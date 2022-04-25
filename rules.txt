@@ -1,0 +1,7 @@
+Rules 
+
+* Skriva kommentarer på engelska
+
+* Funktionsnamn på engelska
+
+* Använda camelCase på exempelvis klassnamn och funktioner
