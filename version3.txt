@@ -1,1 +1,9 @@
-Vesion 3
+Version 3
+
+* Fixa det sista CSS och allt utseendemässiga
+* Fixa transisions
+* Bli klar med responsivitet
+* Se över inventeringen 
+* Se över allt så allt fungerar
+* Fixa smådetaljer 
+
