@@ -1,1 +1,11 @@
  Version 1
+
+ * Skapa skelett med olika filer i VS. 
+
+ * Skapa ett dokument om regler för exempelvis namn på klasser, funktioner osv. 
+
+ * Ha samma formateringsprogram.
+
+ * Ett enkelt skal i html/CSS utefter designen vi kommit fram till i Figma. 
+
+ * Länka in databasen, bestämma vilka bilder som ska användas osv. 
