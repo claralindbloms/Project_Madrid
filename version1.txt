@@ -7,5 +7,6 @@
  * Ha samma formateringsprogram.
 
  * Ett enkelt skal i html/CSS utefter designen vi kommit fram till i Figma. 
+    - Visa med divar och rutor hur vi har tänkt.
 
  * Länka in databasen, bestämma vilka bilder som ska användas osv. 
