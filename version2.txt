@@ -1,0 +1,10 @@
+Version 2
+
+* Fortsätta med grundläggande HTML/CSS, utgående från Figma.
+
+* JavaScript-kodning.
+    * Nödvändig kod för innehåll, information, navigering och filtrering.
+    * Funktioner, event-listeners, osv.
+    * JSON och GET-parameter.
+
+* Börja med responsivitet på webbsidan. 
