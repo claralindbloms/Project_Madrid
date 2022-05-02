@@ -36,12 +36,7 @@ h1 {
 }
 
 #chooseCountry {
-    height: 25px;
-    width: 300px;
 
-    border-radius: 180px;
-    background-color: gray;
-    padding: 8px;
     margin-bottom: 20px;
 }
 
@@ -52,6 +47,10 @@ h1 {
     background-color: white;
     margin-bottom: 30px;
     border: 2px black solid;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #footer {
@@ -59,4 +58,34 @@ h1 {
     width: 390px;
 
     background-color: white;
+}
+
+#smallPicture {
+    height: 200px;
+    width: 300px;
+
+    border: 1px solid black;
+}
+
+p{
+    padding: 5px;
+}
+
+#containerInfo {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#chooseCity {
+    margin: 10px;
+}
+
+#mooreChoices {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
 }

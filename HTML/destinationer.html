@@ -17,13 +17,35 @@
 
     <h1>Destinationer</h1>
 
-    <div id="chooseCountry">Välj land</div>
+    <select name="choose country" id="chooseCountry" required>
+        <option value="" disabled selected hidden>Välj land</option>
+        <option value="spanien">Spanien</option>
+        <option value="sverige">Sverige</option>
+        <option value="england">England</option>
+    </select>
+   
 
-    <div id="containerCountry"></div>
+    <div id="containerCountry">
+        <h2>Spanien</h2>
+        <div id="smallPicture"></div>
+
+        <p>Spanien är ett land och en medlemsstat i Europeiska unionen belägen i sydvästra Europa på Iberiska halvön. Dess fastland gränsar i söder och öster till Medelhavet förutom en liten landgräns med det brittiska utomeuropeiska territoriet Gibraltar, i norr av Frankrike, Andorra och Biscayabukten samt i nordväst och väster av Atlanten och Portugal.</p>
+        <div id="containerInfo">
+            <p>Språk: Spanska <br> Visum: Nej </p>
+        </div>
+
+        <div id="mooreChoices">
+            <button>Till utbildningar</button>
+            <select name="choose city" id="chooseCity" required>
+                <option value="" disabled selected hidden>Välj stad</option>
+                <option value="madrid">Madrid</option>
+                <option value="barcelona">Barcelona</option>
+                <option value="Valencia">Valencia</option>
+            </select>
+        </div>  
+    </div>
 
     <div id="footer"></div>
-
-
 
     <script src="database.js"></script>
     <script src="destinationer.js"></script>
