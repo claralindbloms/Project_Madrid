@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    height: 1185px;
+    width: 390px;
+    background-color: bisque;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#header {
+    height: 95px;
+    width: 390px;
+    background-color: white;
+}
+
+#logo {
+    height: 90px;
+}
+
+#picture {
+    height: 260px;
+    width: 390px;
+
+    background-color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#chooseCountry {
+
+    margin-bottom: 20px;
+}
+
+#containerCountry {
+    height: 590px;
+    width: 330px;
+
+    background-color: white;
+    margin-bottom: 30px;
+    border: 2px black solid;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footer {
+    height: 69px;
+    width: 390px;
+
+    background-color: white;
+}
+
+#smallPicture {
+    height: 200px;
+    width: 300px;
+
+    border: 1px solid black;
+}
+
+p{
+    padding: 5px;
+}
+
+#containerInfo {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#chooseCity {
+    margin: 10px;
+}
+
+#mooreChoices {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
