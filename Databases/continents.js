@@ -1,31 +1,31 @@
 const CONTINENTS = [
   {
-    name: "Africa",
+    name: "Afrika",
     countries: [],
   },
 
   {
-    name: "Asia",
+    name: "Asien",
     countries: [],
   },
 
   {
-    name: "Europe",
+    name: "Europa",
     countries: [0, 1, 3, 4],
   },
 
   {
-    name: "North America",
+    name: "Nordamerika",
     countries: [5, 6]
   },
 
   {
-    name: "Oceania",
+    name: "Oceanien",
     countries: [2],
   },
 
   {
-    name: "South America",
+    name: "Sydamerika",
     countries: [7, 8],
   },
 ];
