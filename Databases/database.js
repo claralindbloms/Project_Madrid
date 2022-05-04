@@ -84,7 +84,7 @@ universitet.
 const COUNTRIES = [
     {
         "id": 0,
-        "name": "Spain",
+        "name": "Spanien",
         "visa": false,
         "languageID": 0,
         "flag": "spain.png",
@@ -105,7 +105,7 @@ const COUNTRIES = [
     },
     {
         "id": 1,
-        "name": "France",
+        "name": "Frankrike",
         "visa": false,
         "languageID": 2,
         "flag": "france.png",
@@ -126,7 +126,7 @@ const COUNTRIES = [
     },
     {
         "id": 2,
-        "name": "Australia",
+        "name": "Australien",
         "visa": false,
         "languageID": 1,
         "flag": "australia.png",
@@ -141,7 +141,7 @@ const COUNTRIES = [
     },
     {
         "id": 3,
-        "name": "United Kingdom",
+        "name": "Storbrittanien",
         "visa": false,
         "languageID": 1,
         "flag": "uk.png",
@@ -162,7 +162,7 @@ const COUNTRIES = [
     },
     {
         "id": 4,
-        "name": "Sweden",
+        "name": "Sverige",
         "visa": false,
         "languageID": 3,
         "flag": "sweden.png",
