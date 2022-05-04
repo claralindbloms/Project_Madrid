@@ -1,21 +1,13 @@
-body{
-    margin: 0;
-    height: 100vh;
-    position: relative;
-  
-}
-
 .header{
     width: 100vw;
-    height: 10vh;
     background-color:white;
 }
 
 .logga{
     padding-top: 10px;
     padding-left: 10px;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 
 .hamburger{
