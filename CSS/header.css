@@ -7,7 +7,7 @@ body{
 
 .header{
     width: 100vw;
-    height: 15vh;
+    height: 10vh;
     background-color:white;
 }
 
@@ -23,15 +23,6 @@ body{
     height: 60px;
     position: fixed;
     left: 80vw;
-    top: 4vh;
+    top: 3vh;
  
-}
-
-.footer{
-    width: 100vw;
-    height: 12vh;
-    background-color: black;
-    position: absolute;
-    bottom: 0;
-
 }
