@@ -27,7 +27,9 @@ return burgerHTML*/
 
 function BurgerMenu (){
     let burgerHTML = document.createElement("div");
-    burgerHTML.innerTEXT = `
-	<h1>MENY</h1>`;
-
+    burgerHTML.innerHTML = `
+	<h1>MENY</h1>
+	`;
+	//append darkMode
+	//append close
 }
