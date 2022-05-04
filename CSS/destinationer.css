@@ -88,3 +88,7 @@ p{
     align-items: center;
     width: 300px;
 }
+
+.flag {
+    height: 5vh;
+}

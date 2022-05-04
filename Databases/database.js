@@ -87,7 +87,7 @@ const COUNTRIES = [
         "name": "Spanien",
         "visa": false,
         "languageID": 0,
-        "flag": "spain.png",
+        "flag": "../images/spanien.png",
         "text": "Spanien \u00e4r ett land och en medlemsstat i Europeiska unionen bel\u00e4gen i sydv\u00e4stra Europa p\u00e5 Iberiska halv\u00f6n. Dess fastland gr\u00e4nsar i s\u00f6der och \u00f6ster till Medelhavet f\u00f6rutom en liten landgr\u00e4ns med det brittiska utomeuropeiska territoriet Gibraltar, i norr av Frankrike, Andorra och Biscayabukten samt i nordv\u00e4st och v\u00e4ster av Atlanten och Portugal.",
         "imagesNormal": [
             "spain_normal_1.jpg",
@@ -108,7 +108,7 @@ const COUNTRIES = [
         "name": "Frankrike",
         "visa": false,
         "languageID": 2,
-        "flag": "france.png",
+        "flag": "../images/frankrike.png",
         "text": "Frankrike \u00e4r ett mycket sp\u00e4nnande land som har en stolt och intressant historia. Det \u00e4r ett av v\u00e4rldens mest popul\u00e4ra turistl\u00e4nder, d\u00e5 det finns m\u00e5nga omr\u00e5den som \u00e4r v\u00e4rda att bes\u00f6ka. Det \u00e4r heller inte alls konstigt att f\u00f6rst\u00e5 varf\u00f6r Frankrike h\u00e5ller sig i turisttoppen \u00e5r efter \u00e5r.",
         "imagesNormal": [
             "france_normal_1.jpg",
@@ -129,7 +129,7 @@ const COUNTRIES = [
         "name": "Australien",
         "visa": false,
         "languageID": 1,
-        "flag": "australia.png",
+        "flag": "../images/australien.png",
         "text": "Australien \u00e4r ett land p\u00e5 s\u00f6dra halvklotet best\u00e5ende av fastlandet kontinenten Australien, \u00f6n Tasmanien samt ett antal mindre \u00f6ar i Indiska oceanen och Stilla havet. Idag \u00e4r Australien ett modernt industri- och tj\u00e4nstesamh\u00e4lle. Politiskt har landet sedan andra v\u00e4rldskriget varit en n\u00e4ra allierad till USA. Det \u00e4r v\u00e4rldens sj\u00e4tte st\u00f6rsta land har en yta som \u00e4r 17 g\u00e5nger st\u00f6rre \u00e4n Sveriges.",
         "imagesNormal": [
             "australia_normal_1.jpg",
@@ -144,7 +144,7 @@ const COUNTRIES = [
         "name": "Storbrittanien",
         "visa": false,
         "languageID": 1,
-        "flag": "uk.png",
+        "flag": "../images/uk.png",
         "text": "Storbritannien, formellt F\u00f6renade konungariket Storbritannien och Nordirland med kortform F\u00f6renade kungariket, \u00e4r en suver\u00e4n stat som best\u00e5r av \u00f6ar bel\u00e4gna vid den nordv\u00e4stra kusten av den europeiska kontinenten. Landet omfattar \u00f6n Storbritannien, den nord\u00f6stra delen av \u00f6n Irland och m\u00e5nga mindre \u00f6ar.",
         "imagesNormal": [
             "united kingdom_normal_1.jpg",
@@ -165,7 +165,7 @@ const COUNTRIES = [
         "name": "Sverige",
         "visa": false,
         "languageID": 3,
-        "flag": "sweden.png",
+        "flag": "../images/sverige.png",
         "text": "Sverige ben\u00e4mns formellt Konungariket Sverige \u00e4r en konstitutionell monarki p\u00e5 Skandinaviska halv\u00f6n i Nordeuropa. Sverige har landgr\u00e4ns i v\u00e4st med Norge, i nordost med Finland samt angr\u00e4nsande territorialvatten till Norge i v\u00e4stsydv\u00e4st, Danmark i sydv\u00e4st och Finland i \u00f6st. Sverige \u00e4r en konstitutionell monarki med parlamentarisk demokrati och utvecklad ekonomi. Landet \u00e4r medlem i F\u00f6renta nationerna sedan november 1946 och Europeiska unionen sedan den 1 januari 1995.",
         "imagesNormal": [
             "sweden_normal_1.jpg",
@@ -186,7 +186,7 @@ const COUNTRIES = [
         "name": "Chile",
         "visa": true,
         "languageID": 0,
-        "flag": "chile.png",
+        "flag": "../images/chile.png",
         "text": "Chile \u00e4r det l\u00e4ngsta landet i v\u00e4rlden som str\u00e4cker sig fr\u00e5n norr till s\u00f6der i en smal remsa. Republiken Chile (dess officiella namn) har en befolkning p\u00e5 19,7 miljoner m\u00e4nniskor (2021). Huvudstaden och st\u00f6rsta staden \u00e4r Santiago (Santiago de Chile). Det nationella spr\u00e5ket \u00e4r spanska.",
         "imagesNormal": [
             "chile_normal_1.jpg",
@@ -204,7 +204,7 @@ const COUNTRIES = [
         "name": "Mexico",
         "visa": true,
         "languageID": 0,
-        "flag": "mexico.png",
+        "flag": "../images/mexico.png",
         "text": "Mexiko \u00e4r en federal konstitutionell republik i Nordamerika. Landet gr\u00e4nsar i norr till USA, i s\u00f6der och v\u00e4ster till Stilla havet, i syd\u00f6st till Guatemala, Belize, Karibiska havet och i \u00f6ster till Mexikanska golfen. Folkm\u00e4ngden uppgick till cirka 123 miljoner inv\u00e5nare 2016, vilket g\u00f6r Mexiko till det folkrikaste spansktalande omr\u00e5det p\u00e5 jorden.",
         "imagesNormal": [
             "mexico_normal_1.jpg",
@@ -225,7 +225,7 @@ const COUNTRIES = [
         "name": "USA",
         "visa": true,
         "languageID": 1,
-        "flag": "usa.png",
+        "flag": "../images/usa.png",
         "text": "Amerikas f\u00f6renta stater \u00e4r en federal republik som best\u00e5r av 50 delstater, ett federalt distrikt och ett flertal olika sj\u00e4lvstyrande omr\u00e5den. Med 9,83 miljoner km2 och med \u00f6ver 328 miljoner inv\u00e5nare \u00e4r USA det tredje st\u00f6rsta landet till total yta, och det tredje st\u00f6rsta till total befolkning. USA \u00e4r en av v\u00e4rldens mest etniskt blandade och m\u00e5ngkulturella nationer, p\u00e5 grund av storskalig invandring fr\u00e5n m\u00e5nga l\u00e4nder.",
         "imagesNormal": [
             "usa_normal_1.jpg",
@@ -243,7 +243,7 @@ const COUNTRIES = [
         "name": "Argentina",
         "visa": true,
         "languageID": 0,
-        "flag": "argentina.png",
+        "flag": "../images/argentina.png",
         "text": "Argentina \u00e4r det n\u00e4st st\u00f6rsta landet i Sydamerika, bildat som en federation av 23 provinser och en sj\u00e4lvst\u00e4ndig stad vid namn Buenos Aires. Argentina \u00e4r det \u00e5ttonde st\u00f6rsta landet i v\u00e4rlden till ytan och \u00e4r befolkningsm\u00e4ssigt den fj\u00e4rde st\u00f6rsta spansktalande nationen efter Mexiko, Colombia och Spanien. Det \u00e4r \u00e4ven v\u00e4rldens st\u00f6rsta spanskspr\u00e5kiga stat sett till ytan.",
         "imagesNormal": [
             "argentina_normal_1.jpg",
