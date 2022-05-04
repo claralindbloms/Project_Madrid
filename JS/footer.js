@@ -1,7 +1,7 @@
 "use strict";
 
 function buildFooter (){
-    let body = document.body;
+    let footer = document.getElementById("footerDiv");
     let footerDiv = document.createElement("div");
     footerDiv.classList.add("footer");
 
@@ -21,8 +21,10 @@ function buildFooter (){
     footerDiv.append(youtubeLogga)
 
 
-    body.append(footerDiv);
+    footer.append(footerDiv);
 
     return footerDiv
 
 }
+
+buildFooter ();
