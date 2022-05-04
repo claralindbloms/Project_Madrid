@@ -20,3 +20,5 @@ function buildHeader() {
 
     return headerDiv;
 }
+
+buildHeader();
