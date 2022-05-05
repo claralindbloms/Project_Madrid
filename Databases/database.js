@@ -87,7 +87,7 @@ const COUNTRIES = [
         "name": "Spanien",
         "visa": false,
         "languageID": 0,
-        "flag": "../images/spanien.png",
+        "flag": "spanien.png",
         "text": "Spanien \u00e4r ett land och en medlemsstat i Europeiska unionen bel\u00e4gen i sydv\u00e4stra Europa p\u00e5 Iberiska halv\u00f6n. Dess fastland gr\u00e4nsar i s\u00f6der och \u00f6ster till Medelhavet f\u00f6rutom en liten landgr\u00e4ns med det brittiska utomeuropeiska territoriet Gibraltar, i norr av Frankrike, Andorra och Biscayabukten samt i nordv\u00e4st och v\u00e4ster av Atlanten och Portugal.",
         "imagesNormal": [
             "spain_normal_1.jpg",
