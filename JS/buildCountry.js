@@ -33,14 +33,19 @@ function buildCountry (country){
     let foundLanguages = getLanguageById(country);
     let languageCountry = document.createElement("p");
     languageCountry.innerText = "Språk: " + foundLanguages[0];
-    // behövs en loop till för att få rätt språk mha id? // 
+    countryContainer.append(languageCountry);
         
-    countryResult.append(countryContainer);
 
     let toEduButton = document.createElement("button");
 
-    // let selectCity = document.createElement("select"); //
+    countryContainer.append(toEduButton);
 
+    
+    let selectCity = document.createElement("select"); 
+
+    countryContainer.append(selectCity);
+
+    countryResult.append(countryContainer);
    
 }
 
@@ -51,38 +56,19 @@ for (let i = 0; i < COUNTRIES.length; i++){
 // Hitta rätt språk baserat på dess id
 function getLanguageById (country) {
     let foundLanguages = []
-  
-    for (let i = 0; i < country.length; i++) {
-      foundLanguages.push(
-        country.LANGUAGE.find(language => {
-          return language.id == country.languageID
-        })
-      )
+
+    for (let i = 0; i < COUNTRIES.length; i++) {
+        for (let i = 0; i < LANGUAGES.length ; i++) {
+            if (country.languageID == LANGUAGES[i].id) {
+                foundLanguages.push(LANGUAGES[i].name);
+            }
+        }
     }
+    
     return foundLanguages;
 }
 
-//   const LANGUAGES = [
-//     {
-//         "id": 0,
-//         "name": "Spanish",
-//         "flag": "spain.png"
-//     },
-//     {
-//         "id": 1,
-//         "name": "English",
-//         "flag": "uk.png"
-//     },
-//     {
-//         "id": 2,
-//         "name": "French",
-//         "flag": "france.png"
-//     },
-//     {
-//         "id": 3,
-//         "name": "Swedish",
-//         "flag": "sweden.png"
-//     }
+
 // denna ska köras i eventlyssnaren för select-funktionen
 
 function createHTML (countries) {
