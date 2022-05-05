@@ -92,3 +92,8 @@ p{
 .flag {
     height: 5vh;
 }
+
+.countryContainer {
+    background-color: aliceblue;
+    width: 100vw;
+}
