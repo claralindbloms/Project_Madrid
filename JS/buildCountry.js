@@ -1,4 +1,4 @@
-
+"use strict";
 
 // funktion som ska skapa en informationsruta om vardera land
 
@@ -14,7 +14,7 @@ function buildCountry (country){
         countryContainer.append(countryName);
 
         let countryImage = document.createElement("img");
-         /* hur får jag så rätt bild väljs till rätt land? */ 
+        /* hur får jag så rätt bild väljs till rätt land? */ 
 
         let aboutCountry = document.createElement("p");
         aboutCountry.innerText = country[i].text; 
@@ -28,7 +28,10 @@ function buildCountry (country){
         }
         countryContainer.append(visaCountry);
 
+        let foundLanguages = getLanguageById(country);
         let languageCountry = document.createElement("p");
+        languageCountry.innerText = "Språk: " + 
+        // behövs en loop till för att få rätt språk mha id? // 
         
         countryResult.append(countryContainer);
     }
@@ -37,6 +40,41 @@ function buildCountry (country){
    
 }
 
+// Hitta rätt språk baserat på dess id
+function getLanguageById (country) {
+    let foundLanguages = []
+  
+    for (let i = 0; i < country.length; i++) {
+      foundLanguages.push(
+        DB.LANGUAGE.find(language => {
+          return language.id == country.languageID
+        })
+      )
+    }
+    return foundLanguages;
+}
+
+//   const LANGUAGES = [
+//     {
+//         "id": 0,
+//         "name": "Spanish",
+//         "flag": "spain.png"
+//     },
+//     {
+//         "id": 1,
+//         "name": "English",
+//         "flag": "uk.png"
+//     },
+//     {
+//         "id": 2,
+//         "name": "French",
+//         "flag": "france.png"
+//     },
+//     {
+//         "id": 3,
+//         "name": "Swedish",
+//         "flag": "sweden.png"
+//     }
 // denna ska köras i eventlyssnaren för select-funktionen
 
 function createHTML (countries) {
