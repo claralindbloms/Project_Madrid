@@ -1,7 +1,6 @@
 body {
     margin: 0;
-    height: 1185px;
-    width: 390px;
+    width: 100vw;
     background-color: bisque;
 
     display: flex;
@@ -88,4 +87,8 @@ p{
     justify-content: center;
     align-items: center;
     width: 300px;
+}
+
+.flag {
+    height: 5vh;
 }
