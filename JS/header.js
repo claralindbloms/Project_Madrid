@@ -36,15 +36,15 @@ function BurgerMenu (){
 const MENU_LINKS = [
 	{
 		name: "Hitta din utbildning",
-		url: '../HTML/utbildningar.html'
+		url: './utbildningar.html'
 	},
 	{
 		name: "Destinationer",
-		url: '../HTML/utbildningar.html'
+		url: './utbildningar.html'
 	},
 	{
 		name: "Om oss",
-		href: '../HTML/index.html#aboutus'
+		href: './index.html#aboutus'
 	},
 ]
 
