@@ -22,3 +22,37 @@ function buildHeader() {
 }
 
 buildHeader();
+
+
+function BurgerMenu (){
+    let burgerHTML = document.createElement("div");
+    burgerHTML.innerHTML = `
+	<h1>MENY</h1>
+	`;
+	//append darkMode
+	//append close
+}
+
+const MENU_LINKS = [
+	{
+		name: "Hitta din utbildning",
+		url: '../HTML/utbildningar.html'
+	},
+	{
+		name: "Destinationer",
+		url: '../HTML/utbildningar.html'
+	},
+	{
+		name: "Om oss",
+		href: '../HTML/index.html#aboutus'
+	},
+]
+
+let header
+
+for (let link of MENU_LINKS){
+	const linkElem = document.createElement('a');
+	a.href = link.url;
+	a.innerHTML = link.name;
+	header.append(linkElem);
+}
