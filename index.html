@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="homepage.css" />
     <link rel="stylesheet" href="../CSS/header.css" />
     <link rel="stylesheet" href="../CSS/footer.css" />
+    <link rel="stylesheet" href="CSS/popup.css" />
+
   </head>
 
   <body>
     <header id="headerDiv"></header>
-
+    <button id="overlay" onclick="off()">close</button>
+    <button onclick="on()">Europa</button>
+   <button onclick="on()">Asien</button>
     <div id="wrapper">
       <h4>Vart vill du studera?</h4>
       <div id="globes"></div>
@@ -55,9 +59,13 @@
       </div>
     </div>
 
+
+
     <footer id="footerDiv"></footer>
-    <script src="../JS/header.js"></script>
-    <script src="../JS/footer.js"></script>
+    <script src= "Databases/database.js"></script>
+    <script src="JS/header.js"></script>
+    <script src="JS/footer.js"></script>
+    <script src="JS/buildCountryHomeoverlay.js"></script>
   </body>
 </html>
 

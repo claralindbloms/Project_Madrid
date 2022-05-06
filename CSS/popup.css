@@ -2,12 +2,12 @@
     position: fixed;
     display: none;
     width: 100vw;
-    height: 78vh;
+    height: 90vh;
     top: 10;
     left: 0;
     right: 0;
     bottom: 10;
-    background-color:white;
+    background-color:transparent;
     z-index: 2;
     cursor: pointer;
     border: beige;
