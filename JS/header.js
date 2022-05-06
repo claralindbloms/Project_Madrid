@@ -31,7 +31,7 @@ const MENU_LINKS = [
 	},
 	{
 		name: "Destinationer",
-		url: './utbildningar.html'
+		url: './destinationer.html'
 	},
 	{
 		name: "Om oss",
@@ -51,7 +51,7 @@ function BurgerMenu() {
 		let overlay = document.createElement("div");
 		overlay.classList.add("meny");
 		burgerHTML.classList.add("menuactive");
-		let wrap = document.querySelector("#wrapper");
+		let wrap = document.querySelector("#wrapper"); //add wrapper on eachpage?
 		wrap.append(overlay);
 		for (let link of MENU_LINKS) {
 			const linkElem = document.createElement('a');
