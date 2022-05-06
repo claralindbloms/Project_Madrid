@@ -12,3 +12,5 @@ function buildContinents () {
         testDiv.append(continent);
     }
 }
+
+buildContinents();
