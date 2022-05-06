@@ -8,8 +8,8 @@ function buildContinents () {
             <img class="continent_images" src="../images/${CONTINENTS[i].image}"</img>
             <h2>${CONTINENTS[i].name}</h2>
         `
-        let testDiv = document.getElementById("testDiv")
-        testDiv.append(continent);
+        let globesContainer = document.getElementById("globes");
+        globesContainer.append(continent);
     }
 }
 
