@@ -13,5 +13,4 @@ function buildContinents () {
     }
 }
 
-buildContinents();
 
