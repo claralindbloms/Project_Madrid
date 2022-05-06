@@ -1,36 +1,27 @@
 "use strict";
 
 function buildHeader() {
-    let header = document.getElementById("headerDiv");
-    let headerDiv = document.createElement("div");
-    headerDiv.classList.add("header");
+	let header = document.getElementById("headerDiv");
+	let headerDiv = document.createElement("div");
+	headerDiv.classList.add("header");
 
-    header.append(headerDiv);
-
-
-    let logga = document.createElement("img")
-    logga.src = "./images/logga.svg";
-    logga.classList.add("logga")
-    headerDiv.append(logga);
-
-    let hamburgerMenu = document.createElement("img")
-    hamburgerMenu.src = "./images/Hamburger_icon.png";
-    hamburgerMenu.classList.add("hamburger");
-    headerDiv.append(hamburgerMenu);
-
-    return headerDiv;
-}
-
-buildHeader();
+	header.append(headerDiv);
 
 
-function BurgerMenu (){
-    let burgerHTML = document.createElement("div");
-    burgerHTML.innerHTML = `
-	<h1>MENY</h1>
-	`;
-	//append darkMode
-	//append close
+	let logga = document.createElement("img")
+	logga.src = "./images/logga.svg";
+	logga.classList.add("logga")
+	headerDiv.append(logga);
+
+	let hamburgerMenu = document.createElement("img")
+	hamburgerMenu.src = "./images/Hamburger_icon.png";
+	hamburgerMenu.classList.add("hamburger");
+	headerDiv.append(hamburgerMenu);
+	hamburgerMenu.addEventListener('click', function () {
+		BurgerMenu();
+	})
+
+	return headerDiv;
 }
 
 const MENU_LINKS = [
@@ -44,15 +35,43 @@ const MENU_LINKS = [
 	},
 	{
 		name: "Om oss",
-		href: './index.html#aboutus'
+		url: './index.html#aboutus'
 	},
 ]
 
-let header
 
-for (let link of MENU_LINKS){
-	const linkElem = document.createElement('a');
-	a.href = link.url;
-	a.innerHTML = link.name;
-	header.append(linkElem);
+function BurgerMenu() {
+
+	let burgerHTML = document.querySelector(".hamburger");
+	if (document.querySelector(".menuactive")) {
+		let overlay = document.querySelector(".meny");
+		burgerHTML.classList.remove("menuactive");
+		overlay.remove();
+	} else {
+		let overlay = document.createElement("div");
+		overlay.classList.add("meny");
+		burgerHTML.classList.add("menuactive");
+		let wrap = document.querySelector("#wrapper");
+		wrap.append(overlay);
+		for (let link of MENU_LINKS) {
+			const linkElem = document.createElement('a');
+			linkElem.href = link.url;
+			linkElem.innerHTML = link.name;
+			overlay.append(linkElem);
+		}
+	}
 }
+	//overlay
+	/*burgerHTML.innerHTML = `
+	<h1>MENY</h1>
+	`;
+	//append title
+	//append darkMode
+	//append close
+
+*/
+
+
+
+
+buildHeader();
