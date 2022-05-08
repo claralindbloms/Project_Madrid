@@ -1,5 +1,9 @@
 /* Education/utbildningar CSS-file */
 
+body {
+    margin: 0;
+}
+
 
 .programContainer {
     background-color: beige;
