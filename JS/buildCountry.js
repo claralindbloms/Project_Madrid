@@ -12,18 +12,19 @@ function buildCountry (country){
     let countryName = document.createElement("h2");
     
     // länka rätt flagga // 
-    let flag = getFlag (country);
 
-    countryName.innerText = flag + " " + country.name;
-    
+    let countryFlag = document.createElement("img");
+    countryFlag.src = `./images/${country.flag}`;
+    countryFlag.classList.add("countryFlag");
+
+    countryContainer.append(countryFlag);
+
+    countryName.innerText = country.name;
+
     countryContainer.append(countryName);
 
-    // countryImage.innerHTML = `
-    //     <img src="./images/${country.imagesNormal[0]}></img>
-    // `
-
-    // let foundImages = getCountryImage (country);
     let countryImage = document.createElement("img");
+    countryImage.src = `./images/${country.imagesNormal[0]}`;
     countryContainer.append(countryImage);
     /* hur får jag så rätt bild väljs till rätt land? */ 
 
@@ -77,16 +78,6 @@ function getLanguageById (country) {
     }
     
     return foundLanguages;
-}
-
-function getFlag (country) {
-    for (let i = 0; i < country.length; i++) {
-        let flag = document.createElement("div");
-        flag.innerHTML = `
-            <img src="../images/${country.flag}"></img>
-        `
-        
-    }
 }
 
 // hitta rätt bild till varje land
