@@ -11,7 +11,11 @@ function buildCountry (country){
  
     let countryName = document.createElement("h2");
     
-    countryName.innerText = country.flag + " " + country.name;
+    // länka rätt flagga // 
+    let flag = getFlag (country);
+
+    countryName.innerText = flag + " " + country.name;
+    
     countryContainer.append(countryName);
 
     // countryImage.innerHTML = `
@@ -19,8 +23,10 @@ function buildCountry (country){
     // `
 
     // let foundImages = getCountryImage (country);
+
     // let countryImage = document.createElement("img");
     // countryContainer.append(countryImage);
+
     /* hur får jag så rätt bild väljs till rätt land? */ 
 
     let aboutCountry = document.createElement("p");
@@ -51,6 +57,8 @@ function buildCountry (country){
     countryContainer.append(selectCity);
 
     countryResult.append(countryContainer);
+
+    return countryContainer;
    
 }
 
@@ -73,7 +81,23 @@ function getLanguageById (country) {
     return foundLanguages;
 }
 
+
 // hitta rätt bild till varje land - fråga
+// function getCountryImage (country) {
+//     let foundImages = [];
+
+//     for (let i = 0; i < COUNTRIES.length; i++) {
+//         for (let i = 0; .length; i++){
+//             if () {
+//                 foundImages.push();
+//             }
+//         }
+//     }
+
+//     return foundImages;
+// }
+
+// hitta rätt bild till varje land
 // function getCountryImage (country) {
 //     let foundImages = [];
 
@@ -91,11 +115,11 @@ function getLanguageById (country) {
 
 // denna ska köras i eventlyssnaren för select-funktionen
 
-function createHTML (countries) {
-    for (let country of countries) {
-        buildCountry(country)
-    }
-}
+// function createHTML (countries) {
+//     for (let country of countries) {
+//         buildCountry(country)
+//     }
+// }
   
 
 // Måste ha något sånt här för när användaren väljer ett land i select

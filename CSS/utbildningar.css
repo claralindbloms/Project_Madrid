@@ -1,1 +1,14 @@
 /* Education/utbildningar CSS-file */
+
+body {
+    margin: 0;
+}
+
+
+.programContainer {
+    background-color: beige;
+    width: 80vw;
+    position: relative;
+    left: 10vw;
+
+}
