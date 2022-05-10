@@ -1,3 +1,7 @@
+"use strict";
+
+// länka länderna till select
+
 let chooseCountry = document.getElementById("chooseCountry");
 
 COUNTRIES.forEach((country) => {
