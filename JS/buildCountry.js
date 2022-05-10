@@ -23,8 +23,10 @@ function buildCountry (country){
     // `
 
     // let foundImages = getCountryImage (country);
-    let countryImage = document.createElement("img");
-    countryContainer.append(countryImage);
+
+    // let countryImage = document.createElement("img");
+    // countryContainer.append(countryImage);
+
     /* hur får jag så rätt bild väljs till rätt land? */ 
 
     let aboutCountry = document.createElement("p");
@@ -79,15 +81,21 @@ function getLanguageById (country) {
     return foundLanguages;
 }
 
-function getFlag (country) {
-    for (let i = 0; i < country.length; i++) {
-        let flag = document.createElement("div");
-        flag.innerHTML = `
-            <img src="../images/${country.flag}"></img>
-        `
-        
-    }
-}
+
+// hitta rätt bild till varje land - fråga
+// function getCountryImage (country) {
+//     let foundImages = [];
+
+//     for (let i = 0; i < COUNTRIES.length; i++) {
+//         for (let i = 0; .length; i++){
+//             if () {
+//                 foundImages.push();
+//             }
+//         }
+//     }
+
+//     return foundImages;
+// }
 
 // hitta rätt bild till varje land
 // function getCountryImage (country) {

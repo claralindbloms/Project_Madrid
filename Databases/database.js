@@ -141,7 +141,7 @@ const COUNTRIES = [
     },
     {
         "id": 3,
-        "name": "Storbrittanien",
+        "name": "Storbritanien",
         "visa": false,
         "languageID": 1,
         "flag": "uk.png",
