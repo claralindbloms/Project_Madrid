@@ -33,6 +33,8 @@ function buildProgram(program) {
     programName.innerText = program.name;
     programContainer.append(programName);
 
+    // console.log(averageGrade(program, "courses"));
+
     let foundUniversity = getUniversityById(program);
     let universityProgram = document.createElement("p");
     universityProgram.innerText = foundUniversity[0];
