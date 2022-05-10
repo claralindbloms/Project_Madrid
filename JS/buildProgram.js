@@ -82,31 +82,19 @@ function getUniversityById(program) {
 function getCityById(program) {
     let foundCity = []
 
-<<<<<<< Updated upstream
+
     for (let i = 0; i < PROGRAMMES.length; i++) {
         for (let j = 0; j < UNIVERSITIES.length; j++) {
             for (let f = 0; f < CITIES.length; f++) {
                 if (program.universityID == UNIVERSITIES[j].id && UNIVERSITIES[j].cityID == CITIES[f].id) {
                     foundCity.push(CITIES[f].name);
-=======
-   
-        for (let i = 0; i < UNIVERSITIES.length; i++) {
-            for (let i = 0; i < CITIES.length; i++) {
-                if (program.universityID == UNIVERSITIES[i].id && UNIVERSITIES[i].cityID == CITIES[i].id) {
-                    foundCity.push(CITIES[i].name);
->>>>>>> Stashed changes
+
+
                 }
 
             }
-
         }
-<<<<<<< Updated upstream
-
-    }
-=======
-    
-    
->>>>>>> Stashed changes
+        }
 
     return foundCity;
 }
