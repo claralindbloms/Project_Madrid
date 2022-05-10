@@ -80,6 +80,7 @@ function getLanguageById (country) {
     return foundLanguages;
 }
 
+
 // hitta rätt bild till varje land
 // function getCountryImage (country) {
 //     let foundImages = [];
