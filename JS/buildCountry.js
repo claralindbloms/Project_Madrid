@@ -10,18 +10,24 @@ function buildCountry (country){
     countryContainer.classList.add("countryContainer");
  
     
+    let flagCountryDiv = document.createElement("div");
+    flagCountryDiv.classList.add("flagCountryDiv");
+    countryContainer.append(flagCountryDiv);
+
     let countryFlag = document.createElement("img");
     countryFlag.src = `./images/${country.flag}`;
     countryFlag.classList.add("countryFlag");
-    countryContainer.append(countryFlag);
+    flagCountryDiv.append(countryFlag);
 
     let countryName = document.createElement("h2");
     countryName.innerText = country.name;
-    countryContainer.append(countryName);
+    flagCountryDiv.append(countryName);
 
     let countryImage = document.createElement("img");
+    countryImage.classList.add("countryImage");
     countryImage.src = `./images/${country.imagesNormal[0]}`;
     countryContainer.append(countryImage);
+
      
     let aboutCountry = document.createElement("p");
     aboutCountry.innerText = country.text; 
@@ -45,18 +51,37 @@ function buildCountry (country){
     toEduButton.innerText = "Till utbildningar";
     countryContainer.append(toEduButton);
 
+    let selectCity = document.createElement("select")
     
+    let optionOne = document.createElement("option");
+    optionOne.disabled = true;
+    optionOne.hidden = true;
+    optionOne.textContent = "Välj stad";
+    optionOne.selected = true; 
+    selectCity.append(optionOne);
+    
+    let foundCities = getCitiesById(country);
+ 
+    for (let i = 0; i < foundCities.length; i++) {
+        let option = document.createElement("option");
+        option.text = foundCities[i]; 
+        
+        selectCity.append(option);
+    }
 
-    citySelector ()
+    countryContainer.append(selectCity)
 
     countryResult.append(countryContainer);
+    
     return countryContainer;
    
 }
 
 for (let i = 0; i < COUNTRIES.length; i++){
     buildCountry (COUNTRIES[i]);
+
 }
+
 
 // Hitta rätt språk baserat på dess id
 function getLanguageById (country) {
@@ -73,19 +98,18 @@ function getLanguageById (country) {
     return foundLanguages;
 }
 
-// länka städerna till select i countryContainer - fråga på OL
+// länka städerna via ID till rätt land
 
-function citySelector () {
-    let chooseCity = document.getElementById("chooseCity");
+function getCitiesById (country) {
+    let foundCities = [];
 
-    CITIES.forEach((city) => {
-        let option = document.createElement("option");
-        option.text = city.name;
-        
-        chooseCity.append(option);
-    })
+    for (let i = 0; i < CITIES.length; i++) {
+        if (country.id == CITIES[i].countryID) {
+            foundCities.push(CITIES[i].name);
+        }
+    }
+    return foundCities;
 }
-
 
 // Måste ha något sånt här för när användaren väljer ett land i select
 // citySelector.addEventListener('keyup', function () {
