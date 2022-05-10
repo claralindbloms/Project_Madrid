@@ -8,11 +8,17 @@ function buildHeader() {
 	header.append(headerDiv);
 
 
-	let logga = document.createElement("img"); // Change img to a, conflicts with css-styling of hamburgermenu.
-	// logga.innerHTML = `<a href="index.html"><img src="./images/logga.svg></img></a>"`
+	let logga = document.createElement("img");
 	logga.src = "./images/logga.svg";
 	logga.classList.add("logga")
+	logga.setAttribute('id', 'logga');
 	headerDiv.append(logga);
+
+	// Redirecting to homepage when icon is clicked/tapped.
+
+	document.getElementById("logga").onclick = function () {
+		location.href = "index.html"; // Change later depending on how the url works 
+	}
 
 	let hamburgerMenu = document.createElement("img")
 	hamburgerMenu.src = "./images/Hamburger_icon.png";
