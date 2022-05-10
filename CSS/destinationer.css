@@ -30,6 +30,10 @@ body {
     justify-content: center;
 }
 
+#wrapper {
+    margin-top: 93px;
+}
+
 h1 {
     text-align: center;
 }
