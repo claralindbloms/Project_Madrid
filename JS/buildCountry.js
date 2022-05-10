@@ -1,23 +1,5 @@
 "use strict";
 
-function sumGradeCourses() {
-  let gradeCourses = [];
-
-  for (let i = 0; i < COMMENTS_PROGRAMME.length; i++) {
-    gradeCourses.push(COMMENTS_PROGRAMME[i].stars.courses);
-  }
-
-  let sumGradeCourses = 0;
-
-  for (let i = 0; i < gradeCourses.length; i++) {
-    sumGradeCourses += gradeCourses[i];
-  }
-
-  let averageGradeCourses = sumGradeCourses / gradeCourses.length;
-
-  return Math.round(averageGradeCourses * 10) / 10;
-}
-
 // funktion som ska skapa en informationsruta om vardera land
 function buildCountry(country) {
   let countryResult = document.getElementById("countryWrapper");
