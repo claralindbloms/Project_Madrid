@@ -1,13 +1,17 @@
+body{
+  height: 80vh;
+}
+
 #overlay {
-    position: fixed;
+    position: absolute;
     display: none;
+    background-color: white;
     width: 100vw;
-    height: 90vh;
+    height: 310vh;
     top: 10;
     left: 0;
     right: 0;
     bottom: 10;
-    background-color:transparent;
     z-index: 2;
     cursor: pointer;
     border: beige;

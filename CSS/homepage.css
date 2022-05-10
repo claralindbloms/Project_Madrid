@@ -1,4 +1,20 @@
+#wrapper{
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr); */
+  
+}
 .country_images{
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 200%;
+    position: relative;
+    z-index: 3;
+
+}
+
+.country_header{
+    position: relative;
+    z-index: 3;
+
 }
