@@ -8,16 +8,29 @@ function buildCity (city) {
     let cityName = document.createElement("h2");
     cityName.innerText = 
 
+    let cityImage = document.createElement("img");
+    cityImage.src = `./images/${city.imagesNormal[0]}`;
+    cityContainer.append(cityImage);
 
     let aboutCity = document.createElement("p");
     aboutCity.innerText = city.text; 
     cityContainer.append(aboutCity);
 
-    let toEduButton = document.createElement("button");
+    // div för grades, random - Hedvig
 
+    // div för kommentarer, två nyaste visar, sen visa mer - Clara
+
+    // let cityComments = document.createElement("div");
+    // cityContainer.append(cityComments);
+
+    let toEduButton = document.createElement("button");
+    toEduButton.innerText = "Till utbildningar";
     cityContainer.append(toEduButton);
 }
 
+for (let i = 0; i < CITIES.length; i++){
+    buildCity (CITIES[i]);
+}
 
 function getCitiesByCountryId (city) {
     let foundCities = [];
@@ -31,28 +44,3 @@ function getCitiesByCountryId (city) {
     }
     return foundCities;
 }
-
-for (let i = 0; i < CITIES.length; i++){
-    buildCity (CITIES[i]);
-}
-
-// hitta rätt bild till varje stad - fråga
-// function getCountryImage (country) {
-//     let foundImages = [];
-
-//     for (let i = 0; i < COUNTRIES.length; i++) {
-//         for (let i = 0; .length; i++){
-//             if () {
-//                 foundImages.push();
-//             }
-//         }
-//     }
-
-//     return foundImages;
-// }
-
-// funktion för att få fram rätt betyg på de olika kategorierna
-// function getCityGrades (){}
-
-// funktion för att få fram kommentarer, först de två senaste sen "visa fler"
-// function getCityComments (){}
