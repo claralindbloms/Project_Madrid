@@ -17,7 +17,7 @@ function buildHeader() {
 	// Redirecting to homepage when icon is clicked/tapped.
 
 	document.getElementById("logga").onclick = function () {
-		location.href = "index.html"; // Change later depending on how the url works 
+		location.href = "index.html"; // Change later depending on how the url works.
 	}
 
 	let hamburgerMenu = document.createElement("img")
