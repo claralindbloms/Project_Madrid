@@ -8,7 +8,8 @@ function buildHeader() {
 	header.append(headerDiv);
 
 
-	let logga = document.createElement("img")
+	let logga = document.createElement("img"); // Change img to a, conflicts with css-styling of hamburgermenu.
+	// logga.innerHTML = `<a href="index.html"><img src="./images/logga.svg></img></a>"`
 	logga.src = "./images/logga.svg";
 	logga.classList.add("logga")
 	headerDiv.append(logga);
