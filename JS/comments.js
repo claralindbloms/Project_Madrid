@@ -16,7 +16,7 @@
 //absolut inte klar mest test
 function getComments() {
     let commentsDiv = [];
-    console.log(COMMENTS_CITY);
+    console.log(COMMENTS_CITY); //TA BORT
     for (let i = 0; i < COMMENTS_CITY.length; i++) {
         for (let j = 0; j < CITIES.length; j++) {
             let div = document.createElement("div");
