@@ -16,3 +16,13 @@ body {
     left: 10vw;
 
 }
+
+#picture{
+    height: 260px;
+    width: 100vw;
+
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
