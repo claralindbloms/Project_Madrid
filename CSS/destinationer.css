@@ -32,7 +32,6 @@ p{
 }
 
 #bigContainer {
-    padding: 15px;
 
     display: flex;
     flex-direction: column;
@@ -54,7 +53,8 @@ h2 {
 .countryContainer {
     background-color: aliceblue;
     width: 100vw;
-    
+    margin-bottom: 8vh;
+    padding-bottom: 5%;
 }
 
 .countryFlag {
