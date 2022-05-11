@@ -10,24 +10,8 @@ body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
-#header {
-    height: 95px;
-    width: 390px;
-    background-color: white;
-}
-
-#logo {
-    height: 90px;
-}
-
 #picture {
-    height: 260px;
     width: 100vw;
-
-    background-color: brown;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 #wrapper {
@@ -43,62 +27,44 @@ h1 {
     margin-bottom: 20px;
 }
 
-#containerCountry {
-    height: 590px;
-    width: 330px;
-
-    background-color: white;
-    margin-bottom: 30px;
-    border: 2px black solid;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#footer {
-    height: 69px;
-    width: 390px;
-
-    background-color: white;
-}
-
-#smallPicture {
-    height: 200px;
-    width: 300px;
-
-    border: 1px solid black;
-}
-
 p{
-    padding: 5px;
+    padding: 5%;
 }
 
-#containerInfo {
-    width: 300px;
+#bigContainer {
+    padding: 15px;
+
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-}
-
-#chooseCity {
-    margin: 10px;
-}
-
-#mooreChoices {
-    padding: 20px;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    width: 300px;
+    background-color: bisque;
+
 }
 
+.flagCountryDiv {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+h2 {
+    padding: 10px;
+}
 
 .countryContainer {
     background-color: aliceblue;
     width: 100vw;
+    
 }
 
 .countryFlag {
-    height: 4vh;
+    height: 6vh;
 }
+
+.countryImage {
+    width: 90%;
+    height: 90%;
+
+    padding-left: 5%;
+}
+
