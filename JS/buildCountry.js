@@ -4,34 +4,27 @@
 
 function buildCountry (country){
 
- 
     let countryResult = document.getElementById("countryWrapper");
+
     let countryContainer = document.createElement("div");
     countryContainer.classList.add("countryContainer");
- 
-    let countryName = document.createElement("h2");
-    
-    // länka rätt flagga // 
 
-    let countryFlag = document.createElement("img");
-    countryFlag.src = `./images/${country.flag}`;
-    countryFlag.classList.add("countryFlag");
+    let foundLanguages = getLanguageById(country);
+    countryContainer.innerHTML = `
+        <div class="flagCountryDiv">
+            <img class="countryFlag" src="./images/${country.flag}">
+            <h2>${country.name}</h2>
+        </div>
+        <img class="countryImage" src="./images/${country.imagesNormal[0]}">
+        <p>${country.text}</p>
+        <p>Språk: ${foundLanguages[0]}</p>
+        <button>Till utbildningar</button>
+        <select>
+            <option selected disabled hidden>Välj stad</option>
+        </select>
+    `;
+     
 
-    countryContainer.append(countryFlag);
-
-    countryName.innerText = country.name;
-
-    countryContainer.append(countryName);
-
-    let countryImage = document.createElement("img");
-    countryImage.src = `./images/${country.imagesNormal[0]}`;
-    countryContainer.append(countryImage);
-    /* hur får jag så rätt bild väljs till rätt land? */ 
-
-    let aboutCountry = document.createElement("p");
-    aboutCountry.innerText = country.text; 
-    countryContainer.append(aboutCountry);
-        
     let visaCountry = document.createElement("p");
     if (country.visa === false) {
         visaCountry.innerText = "Visum: " + "Nej";
@@ -40,26 +33,36 @@ function buildCountry (country){
     }
     countryContainer.append(visaCountry);
 
-    let foundLanguages = getLanguageById(country);
-    let languageCountry = document.createElement("p");
-    languageCountry.innerText = "Språk: " + foundLanguages[0];
-    countryContainer.append(languageCountry);
-        
 
-    let toEduButton = document.createElement("button");
-
-    countryContainer.append(toEduButton);
-
+    // let selectCity = document.createElement("select")
     
-    let selectCity = document.createElement("select"); 
+    // let optionOne = document.createElement("option");
+    // optionOne.disabled = true;
+    // optionOne.hidden = true;
+    // optionOne.textContent = "Välj stad";
+    // optionOne.selected = true; 
+    // selectCity.append(optionOne);
+    
+    // let foundCities = getCitiesById(country);
+ 
+    // for (let i = 0; i < foundCities.length; i++) {
+    //     let option = document.createElement("option");
+    //     option.text = foundCities[i]; 
+        
+    //     selectCity.append(option);
+    // }
 
-    countryContainer.append(selectCity);
+    // countryContainer.append(selectCity)
 
     countryResult.append(countryContainer);
 
     return countryContainer;
    
 }
+
+let countryResult = document.getElementById("countryWrapper");
+
+countryResult.innerHTML = "";
 
 for (let i = 0; i < COUNTRIES.length; i++){
     buildCountry (COUNTRIES[i]);
