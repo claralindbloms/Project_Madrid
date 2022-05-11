@@ -9,6 +9,7 @@ function buildCountry (country){
     let countryContainer = document.createElement("div");
     countryContainer.classList.add("countryContainer");
 
+
     let foundLanguages = getLanguageById(country);
     countryContainer.innerHTML = `
         <div class="flagCountryDiv">
@@ -25,6 +26,7 @@ function buildCountry (country){
     `;
      
 
+
     let visaCountry = document.createElement("p");
     if (country.visa === false) {
         visaCountry.innerText = "Visum: " + "Nej";
@@ -32,6 +34,7 @@ function buildCountry (country){
         visaCountry.innerText = "Visum: " + "Ja";
     }
     countryContainer.append(visaCountry);
+
 
 
     // let selectCity = document.createElement("select")
@@ -54,8 +57,9 @@ function buildCountry (country){
 
     // countryContainer.append(selectCity)
 
-    countryResult.append(countryContainer);
 
+    countryResult.append(countryContainer);
+    
     return countryContainer;
    
 }
@@ -66,7 +70,9 @@ countryResult.innerHTML = "";
 
 for (let i = 0; i < COUNTRIES.length; i++){
     buildCountry (COUNTRIES[i]);
+
 }
+
 
 // Hitta rätt språk baserat på dess id
 function getLanguageById (country) {
@@ -83,39 +89,21 @@ function getLanguageById (country) {
     return foundLanguages;
 }
 
+// länka städerna via ID till rätt land
 
-// hitta rätt bild till varje land
-// function getCountryImage (country) {
-//     let foundImages = [];
+function getCitiesById (country) {
+    let foundCities = [];
 
-//     for (let i = 0; i < COUNTRIES.length; i++) {
-//         for (let i = 0; .length; i++){
-//             if () {
-//                 foundImages.push();
-//             }
-//         }
-//     }
-
-//     return foundImages;
-// }
-
-
-// denna ska köras i eventlyssnaren för select-funktionen
-
-// function createHTML (countries) {
-//     for (let country of countries) {
-//         buildCountry(country)
-//     }
-// }
-  
+    for (let i = 0; i < CITIES.length; i++) {
+        if (country.id == CITIES[i].countryID) {
+            foundCities.push(CITIES[i].name);
+        }
+    }
+    return foundCities;
+}
 
 // Måste ha något sånt här för när användaren väljer ett land i select
-// inputStudent.addEventListener('keyup', function () {
-//     let foundStudent = findStudent()
-//     document.getElementById('results').innerHTML = ''
-//     createHTML(foundStudent)
-  
-//     if (inputStudent.value == '') {
-//       document.getElementById('results').innerHTML = ''
+// citySelector.addEventListener('keyup', function () {
+//    let 
 //     }
 //   })

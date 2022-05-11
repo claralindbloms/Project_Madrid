@@ -1,3 +1,7 @@
+"use strict";
+
+// länka länderna till select
+
 let chooseCountry = document.getElementById("chooseCountry");
 
 COUNTRIES.forEach((country) => {
@@ -7,7 +11,6 @@ COUNTRIES.forEach((country) => {
     chooseCountry.append(option);
 }
 )
-
 chooseCountry.addEventListener("change", function (event){
     const country = COUNTRIES.find(function(c){
         if(c.name === chooseCountry.value){
@@ -21,3 +24,4 @@ chooseCountry.addEventListener("change", function (event){
     countryResult.innerHTML = "";
     buildCountry(country);
 })
+

@@ -33,7 +33,7 @@
 //   },
 //   {
 //     id: 2,
-//     programmeID: 0,
+//     programmeID: 1,
 //     alias: "Carla Stenlund",
 //     text: "B\u00e4sta tiden i mitt liv! \u00c4ven om kurserna kunde varit b\u00e4ttre lyfte l\u00e4rarna och klasskompisarna detta till det b\u00e4sta jag n\u00e5gonsin gjort. Har f\u00e5tt v\u00e4nner och minnen f\u00f6r livet!",
 //     date: {
@@ -49,7 +49,7 @@
 //   },
 //   {
 //     id: 3,
-//     programmeID: 0,
+//     programmeID: 2,
 //     alias: "Mario",
 //     text: "Lektionerna var superl\u00e4rorika men om man missade en var det k\u00f6rt!! Inga presentationer l\u00e4ggs ut efter\u00e5t se till att vara p\u00e5 plats!",
 //     date: {
@@ -65,7 +65,7 @@
 //   },
 //   {
 //     id: 4,
-//     programmeID: 0,
+//     programmeID: 2,
 //     alias: "Kevin",
 //     text: "Fantastiskt program!!! \u00c4lskade mina l\u00e4rare, mina klasskompisar och lektionerna var alltid roliga och intressanta. Har verkligen inget negativt att s\u00e4ga!",
 //     date: {
@@ -81,7 +81,7 @@
 //   },
 //   {
 //     id: 5,
-//     programmeID: 0,
+//     programmeID: 2,
 //     alias: "Filippa",
 //     text: "Helt okej utbildning, har verken n\u00e5got d\u00e5ligt eller super bra att s\u00e4ga om den. Det var l\u00e4rorikt men k\u00e4nner ocks\u00e5 att det ska bli sk\u00f6nt att komma hem :)",
 //     date: {
@@ -97,22 +97,49 @@
 //   },
 // ];
 
-function sumGradeCourses() {
-  let gradeCourses = [];
+// Parameter 1: Vilken typ, program eller land.
+// Parameter 2: vilket id (program, land).
+    // console.log(averageGrade(program, "courses"));
 
-  for (let i = 0; i < COMMENTS_PROGRAMME.length; i++) {
-    gradeCourses.push(COMMENTS_PROGRAMME[i].stars.courses);
-  }
+function averageGradeProgramme(programme, type) {
+  let grade = [];
 
-  let sumGradeCourses = 0;
+  COMMENTS_PROGRAMME.filter((comment) => {
+    if (comment.programmeID == programme.id) {
+      grade.push(comment.stars[type]);
+    }
+  });
 
-  for (let i = 0; i < gradeCourses.length; i++) {
-    sumGradeCourses += gradeCourses[i];
-  }
+  return averageCalc(grade);
 
-  let averageGradeCourses = sumGradeCourses / gradeCourses.length;
-
-  return Math.round(averageGradeCourses * 10) / 10;
+  // for (let i = 0; i < COMMENTS_PROGRAMME.length; i++) {
+  //   gradeCourses.push(COMMENTS_PROGRAMME[i].stars.courses);
+  // }
 }
 
-// Funktionen räknar ut för ALLA kommentarer som finns. Hur gör jag för att den endast ska räkna ut för det valda programmet/landet?
+function averageGradeCity (city, type) {
+  let grade = [];
+
+  COMMENTS_CITY.filter((comment) => {
+    if (comment.cityID == city.id) {
+      grade.push(comment.stars[type]);
+    }
+  });
+
+  return averageCalc(grade);
+}
+
+function averageCalc(array) {
+  let sum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+
+  let average = sum / array.length;
+
+  let averageGrade = Math.round(average * 10) / 10;
+
+  return averageGrade;
+}
+
