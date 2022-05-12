@@ -2,6 +2,7 @@
 
 // funktion som ska skapa en informationsruta om vardera land
 
+
 function buildCountry (country){
 
     let countryResult = document.getElementById("countryWrapper");
