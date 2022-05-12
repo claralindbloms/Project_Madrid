@@ -11,6 +11,14 @@ function buildCountry (country){
 
 
     let foundLanguages = getLanguageById(country);
+
+    let visaCountry = document.createElement("p");
+    if (country.visa === false) {
+        visaCountry.innerText = "Visum: Nej";
+    } else {
+        visaCountry.innerText = "Visum: Ja";
+    }
+
     countryContainer.innerHTML = `
         <div class="flagCountryDiv">
             <img class="countryFlag" src="./images/${country.flag}">
@@ -18,54 +26,31 @@ function buildCountry (country){
         </div>
         <img class="countryImage" src="./images/${country.imagesNormal[0]}">
         <p>${country.text}</p>
-        <p>Språk: ${foundLanguages[0]}</p>
+        <p>Språk: ${foundLanguages[0]} <br/>
+        ${(country.visa === false) ?  "Visum: Nej":"Visum: Ja"}
+        </p>
+    
         <button>Till utbildningar</button>
-        <select>
+        <select class="chooseCity" id="${country.name}">
             <option selected disabled hidden>Välj stad</option>
         </select>
     `;
-     
-
-
-    let visaCountry = document.createElement("p");
-    if (country.visa === false) {
-        visaCountry.innerText = "Visum: " + "Nej";
-    } else {
-        visaCountry.innerText = "Visum: " + "Ja";
-    }
-    countryContainer.append(visaCountry);
-
-
-
-    // let selectCity = document.createElement("select")
     
-    // let optionOne = document.createElement("option");
-    // optionOne.disabled = true;
-    // optionOne.hidden = true;
-    // optionOne.textContent = "Välj stad";
-    // optionOne.selected = true; 
-    // selectCity.append(optionOne);
-    
-    // let foundCities = getCitiesById(country);
- 
-    // for (let i = 0; i < foundCities.length; i++) {
-    //     let option = document.createElement("option");
-    //     option.text = foundCities[i]; 
-        
-    //     selectCity.append(option);
-    // }
-
-    // countryContainer.append(selectCity)
-
-
+    let foundCities = getCitiesById(country);
     countryResult.append(countryContainer);
-    
+    let selectCity = document.querySelector(`#${country.name}`);
+
+    for (let i = 0; i < foundCities.length; i++) {
+        let option = document.createElement("option");
+        option.text = foundCities[i]; 
+        
+        selectCity.append(option);
+    }
+
     return countryContainer;
-   
 }
 
 let countryResult = document.getElementById("countryWrapper");
-
 countryResult.innerHTML = "";
 
 for (let i = 0; i < COUNTRIES.length; i++){
@@ -73,8 +58,8 @@ for (let i = 0; i < COUNTRIES.length; i++){
 
 }
 
-
 // Hitta rätt språk baserat på dess id
+
 function getLanguageById (country) {
     let foundLanguages = []
 
@@ -101,9 +86,3 @@ function getCitiesById (country) {
     }
     return foundCities;
 }
-
-// Måste ha något sånt här för när användaren väljer ett land i select
-// citySelector.addEventListener('keyup', function () {
-//    let 
-//     }
-//   })
