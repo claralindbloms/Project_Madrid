@@ -26,3 +26,36 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+#grades {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.grade {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: solid 10px beige;
+}
+
+.grade p {
+    margin: 0;
+    text-align: center;
+}
+
+.grade > h3 {
+    margin: 0;
+}
+
+#disclaimer {
+    color: gray;
+    text-align: center;
+    margin-top: 1px;
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}
