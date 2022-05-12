@@ -14,3 +14,8 @@ function buildContinents () {
 }
 
 buildContinents();
+
+
+document.getElementById("bookicon").onclick = function () {
+    location.href = "utbildningar.html"; // Change later depending on how the url works.
+}

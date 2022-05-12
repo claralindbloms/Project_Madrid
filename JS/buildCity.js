@@ -1,12 +1,17 @@
 "use strict";
 
+// för att städerna inte ska visas direkt när destinations-sidan öppnas
+
+let countryResult = document.getElementById("countryWrapper");
+countryResult.innerHTML = "";
+
 function buildCity (city) {
 
+    let countryResult = document.getElementById("countryWrapper");
     let cityContainer = document.createElement("div");
     cityContainer.classList.add("cityContainer");
 
-    let cityName = document.createElement("h2");
-    cityName.innerText =`` ;
+
 
     let cityImage = document.createElement("img");
     cityImage.src = `./images/${city.imagesNormal[0]}`;
@@ -16,6 +21,14 @@ function buildCity (city) {
     aboutCity.innerText = city.text; 
     cityContainer.append(aboutCity);
 
+    cityContainer.innerHTML = `
+    <h2>${city.name}</h2>
+    <img class="cityImage" src="./images/${city.imagesNormal[0]}">
+    <p>${city.text}</p>
+    <button>Till utbildningar</button>
+    `;
+
+
     // div för grades, random - Hedvig
 
     // div för kommentarer, två nyaste visar, sen visa mer - Clara
@@ -23,9 +36,7 @@ function buildCity (city) {
     // let cityComments = document.createElement("div");
     // cityContainer.append(cityComments);
 
-    let toEduButton = document.createElement("button");
-    toEduButton.innerText = "Till utbildningar";
-    cityContainer.append(toEduButton);
+    countryResult.append(cityContainer);
 }
 
 for (let i = 0; i < CITIES.length; i++){
