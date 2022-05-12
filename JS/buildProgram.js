@@ -1,28 +1,6 @@
 "use strict";
 
-let chooseCountry = document.getElementById ("chooseCountry");
-
-COUNTRIES.forEach ((country)=>{
-    let option = document.createElement ("option");
-    option.text = country.name;
-
-    chooseCountry.append(option);
-
-}
-)
-
-let chooseSubject = document.getElementById ("chooseSubject");
-
-FIELDS.forEach ((subject)=>{
-    let option = document.createElement ("option");
-    option.text = subject.name;
-
-    chooseSubject.append(option);
-
-}
-)
-
-function buildProgram(program) {
+function buildProgram(program, countryName) {
 
     let programResult = document.getElementById("programWrapper");
     let programContainer = document.createElement("div");
@@ -43,15 +21,15 @@ function buildProgram(program) {
     let foundCity = getCityById(program);
     let foundCountry = getCountryById(program);
     let cityProgram = document.createElement("p");
-    cityProgram.innerText = foundCity[0] + "," + " " + foundCountry[0];
+    cityProgram.innerText = foundCity[0] + "," + " " + foundCountry[0].name;
     programContainer.append(cityProgram);
-    
+
     let button = document.createElement("button");
-    button.innerText= "Visa mer";
+    button.innerText = "Visa mer";
     programContainer.append(button)
 
     let button2 = document.createElement("button");
-    button2.innerText= "Mer om landet";
+    button2.innerText = "Mer om landet";
     programContainer.append(button2)
 
     programResult.append(programContainer);
@@ -59,11 +37,15 @@ function buildProgram(program) {
 
 
 }
+
+let programResult = document.getElementById("programWrapper");
+programResult.innerHTML = "";
+
 // Kör denna loopen för att få alla och skriv i istället för 0
-// for (let i = 0; i < PROGRAMMES.length; i++) {
-    for (let i = 0; i < 20; i++) {
-buildProgram(PROGRAMMES[i]);
- }
+//  for (let i = 0; i < PROGRAMMES.length; i++) {
+for (let i = 0; i < 50; i++) {
+    buildProgram(PROGRAMMES[i]);
+}
 
 // Hitta rätt universitet baserat på dess id
 function getUniversityById(program) {
@@ -96,37 +78,106 @@ function getCityById(program) {
 
             }
         }
-        }
+    }
 
     return foundCity;
 }
 
 // Hitta rätt land baserat på dess id
 function getCountryById(program) {
+    console.log (program)
     let foundCountry = []
-    for (let i = 0; i < PROGRAMMES.length; i++) {
-        for (let j = 0; j < UNIVERSITIES.length; j++) {
+    // for (let i = 0; i < PROGRAMMES.length; i++) {
+    for (let j = 0; j < UNIVERSITIES.length; j++) {
+        if (program.universityID == UNIVERSITIES[j].id) {
+
+
             for (let f = 0; f < CITIES.length; f++) {
-                for (let r = 0; r < COUNTRIES.length; r++) {
-                    if (program.universityID == UNIVERSITIES[j].id && UNIVERSITIES[j].cityID == CITIES[f].id && CITIES[f].countryID == COUNTRIES[r].id) {
-                        foundCountry.push(COUNTRIES[r].name);
+                if (UNIVERSITIES[j].cityID == CITIES[f].id) {
+
+                    for (let r = 0; r < COUNTRIES.length; r++) {
+                        if (CITIES[f].countryID == COUNTRIES[r].id) {
+                            foundCountry.push(COUNTRIES[r]);
+                        }
+
                     }
                 }
             }
         }
     }
-
+    
+    
     return foundCountry;
+
+}
+
+function getProgramByCountryId(id){
+    let foundCountry = []
+    for (let j = 0; j < CITIES.length; j++) {
+        if (id == CITIES[j].countryID) {
+
+
+            for (let f = 0; f < UNIVERSITIES.length; f++) {
+                if (UNIVERSITIES[f].cityID == CITIES[j].id) {
+
+                    for (let r = 0; r < PROGRAMMES.length; r++) {
+                        if (PROGRAMMES[r].universityID == UNIVERSITIES[f].id) {
+                            foundCountry.push(PROGRAMMES[r]);
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+    
+return foundCountry
 }
 
 
-// denna ska köras i eventlyssnaren för select-funktionen
+let chooseCountry = document.getElementById("chooseCountry");
 
-// function createHTML(programs) {
-//     for (let program of programs) {
-//         buildCountry(program)
-//     }
-// }
+COUNTRIES.forEach((country) => {
+    let option = document.createElement("option");
+    option.text = country.name;
+    option.value = country.id;
+    chooseCountry.append(option);
 
-// test
+}
+)
+
+chooseCountry.addEventListener("change", function (event) {
+    let programResult = document.getElementById("programWrapper");
+    programResult.innerHTML = "";
+
+        let foundPrograms = getProgramByCountryId(chooseCountry.value);
+        foundPrograms.forEach((program)=>{
+            buildProgram(program)
+        })
+
+        // console.log(foundPrograms[0]);
+        // if (foundPrograms[0].id === chooseCountry.value) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+    
+
+    
+
+    // buildProgram(p);
+
+})
+
+
+let chooseSubject = document.getElementById("chooseSubject");
+
+FIELDS.forEach((subject) => {
+    let option = document.createElement("option");
+    option.text = subject.name;
+
+    chooseSubject.append(option);
+
+}
+)
 
