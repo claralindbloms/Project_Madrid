@@ -28,8 +28,6 @@ function buildProgram(program) {
   programName.innerText = program.name;
   programContainer.append(programName);
 
-  // console.log(averageGrade(program, "courses"));
-
   let foundUniversity = getUniversityById(program);
   let universityProgram = document.createElement("p");
   universityProgram.innerText = foundUniversity[0];
@@ -45,14 +43,17 @@ function buildProgram(program) {
   let teachersGrade = averageGradeProgramme(program, "teachers");
   let studentsGrade = averageGradeProgramme(program, "students");
 
+  let foundLanguage = getLanguageById(program);
+  let foundLevel = getLevelById(program);
+
   let moreInformation = document.createElement("div");
   moreInformation.id = "moreInformation";
-  moreInformation.classList.add("hidden");
+  // moreInformation.classList.add("hidden");
   moreInformation.innerHTML = `
         <h3>Information:</h3>
-        <p>Utbildningsnivå: ${program.level}</p>
-        <p>Intagningsbetyg: ${program.entryGrades[0]}</p>
-        <p>Språk: ${program.language}</p>
+        <p>Utbildningsnivå: ${foundLevel}</p>
+        <p>Intagningsbetyg: ${program.entryGrades[0]} (2021)</p>
+        <p>Språk: ${foundLanguage}</p>
 
         <h3>Betyg:</h3>
         <div id="grades">
@@ -83,17 +84,44 @@ function buildProgram(program) {
   button2.innerText = "Mer om landet";
   programContainer.append(button2);
 
-  button.addEventListener("click", function () {
-    let div = document.getElementById("moreInformation");
+  // button.addEventListener("click", function () {
+  //   let div = document.getElementById("moreInformation");
 
-    if (div.classList.contains("hidden")) {
-      div.classList.remove("hidden");
-    } else {
-      div.classList.add("hidden");
-    }
-  });
+  //   if (div.classList.contains("hidden")) {
+  //     div.classList.remove("hidden");
+  //   } else {
+  //     div.classList.add("hidden");
+  //   }
+  // });
 
   programResult.append(programContainer);
+}
+
+function getLevelById(program) {
+  let foundLevel = [];
+
+  if (program.level == 0) {
+    foundLevel.push(LEVELS[0])
+  } else if (program.level == 1) {
+    foundLevel.push(LEVELS[1])
+  } else if (program.level == 2){
+    foundLevel.push(LEVELS[2])
+  }
+
+  return foundLevel;
+}
+
+
+function getLanguageById(program) {
+  let foundLanguages = [];
+
+  for (let i = 0; i < LANGUAGES.length; i++) {
+    if (program.language == LANGUAGES[i].id) {
+      foundLanguages.push(LANGUAGES[i].name);
+    }
+  }
+
+  return foundLanguages;
 }
 
 // Kör denna loopen för att få alla och skriv i istället för 0
