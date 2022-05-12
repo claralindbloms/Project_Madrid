@@ -6,7 +6,7 @@ function buildCity (city) {
     cityContainer.classList.add("cityContainer");
 
     let cityName = document.createElement("h2");
-    cityName.innerText = 
+    cityName.innerText =`` ;
 
     let cityImage = document.createElement("img");
     cityImage.src = `./images/${city.imagesNormal[0]}`;
