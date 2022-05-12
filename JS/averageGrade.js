@@ -111,10 +111,6 @@ function averageGradeProgramme(programme, type) {
   });
 
   return averageCalc(grade);
-
-  // for (let i = 0; i < COMMENTS_PROGRAMME.length; i++) {
-  //   gradeCourses.push(COMMENTS_PROGRAMME[i].stars.courses);
-  // }
 }
 
 function averageGradeCity (city, type) {
