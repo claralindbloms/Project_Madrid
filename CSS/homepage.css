@@ -39,13 +39,17 @@ body {
     margin: 25px;
 }
 
+#invisible-div{
+    padding: 45px;
+}
+
 #aboutus > p, #contact {
     margin: 30px;
 }
 
 #aboutus > h4, #contact > h4 {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 #contact {

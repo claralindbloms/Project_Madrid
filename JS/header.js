@@ -42,7 +42,7 @@ const MENU_LINKS = [
 	},
 	{
 		name: "Om oss",
-		url: './index.html#aboutus'
+		url: './index.html#invisible-div'
 	},
 ]
 
