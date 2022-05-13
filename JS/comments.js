@@ -27,12 +27,13 @@ function getComments() {
                 <p>${COMMENTS_CITY[0].text}</p>
                 </div>`;
                 commentsDiv.push(divv); //TA FRAM IGEN`?
+                
                 //console.log(COMMENTS_CITY[].alias);
                 //COMMENTS_CITY.filter(COMMENTS_CITY.length).sort((a, b) => a.alias - b.alias).map((comment) => `${comment.alias}`).splice(0, 3);
                 //commentsDiv.sort((a, b) => b.date.year - a.date.year).push(comment).splice(0, 3);
            // }
         }
-    }console.log(commentsDiv[0]);
+    }//console.log(commentsDiv[0]);
     return commentsDiv.toString().split(",").join("");
 }
 getComments()
