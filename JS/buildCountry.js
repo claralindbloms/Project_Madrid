@@ -1,18 +1,16 @@
 "use strict";
 
-// funktion som ska skapa en informationsruta om vardera land
-
+// function that creates each box with information of a country
 
 function buildCountry (country){
 
     let countryResult = document.getElementById("countryWrapper");
-
     let countryContainer = document.createElement("div");
     countryContainer.classList.add("countryContainer");
 
-
     let foundLanguages = getLanguageById(country);
 
+    // to get the correct visa-status
     let visaCountry = document.createElement("p");
     if (country.visa === false) {
         visaCountry.innerText = "Visum: Nej";
@@ -20,6 +18,7 @@ function buildCountry (country){
         visaCountry.innerText = "Visum: Ja";
     }
 
+    // the information of the countries
     countryContainer.innerHTML = `
         <div class="flagCountryDiv">
             <img class="countryFlag" src="./images/${country.flag}">
@@ -37,6 +36,7 @@ function buildCountry (country){
         </select>
     `;
     
+    // to get the correct cities that belong to the choosen country
     let foundCities = getCitiesById(country);
     countryResult.append(countryContainer);
     let selectCity = document.querySelector(`#${country.name}`);
@@ -51,15 +51,17 @@ function buildCountry (country){
     return countryContainer;
 }
 
+// code that makes the select-bars empty when refreashing the page
 let countryResult = document.getElementById("countryWrapper");
 countryResult.innerHTML = "";
 
+// go through the country database and create each country
 for (let i = 0; i < COUNTRIES.length; i++){
     buildCountry (COUNTRIES[i]);
 
 }
 
-// Hitta rätt språk baserat på dess id
+// find the correct language based on the country id
 
 function getLanguageById (country) {
     let foundLanguages = []
@@ -75,7 +77,7 @@ function getLanguageById (country) {
     return foundLanguages;
 }
 
-// länka städerna via ID till rätt land
+// find the correct cities based on country id
 
 function getCitiesById (country) {
     let foundCities = [];
