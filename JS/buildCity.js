@@ -2,6 +2,10 @@
 
 
 
+ let countryResult = document.getElementById("countryWrapper");
+ countryResult.innerHTML = "";
+
+
 function buildCity (city) {
 
     let countryResult = document.getElementById("countryWrapper");
@@ -11,10 +15,33 @@ function buildCity (city) {
 
     // let foundGrade = averageGradeProgramme();
 
+    let foodGrade = averageGradeCity(city, "food");
+    let accomodationGrade = averageGradeCity(city, "accomodation");
+    let outGrade = averageGradeCity(city, "out");
+
     cityContainer.innerHTML = `
     <h2>${city.name}</h2>
     <img class="cityImage" src="./images/${city.imagesNormal[0]}">
     <p>${city.text}</p>
+    <div id="grades">
+            <div class="grade">
+                <p>Mat</p>
+                <p>${foodGrade}/5</p>
+            </div>
+            <div class="grade">
+                <p>Boende</p>
+                <p>${accomodationGrade}/5</p>
+            </div>
+            <div class="grade">
+                <p>Uteliv</p>
+                <p>${outGrade}/5</p>
+            </div>
+        </div>
+        <p id="disclaimer">Genomsnittligt betyg från tidigare studenter</p>
+
+    <div id="comments">
+        <h3>Kommentarer</h3>
+    </div>
     <button>Till utbildningar</button>
     `;
 
@@ -49,3 +76,29 @@ function getCitiesByCountryId (city) {
     }
     return foundCities;
 }
+
+function averageGradeCity (city, type) {
+    let grade = [];
+  
+    COMMENTS_CITY.filter((comment) => {
+      if (comment.cityID == city.id) {
+        grade.push(comment.stars[type]);
+      }
+    });
+  
+    return averageCalc(grade);
+  }
+
+function averageCalc(array) {
+    let sum = 0;
+  
+    for (let i = 0; i < array.length; i++) {
+      sum += array[i];
+    }
+  
+    let average = sum / array.length;
+  
+    let averageGrade = Math.round(average * 10) / 10;
+  
+    return averageGrade;
+  }
