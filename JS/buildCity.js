@@ -1,9 +1,10 @@
 "use strict";
 
-// för att städerna inte ska visas direkt när destinations-sidan öppnas
 
-// let countryResult = document.getElementById("countryWrapper");
-// countryResult.innerHTML = "";
+
+ let countryResult = document.getElementById("countryWrapper");
+ countryResult.innerHTML = "";
+
 
 function buildCity (city) {
 
@@ -12,14 +13,7 @@ function buildCity (city) {
     cityContainer.classList.add("cityContainer");
 
 
-
-    let cityImage = document.createElement("img");
-    cityImage.src = `./images/${city.imagesNormal[0]}`;
-    cityContainer.append(cityImage);
-
-    let aboutCity = document.createElement("p");
-    aboutCity.innerText = city.text; 
-    cityContainer.append(aboutCity);
+    // let foundGrade = averageGradeProgramme();
 
     let foodGrade = averageGradeCity(city, "food");
     let accomodationGrade = averageGradeCity(city, "accomodation");
@@ -51,16 +45,20 @@ function buildCity (city) {
     <button>Till utbildningar</button>
     `;
 
-
+    
     // div för grades, random - Hedvig
 
     // div för kommentarer, två nyaste visar, sen visa mer - Clara
 
-    // let cityComments = document.createElement("div");
-    // cityContainer.append(cityComments);
+
 
     countryResult.append(cityContainer);
 }
+
+// för att städerna inte ska visas direkt när destinations-sidan öppnas
+
+let countryResult = document.getElementById("countryWrapper");
+countryResult.innerHTML = "";
 
 for (let i = 0; i < CITIES.length; i++){
     buildCity (CITIES[i]);
