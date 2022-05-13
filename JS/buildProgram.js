@@ -1,6 +1,9 @@
 "use strict";
 
+
 function buildProgram(program) {
+
+
 
     let programResult = document.getElementById("programWrapper");
     let programContainer = document.createElement("div");
@@ -43,7 +46,9 @@ programResult.innerHTML = "";
 
 // Kör denna loopen för att få alla och skriv i istället för 0
 //  for (let i = 0; i < PROGRAMMES.length; i++) {
+
 for (let i = 0; i < 20; i++) {
+
     buildProgram(PROGRAMMES[i]);
 }
 
@@ -83,7 +88,9 @@ function getCityById(program) {
 
 // Hitta rätt land baserat på dess id
 function getCountryById(program) {
+    console.log (program)
     let foundCountry = []
+
 
     for (let j = 0; j < UNIVERSITIES.length; j++) {
         if (program.universityID == UNIVERSITIES[j].id) {
@@ -102,15 +109,17 @@ function getCountryById(program) {
         }
     }
 
-
     return foundCountry;
 
 }
 
+
 function getProgramByCountryId(id) {
+
     let foundCountry = []
     for (let j = 0; j < CITIES.length; j++) {
         if (id == CITIES[j].countryID) {
+
 
 
             for (let f = 0; f < UNIVERSITIES.length; f++) {
@@ -186,6 +195,9 @@ chooseSubject.addEventListener("change", function (event) {
     foundSubject.forEach((program) => {
         buildProgram(program)
     })
+
+
+
 
 
 })
