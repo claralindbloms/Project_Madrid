@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 function buildCity (city) {
 
     let countryResult = document.getElementById("countryWrapper");
@@ -18,8 +17,7 @@ function buildCity (city) {
     <button>Till utbildningar</button>
     `;
 
-    
-    // div för grades, random - Hedvig
+
 
     // div för kommentarer, två nyaste visar, sen visa mer - Clara
 
