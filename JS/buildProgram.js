@@ -1,6 +1,7 @@
 "use strict";
 
 function buildProgram(program) {
+  
   let programResult = document.getElementById("programWrapper");
   let programContainer = document.createElement("div");
   programContainer.classList.add("programContainer");
@@ -32,7 +33,8 @@ function buildProgram(program) {
 
   let moreInformation = document.createElement("div");
   moreInformation.id = "moreInformation";
-  // moreInformation.classList.add("hidden");
+  moreInformation.classList.add("informationItem");
+  moreInformation.classList.add("hidden");
   moreInformation.innerHTML = `
         <h3>Information:</h3>
         <p>Utbildningsnivå: ${foundLevel}</p>
@@ -61,6 +63,7 @@ function buildProgram(program) {
 
   let button = document.createElement("button");
   button.innerText = "Visa mer";
+  button.classList.add("showMoreLess");
   programContainer.append(button);
 
   let button2 = document.createElement("button");
@@ -68,6 +71,7 @@ function buildProgram(program) {
   programContainer.append(button2);
 
   programResult.append(programContainer);
+  
 }
 
 let programResult = document.getElementById("programWrapper");
@@ -112,7 +116,6 @@ function getCityById(program) {
 
 // Hitta rätt land baserat på dess id
 function getCountryById(program) {
-  console.log(program);
   let foundCountry = [];
 
   for (let j = 0; j < UNIVERSITIES.length; j++) {
@@ -255,3 +258,4 @@ chooseSubject.addEventListener("change", function (event) {
     buildProgram(program);
   });
 });
+
