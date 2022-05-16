@@ -1,32 +1,64 @@
 "use strict";
 
+
+
+ let countryResult = document.getElementById("countryWrapper");
+ countryResult.innerHTML = "";
+
+
 function buildCity (city) {
 
+    let countryResult = document.getElementById("countryWrapper");
     let cityContainer = document.createElement("div");
     cityContainer.classList.add("cityContainer");
 
-    let cityName = document.createElement("h2");
-    cityName.innerText = 
 
-    let cityImage = document.createElement("img");
-    cityImage.src = `./images/${city.imagesNormal[0]}`;
-    cityContainer.append(cityImage);
+    // let foundGrade = averageGradeProgramme();
 
-    let aboutCity = document.createElement("p");
-    aboutCity.innerText = city.text; 
-    cityContainer.append(aboutCity);
+    let foodGrade = averageGradeCity(city, "food");
+    let accomodationGrade = averageGradeCity(city, "accomodation");
+    let outGrade = averageGradeCity(city, "out");
 
+    cityContainer.innerHTML = `
+    <h2>${city.name}</h2>
+    <img class="cityImage" src="./images/${city.imagesNormal[0]}">
+    <p>${city.text}</p>
+    <div id="grades">
+            <div class="grade">
+                <p>Mat</p>
+                <p>${foodGrade}/5</p>
+            </div>
+            <div class="grade">
+                <p>Boende</p>
+                <p>${accomodationGrade}/5</p>
+            </div>
+            <div class="grade">
+                <p>Uteliv</p>
+                <p>${outGrade}/5</p>
+            </div>
+        </div>
+        <p id="disclaimer">Genomsnittligt betyg från tidigare studenter</p>
+
+    <div id="comments">
+        <h3>Kommentarer</h3>
+    </div>
+    <button>Till utbildningar</button>
+    `;
+
+    
     // div för grades, random - Hedvig
 
     // div för kommentarer, två nyaste visar, sen visa mer - Clara
 
-    // let cityComments = document.createElement("div");
-    // cityContainer.append(cityComments);
 
-    let toEduButton = document.createElement("button");
-    toEduButton.innerText = "Till utbildningar";
-    cityContainer.append(toEduButton);
+
+    countryResult.append(cityContainer);
 }
+
+// för att städerna inte ska visas direkt när destinations-sidan öppnas
+
+let countryResult = document.getElementById("countryWrapper");
+countryResult.innerHTML = "";
 
 for (let i = 0; i < CITIES.length; i++){
     buildCity (CITIES[i]);
@@ -44,3 +76,29 @@ function getCitiesByCountryId (city) {
     }
     return foundCities;
 }
+
+function averageGradeCity (city, type) {
+    let grade = [];
+  
+    COMMENTS_CITY.filter((comment) => {
+      if (comment.cityID == city.id) {
+        grade.push(comment.stars[type]);
+      }
+    });
+  
+    return averageCalc(grade);
+  }
+
+function averageCalc(array) {
+    let sum = 0;
+  
+    for (let i = 0; i < array.length; i++) {
+      sum += array[i];
+    }
+  
+    let average = sum / array.length;
+  
+    let averageGrade = Math.round(average * 10) / 10;
+  
+    return averageGrade;
+  }

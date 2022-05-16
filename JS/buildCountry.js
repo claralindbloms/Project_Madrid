@@ -1,16 +1,24 @@
 "use strict";
 
-// funktion som ska skapa en informationsruta om vardera land
+// function that creates each box with information of a country
 
 function buildCountry (country){
 
     let countryResult = document.getElementById("countryWrapper");
-
     let countryContainer = document.createElement("div");
     countryContainer.classList.add("countryContainer");
 
-
     let foundLanguages = getLanguageById(country);
+
+    // to get the correct visa-status
+    let visaCountry = document.createElement("p");
+    if (country.visa === false) {
+        visaCountry.innerText = "Visum: Nej";
+    } else {
+        visaCountry.innerText = "Visum: Ja";
+    }
+
+    // the information of the countries
     countryContainer.innerHTML = `
         <div class="flagCountryDiv">
             <img class="countryFlag" src="./images/${country.flag}">
@@ -18,63 +26,43 @@ function buildCountry (country){
         </div>
         <img class="countryImage" src="./images/${country.imagesNormal[0]}">
         <p>${country.text}</p>
-        <p>Språk: ${foundLanguages[0]}</p>
+        <p>Språk: ${foundLanguages[0]} <br/>
+        ${(country.visa === false) ?  "Visum: Nej":"Visum: Ja"}
+        </p>
+    
         <button>Till utbildningar</button>
-        <select>
+        <select class="chooseCity" id="${country.name}">
             <option selected disabled hidden>Välj stad</option>
         </select>
     `;
-     
-
-
-    let visaCountry = document.createElement("p");
-    if (country.visa === false) {
-        visaCountry.innerText = "Visum: " + "Nej";
-    } else {
-        visaCountry.innerText = "Visum: " + "Ja";
-    }
-    countryContainer.append(visaCountry);
-
-
-
-    // let selectCity = document.createElement("select")
     
-    // let optionOne = document.createElement("option");
-    // optionOne.disabled = true;
-    // optionOne.hidden = true;
-    // optionOne.textContent = "Välj stad";
-    // optionOne.selected = true; 
-    // selectCity.append(optionOne);
-    
-    // let foundCities = getCitiesById(country);
- 
-    // for (let i = 0; i < foundCities.length; i++) {
-    //     let option = document.createElement("option");
-    //     option.text = foundCities[i]; 
-        
-    //     selectCity.append(option);
-    // }
-
-    // countryContainer.append(selectCity)
-
-
+    // to get the correct cities that belong to the choosen country
+    let foundCities = getCitiesById(country);
     countryResult.append(countryContainer);
-    
+    let selectCity = document.querySelector(`#${country.name}`);
+
+    for (let i = 0; i < foundCities.length; i++) {
+        let option = document.createElement("option");
+        option.text = foundCities[i]; 
+        
+        selectCity.append(option);
+    }
+
     return countryContainer;
-   
 }
 
+// code that makes the select-bars empty when refreashing the page
 let countryResult = document.getElementById("countryWrapper");
-
 countryResult.innerHTML = "";
 
+// go through the country database and create each country
 for (let i = 0; i < COUNTRIES.length; i++){
     buildCountry (COUNTRIES[i]);
 
 }
 
+// find the correct language based on the country id
 
-// Hitta rätt språk baserat på dess id
 function getLanguageById (country) {
     let foundLanguages = []
 
@@ -89,7 +77,7 @@ function getLanguageById (country) {
     return foundLanguages;
 }
 
-// länka städerna via ID till rätt land
+// find the correct cities based on country id
 
 function getCitiesById (country) {
     let foundCities = [];
@@ -101,9 +89,3 @@ function getCitiesById (country) {
     }
     return foundCities;
 }
-
-// Måste ha något sånt här för när användaren väljer ett land i select
-// citySelector.addEventListener('keyup', function () {
-//    let 
-//     }
-//   })

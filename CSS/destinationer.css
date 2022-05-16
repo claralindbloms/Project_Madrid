@@ -68,3 +68,55 @@ h2 {
     padding-left: 5%;
 }
 
+.cityImage{
+    width: 90%;
+    height: 90%;
+
+    padding-left: 5%;
+}
+
+#grades {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.grade {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: solid 10px beige;
+}
+
+.grade p {
+    margin: 0;
+    text-align: center;
+}
+
+.grade > h3 {
+    margin: 0;
+}
+
+#disclaimer {
+    color: gray;
+    text-align: center;
+    margin-top: 1px;
+    font-size: 12px;
+}
+
+/* style for comments under */
+
+.comment {
+    background-color: bisque;
+    border: 2px solid red;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.comment > p:nth-child(2) {
+    font-style: italic;
+}
