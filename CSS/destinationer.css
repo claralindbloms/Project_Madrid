@@ -120,3 +120,15 @@ h2 {
 .comment > p:nth-child(2) {
     font-style: italic;
 }
+
+
+/* styling for buttons */
+#chooseCountry, button, .chooseCity{
+    border-radius: 30px;
+    border: black;
+    padding: 15px;
+}
+
+button, .chooseCity {
+    background-color: lightgray;
+}
