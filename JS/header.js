@@ -27,7 +27,7 @@ function buildHeader() {
 	hamburgerMenu.addEventListener('click', function () {
 		BurgerMenu();
 	})
-
+2
 	return headerDiv;
 }
 
