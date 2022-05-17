@@ -1,7 +1,8 @@
 "use strict";
+// för att städerna inte ska visas direkt när destinations-sidan öppnas
 
- let countryResult = document.getElementById("countryWrapper");
- countryResult.innerHTML = "";
+// let countryResult = document.getElementById("countryWrapper");
+// countryResult.innerHTML = "";
 
 function buildCity (city) {
 
@@ -9,13 +10,11 @@ function buildCity (city) {
     let cityContainer = document.createElement("div");
     cityContainer.classList.add("cityContainer");
 
-
-    // let foundGrade = averageGradeProgramme();
-
     let foodGrade = averageGradeCity(city, "food");
     let accomodationGrade = averageGradeCity(city, "accomodation");
     let outGrade = averageGradeCity(city, "out");
 
+    // let comments = getComments(city);
     cityContainer.innerHTML = `
     <h2>${city.name}</h2>
     <img class="cityImage" src="./images/${city.imagesNormal[0]}">
@@ -38,6 +37,7 @@ function buildCity (city) {
 
     <div id="comments">
         <h3>Kommentarer</h3>
+        
     </div>
     <button>Till utbildningar</button>
     `;
@@ -51,10 +51,7 @@ function buildCity (city) {
     countryResult.append(cityContainer);
 }
 
-// för att städerna inte ska visas direkt när destinations-sidan öppnas
 
-let countryResult = document.getElementById("countryWrapper");
-countryResult.innerHTML = "";
 
 for (let i = 0; i < CITIES.length; i++){
     buildCity (CITIES[i]);
