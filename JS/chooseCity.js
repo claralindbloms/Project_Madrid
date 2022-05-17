@@ -1,5 +1,5 @@
 'use strict'
-let chooseCity = document.getElementsByClassName('.chooseCity')
+let chooseCity = document.getElementsByClassName('chooseCity')
 
 window.onload = function () {
   chooseCity.value = ''
@@ -14,6 +14,7 @@ CITIES.forEach(city => {
 
 chooseCity.addEventListener('change', function (event) {
   const city = CITIES.find(function (c) {
+   
     if (c.name === chooseCity.value) {
       return true
     } else {

@@ -45,15 +45,19 @@ function getComments(numberOfComments) {
         box.append(div);
     }
     showComments += numberOfComments;
-    //let box = document.getElementById("box"); //TO DO, ALLA RADERNA UNDER, KORREKT ELLER EJ? 
-    let button = document.createElement("button"); //FUNKTIONEN FUNGERAR EJ
-    button.innerText = "Visa fler kommentarer..."; //FUNKAR EJ
-    box.append(button); //FUNKAR EJ
 }
 
 //function //TO DO button, skapa en egen funtion för detta?
+function showMoreComments (){
+    let button = document.createElement("button");
+    button.innerText = "Visa fler kommentarer...";
+    document.querySelector("body").append(button); //TO DO append to right element
 
+    button.addEventListener("click", function() {
+        getComments(2);
+    })
+}
 
 init(0); //TO DO, correct city ID, dont have a number in init
-console.log(orderedComments.length);
 getComments(2);
+showMoreComments();
