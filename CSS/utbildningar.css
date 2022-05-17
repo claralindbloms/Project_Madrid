@@ -59,3 +59,16 @@ body {
 .hidden {
     display: none;
 }
+
+/* styling for programmes */
+#chooseCountry, #chooseSubject, button, .chooseCity{
+    border-radius: 30px;
+    border: black;
+    padding: 15px;
+}
+
+button {
+    background-color: white;
+    border: 1.5px solid black;
+    padding: 8px;
+}

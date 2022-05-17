@@ -104,7 +104,15 @@ h2 {
     font-size: 12px;
 }
 
+.cityContainer {
+    background-color: aliceblue;
+}
+
 /* style for comments under */
+
+#box {
+    margin: 20px;
+}
 
 .comment {
     background-color: bisque;
@@ -119,4 +127,20 @@ h2 {
 
 .comment > p:nth-child(2) {
     font-style: italic;
+}
+
+.comment > p {
+    margin: 0px;
+}
+
+
+/* styling for buttons */
+#chooseCountry, button, .chooseCity{
+    border-radius: 30px;
+    border: black;
+    padding: 15px;
+}
+
+button, .chooseCity {
+    background-color: lightgray;
 }

@@ -1,29 +1,25 @@
-"use strict";
+'use strict'
 
- let countryResult = document.getElementById("countryWrapper");
- countryResult.innerHTML = "";
+function buildCity(city) {
+  let countryResult = document.getElementById('countryWrapper')
+  let cityContainer = document.createElement('div')
+  cityContainer.className = 'cityContainer container'
 
-function buildCity (city) {
-
-    let countryResult = document.getElementById("countryWrapper");
-    let cityContainer = document.createElement("div");
-    cityContainer.classList.add("cityContainer");
+  let foodGrade = averageGradeCity(city, 'food')
+  let accomodationGrade = averageGradeCity(city, 'accomodation')
+  let outGrade = averageGradeCity(city, 'out')
 
 
-    // let foundGrade = averageGradeProgramme();
 
-    let foodGrade = averageGradeCity(city, "food");
-    let accomodationGrade = averageGradeCity(city, "accomodation");
-    let outGrade = averageGradeCity(city, "out");
-
-    cityContainer.innerHTML = `
+  // let comments = getComments(city);
+  cityContainer.innerHTML = `
     <h2>${city.name}</h2>
     <img class="cityImage" src="./images/${city.imagesNormal[0]}">
     <p>${city.text}</p>
     <div id="grades">
             <div class="grade">
                 <p>Mat</p>
-                <p>${foodGrade}/5</p>
+                <p class="betyg">${foodGrade}/5</p>
             </div>
             <div class="grade">
                 <p>Boende</p>
@@ -38,63 +34,110 @@ function buildCity (city) {
 
     <div id="comments">
         <h3>Kommentarer</h3>
+          <div id ="box"></div>
+        <button class="mooreComments">Visa fler kommentarer</button>
     </div>
     <button>Till utbildningar</button>
-    `;
+    `
+  // <div>${comments}</div> 
 
+  // let betyg = document.getElementsByClassName(".betyg");
 
+  // if (betyg === NaN){
+  //     return "saknas";
+  // }
 
-    // div för kommentarer, två nyaste visar, sen visa mer - Clara
-
-
-
-    countryResult.append(cityContainer);
+  countryResult.append(cityContainer)
+  console.log(city)
 }
 
-// för att städerna inte ska visas direkt när destinations-sidan öppnas
+function getCitiesByCountryId(city) {
+  let foundCities = []
 
-let countryResult = document.getElementById("countryWrapper");
-countryResult.innerHTML = "";
-
-for (let i = 0; i < CITIES.length; i++){
-    buildCity (CITIES[i]);
-}
-
-function getCitiesByCountryId (city) {
-    let foundCities = [];
-
-    for (let i = 0; i < COUNTRIES.length; i++) {
-        for (let i = 0; i < CITIES.length; i++) {
-            if (city.id == CITIES[i].countryID) {
-                foundCities.push(CITIES[i].name);
-            }
-        }
-    }
-    return foundCities;
-}
-
-function averageGradeCity (city, type) {
-    let grade = [];
-  
-    COMMENTS_CITY.filter((comment) => {
-      if (comment.cityID == city.id) {
-        grade.push(comment.stars[type]);
+  for (let i = 0; i < COUNTRIES.length; i++) {
+    for (let i = 0; i < CITIES.length; i++) {
+      if (city.id == CITIES[i].countryID) {
+        foundCities.push(CITIES[i].name)
       }
-    });
-  
-    return averageCalc(grade);
+    }
   }
+  return foundCities
+}
+
+function averageGradeCity(city, type) {
+  let grade = []
+
+  COMMENTS_CITY.filter(comment => {
+    if (comment.cityID == city.id) {
+      grade.push(comment.stars[type])
+    }
+    // else if (comment.cityID == NaN){
+    //     grade.push("saknas")
+    // }
+  })
+
+  return averageCalc(grade)
+}
 
 function averageCalc(array) {
-    let sum = 0;
-  
-    for (let i = 0; i < array.length; i++) {
-      sum += array[i];
-    }
-  
-    let average = sum / array.length;
-  
-    let averageGrade = Math.round(average * 10) / 10;
-  
-    return averageGrade;
+  let sum = 0
+
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i]
   }
+
+  let average = sum / array.length
+
+  let averageGrade = Math.round(average * 10) / 10
+
+  return averageGrade
+}
+
+//start of comments function
+let orderedComments
+let showComments = 0
+
+function init(city) {
+  orderedComments = COMMENTS_CITY.filter(
+    comment => comment.cityID === city.id
+  ).sort((comment1, comment2) => compareByDate(comment2.date, comment1.date))
+}
+
+function compareByDate(date1, date2) {
+  if (date1.year > date2.year) {
+    return 1
+  } else if (date1.year < date2.year) {
+    return -1
+  } else {
+    if (date1.month > date2.month) {
+      return 1
+    } else if (date1.month < date2.month) {
+      return -1
+    } else {
+      if (date1.day > date2.day) {
+        return 1
+      } else if (date1.day < date2.day) {
+        return -1
+      } else {
+        return 0
+      }
+    }
+  }
+}
+
+function getComments(numberOfComments) {
+  for (let i = showComments; i < showComments + numberOfComments; i++) {
+    if (i === orderedComments.length) {
+      break
+    }
+    let comment = orderedComments[i]
+    let div = document.createElement('div')
+    div.classList.add('comment')
+    div.innerHTML = `<p>${comment.alias}, ${comment.date.year}</p>
+        <p>"${comment.text}"</p>`
+    let box = document.getElementById("box");
+    box.append(div);
+  }
+  showComments += numberOfComments
+}
+

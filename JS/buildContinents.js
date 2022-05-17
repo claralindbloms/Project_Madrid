@@ -5,9 +5,14 @@ function buildContinents() {
 
         let continent = document.createElement("div");
         continent.innerHTML = `
-            <img class="continent_images" src="../images/${CONTINENTS[i].image}"</img>
+            <img class="continent_images" src="./images/${CONTINENTS[i].image}"</img>
             <h2>${CONTINENTS[i].name}</h2>
         `
+
+        if (CONTINENTS[i].countries == 0) {
+            continent.style.opacity = "0.4";
+        }
+
         let globesContainer = document.getElementById("globes");
         globesContainer.append(continent);
 
