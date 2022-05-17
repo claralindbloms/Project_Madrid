@@ -6,7 +6,8 @@ function buildCountry (country){
 
     let countryResult = document.getElementById("countryWrapper");
     let countryContainer = document.createElement("div");
-    countryContainer.classList.add("countryContainer");
+    countryContainer.className = "countryContainer container";
+    countryContainer.id = country.id
 
     let foundLanguages = getLanguageById(country);
 
@@ -40,6 +41,25 @@ function buildCountry (country){
     let foundCities = getCitiesById(country);
     countryResult.append(countryContainer);
     let selectCity = document.querySelector(`#${country.name}`);
+
+    selectCity.addEventListener("change", function (event) {
+          const city = CITIES.find(function (c) {
+           
+            if (c.name === event.target.value) {
+              return true
+            } else {
+              return false
+            }
+          })
+        
+          document.querySelectorAll(".container").forEach(element => {
+            if(city.countryID !== parseInt(element.id)){
+              element.remove()
+            }
+          })
+          buildCity(city)
+        }
+        )
 
     for (let i = 0; i < foundCities.length; i++) {
         let option = document.createElement("option");
