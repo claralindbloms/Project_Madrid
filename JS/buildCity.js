@@ -1,17 +1,15 @@
 'use strict'
-// för att städerna inte ska visas direkt när destinations-sidan öppnas
-
-// let countryResult = document.getElementById("countryWrapper");
-// countryResult.innerHTML = "";
 
 function buildCity (city) {
   let countryResult = document.getElementById('countryWrapper')
   let cityContainer = document.createElement('div')
-  cityContainer.classList.add('cityContainer')
+  cityContainer.className = 'cityContainer container'
 
   let foodGrade = averageGradeCity(city, 'food')
   let accomodationGrade = averageGradeCity(city, 'accomodation')
   let outGrade = averageGradeCity(city, 'out')
+
+ 
 
   // let comments = getComments(city);
   cityContainer.innerHTML = `
@@ -21,7 +19,7 @@ function buildCity (city) {
     <div id="grades">
             <div class="grade">
                 <p>Mat</p>
-                <p>${foodGrade}/5</p>
+                <p class="betyg">${foodGrade}/5</p>
             </div>
             <div class="grade">
                 <p>Boende</p>
@@ -36,19 +34,21 @@ function buildCity (city) {
 
     <div id="comments">
         <h3>Kommentarer</h3>
-        <div>${comments}</div> 
+        
         <button class="mooreComments">Visa fler kommentarer</button>
     </div>
     <button>Till utbildningar</button>
     `
+    // <div>${comments}</div> 
+  
+// let betyg = document.getElementsByClassName(".betyg");
 
-  // div för kommentarer, två nyaste visar, sen visa mer - Clara
+// if (betyg === NaN){
+//     return "saknas";
+// }
 
   countryResult.append(cityContainer)
-}
-
-for (let i = 0; i < CITIES.length; i++) {
-  buildCity(CITIES[i])
+  console.log(city)
 }
 
 function getCitiesByCountryId (city) {
@@ -71,6 +71,9 @@ function averageGradeCity (city, type) {
     if (comment.cityID == city.id) {
       grade.push(comment.stars[type])
     }
+    // else if (comment.cityID == NaN){
+    //     grade.push("saknas")
+    // }
   })
 
   return averageCalc(grade)
