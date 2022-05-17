@@ -173,7 +173,15 @@ h3{
     font-size: 12px;
 }
 
+.cityContainer {
+    background-color: aliceblue;
+}
+
 /* style for comments under */
+
+#box {
+    margin: 20px;
+}
 
 .comment {
     background-color: bisque;
@@ -188,6 +196,10 @@ h3{
 
 .comment > p:nth-child(2) {
     font-style: italic;
+}
+
+.comment > p {
+    margin: 0px;
 }
 
 
