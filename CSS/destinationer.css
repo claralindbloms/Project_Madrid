@@ -16,14 +16,31 @@ body {
 
 #wrapper {
     margin-top: 93px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+      
 }
 
 h1 {
     text-align: center;
 }
 
-#chooseCountry {
+#selectDivContainer{
+    height: 10vh;
+    position: relative;
+}
 
+#selectDiv{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#chooseCountry {
     margin-bottom: 20px;
 }
 
@@ -40,6 +57,18 @@ p{
 
 }
 
+#optionsContainer{
+    height: 10vh;
+    position: relative;
+}
+
+#optionsDiv{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .flagCountryDiv {
     display: flex;
     align-items: center;
@@ -50,11 +79,36 @@ h2 {
     padding: 10px;
 }
 
+h3{
+    padding-left: 30px;
+}
+
 .countryContainer {
     background-color: aliceblue;
     width: 100vw;
     margin-bottom: 8vh;
     padding-bottom: 5%;
+    border-radius: 20px;
+
+}
+
+.cityContainer {
+    background-color: aliceblue;
+    width: 100vw;
+    margin-bottom: 8vh;
+    padding-bottom: 5%;
+    border-radius: 20px;
+}
+
+.cityName {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+#languageVisaDiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
 }
 
 .countryFlag {
@@ -84,8 +138,23 @@ h2 {
 .grade {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border: solid 10px beige;
+    background-color: rgb(243, 245, 235);
+    border: solid 4px rgb(240, 113, 70);
+
+    border-radius: 20px;
+    margin: 10%; 
+}
+
+.langVisastyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(243, 245, 235);
+    border: solid 4px rgb(240, 113, 70);
+
+    border-radius: 20px;
+    margin: 5%; 
 }
 
 .grade p {
@@ -131,4 +200,6 @@ h2 {
 
 button, .chooseCity {
     background-color: lightgray;
+    width: max-content;
+    margin: 5vw;
 }

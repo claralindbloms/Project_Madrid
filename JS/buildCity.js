@@ -13,7 +13,7 @@ function buildCity (city) {
 
   // let comments = getComments(city);
   cityContainer.innerHTML = `
-    <h2>${city.name}</h2>
+    <h2 class="cityName">${city.name}</h2>
     <img class="cityImage" src="./images/${city.imagesNormal[0]}">
     <p>${city.text}</p>
     <div id="grades">
