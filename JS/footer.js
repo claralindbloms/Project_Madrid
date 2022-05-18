@@ -23,6 +23,18 @@ function buildFooter (){
 
     footer.append(footerDiv);
 
+    document.querySelector(".instagramLogga").onclick = function (){
+        location.href = "https://www.instagram.com/";
+    }
+
+    document.querySelector(".twitterLogga").onclick = function (){
+        location.href = "https://twitter.com/";
+    }
+
+    document.querySelector(".youtubeLogga").onclick = function (){
+        location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
+
     return footerDiv
 
 }
