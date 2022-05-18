@@ -1,7 +1,6 @@
 "use strict";
 
 function buildProgram(program) {
-  
   let programResult = document.getElementById("programWrapper");
   let programContainer = document.createElement("div");
   programContainer.classList.add("programContainer");
@@ -70,18 +69,31 @@ function buildProgram(program) {
   button2.innerText = "Mer om landet";
   programContainer.append(button2);
 
+  //TO DO, se över funktionen
+  button2.addEventListener("click", function () {
+    localStorage.setItem("country", JSON.stringify(foundCountry[0]));
+    window.location.href = "./destinationer.html";
+  });
+
   programResult.append(programContainer);
-  
 }
 
 let programResult = document.getElementById("programWrapper");
 programResult.innerHTML = "";
 
 // Kör denna loopen för att få alla och skriv i istället för 0
-//  for (let i = 0; i < PROGRAMMES.length; i++) {
+//  for (let i = 0; i < PROGRAMMES.length; i++)
 
-for (let i = 0; i < 20; i++) {
-  buildProgram(PROGRAMMES[i]);
+if (localStorage.getItem("programmes") !== null) {
+  const programmes = JSON.parse(localStorage.getItem("programmes"))
+  for (let i = 0; i < programmes.length; i++) {
+    buildProgram(programmes[i]);
+    localStorage.removeItem("programmes");
+  }
+} else {
+  for (let i = 0; i < 20; i++) {
+    buildProgram(PROGRAMMES[i]);
+  }
 }
 
 // Hitta rätt universitet baserat på dess id
@@ -136,14 +148,14 @@ function getCountryById(program) {
 }
 
 function getProgramByCountryId(id) {
-  let foundCountry = [];
+  let foundProgram = [];
   for (let j = 0; j < CITIES.length; j++) {
     if (id == CITIES[j].countryID) {
       for (let f = 0; f < UNIVERSITIES.length; f++) {
         if (UNIVERSITIES[f].cityID == CITIES[j].id) {
           for (let r = 0; r < PROGRAMMES.length; r++) {
             if (PROGRAMMES[r].universityID == UNIVERSITIES[f].id) {
-              foundCountry.push(PROGRAMMES[r]);
+              foundProgram.push(PROGRAMMES[r]);
             }
           }
         }
@@ -151,7 +163,7 @@ function getProgramByCountryId(id) {
     }
   }
 
-  return foundCountry;
+  return foundProgram;
 }
 
 function getProgramBySubjectId(id) {
@@ -223,6 +235,10 @@ function averageCalc(array) {
 
 let chooseCountry = document.getElementById("chooseCountry");
 
+window.onload = function () {
+  chooseCountry.value = ''
+}
+
 COUNTRIES.forEach((country) => {
   let option = document.createElement("option");
   option.text = country.name;
@@ -241,6 +257,9 @@ chooseCountry.addEventListener("change", function (event) {
 });
 
 let chooseSubject = document.getElementById("chooseSubject");
+window.onload = function () {
+  chooseSubject.value = ''
+}
 
 FIELDS.forEach((subject) => {
   let option = document.createElement("option");
@@ -258,4 +277,3 @@ chooseSubject.addEventListener("change", function (event) {
     buildProgram(program);
   });
 });
-

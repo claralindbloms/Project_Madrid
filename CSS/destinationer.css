@@ -28,6 +28,16 @@ h1 {
     text-align: center;
 }
 
+.adImage {
+    width: 100vw;
+    height: 33vw;
+}
+
+#one {
+    margin-bottom: 7vh;
+
+}
+
 #selectDivContainer{
     height: 10vh;
     position: relative;
@@ -48,14 +58,14 @@ p{
     padding: 5%;
 }
 
-#bigContainer {
+/* #bigContainer {
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: bisque;
 
-}
+} */
 
 #optionsContainer{
     height: 10vh;

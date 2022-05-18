@@ -9,9 +9,6 @@ function buildCity(city) {
   let accomodationGrade = averageGradeCity(city, 'accomodation')
   let outGrade = averageGradeCity(city, 'out')
 
-
-
-  // let comments = getComments(city);
   cityContainer.innerHTML = `
     <h2 class="cityName">${city.name}</h2>
     <img class="cityImage" src="./images/${city.imagesNormal[0]}">
@@ -39,16 +36,8 @@ function buildCity(city) {
     </div>
     <button>Till utbildningar</button>
     `
-  // <div>${comments}</div> 
-
-  // let betyg = document.getElementsByClassName(".betyg");
-
-  // if (betyg === NaN){
-  //     return "saknas";
-  // }
 
   countryResult.append(cityContainer)
-  console.log(city)
 }
 
 function getCitiesByCountryId(city) {
@@ -71,9 +60,6 @@ function averageGradeCity(city, type) {
     if (comment.cityID == city.id) {
       grade.push(comment.stars[type])
     }
-    // else if (comment.cityID == NaN){
-    //     grade.push("saknas")
-    // }
   })
 
   return averageCalc(grade)
@@ -90,17 +76,33 @@ function averageCalc(array) {
 
   let averageGrade = Math.round(average * 10) / 10
 
+  if (isNaN(averageGrade) == false) {
+    return averageGrade;
+  }
+
+  if (isNaN(averageGrade) == true) {
+    return "-"
+  }
+
   return averageGrade
 }
 
 //start of comments function
 let orderedComments
-let showComments = 0
+let showComments
 
-function init(city) {
+function initComments(city) {
+  showComments = 0
   orderedComments = COMMENTS_CITY.filter(
     comment => comment.cityID === city.id
   ).sort((comment1, comment2) => compareByDate(comment2.date, comment1.date))
+  if (orderedComments.length === 0) {
+    document.querySelector(".mooreComments").style.display = "none";
+    document.querySelector("#comments").innerHTML = `
+    <h3>Kommentarer</h3>
+    <p>Det finns inga kommentarer att visa</p>
+    `;
+  }
 }
 
 function compareByDate(date1, date2) {
@@ -126,8 +128,10 @@ function compareByDate(date1, date2) {
 }
 
 function getComments(numberOfComments) {
+  console.log(showComments);
+  console.log(orderedComments);
   for (let i = showComments; i < showComments + numberOfComments; i++) {
-    if (i === orderedComments.length) {
+    if (i >= orderedComments.length) {
       break
     }
     let comment = orderedComments[i]

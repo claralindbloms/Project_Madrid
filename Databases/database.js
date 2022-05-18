@@ -85,6 +85,7 @@ const COUNTRIES = [
     {
         "id": 0,
         "name": "Spanien",
+        "contitentId": 2,
         "visa": false,
         "languageID": 0,
         "flag": "spanien.png",
@@ -106,6 +107,7 @@ const COUNTRIES = [
     {
         "id": 1,
         "name": "Frankrike",
+        "contitentId": 2,
         "visa": false,
         "languageID": 2,
         "flag": "frankrike.png",
@@ -127,6 +129,7 @@ const COUNTRIES = [
     {
         "id": 2,
         "name": "Australien",
+        "contitentId": 4,
         "visa": false,
         "languageID": 1,
         "flag": "australien.png",
@@ -142,6 +145,7 @@ const COUNTRIES = [
     {
         "id": 3,
         "name": "Storbritanien",
+        "contitentId": 2,
         "visa": false,
         "languageID": 1,
         "flag": "uk.png",
@@ -163,6 +167,7 @@ const COUNTRIES = [
     {
         "id": 4,
         "name": "Sverige",
+        "contitentId": 2,
         "visa": false,
         "languageID": 3,
         "flag": "sverige.png",
@@ -184,6 +189,7 @@ const COUNTRIES = [
     {
         "id": 8,
         "name": "Chile",
+        "contitentId": 5,
         "visa": true,
         "languageID": 0,
         "flag": "chile.png",
@@ -202,6 +208,7 @@ const COUNTRIES = [
     {
         "id": 5,
         "name": "Mexico",
+        "contitentId": 5,
         "visa": true,
         "languageID": 0,
         "flag": "mexico.png",
@@ -223,6 +230,7 @@ const COUNTRIES = [
     {
         "id": 6,
         "name": "USA",
+        "contitentId": 3,
         "visa": true,
         "languageID": 1,
         "flag": "usa.png",
@@ -241,6 +249,7 @@ const COUNTRIES = [
     {
         "id": 7,
         "name": "Argentina",
+        "contitentId": 5,
         "visa": true,
         "languageID": 0,
         "flag": "argentina.png",
