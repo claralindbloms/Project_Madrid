@@ -69,6 +69,12 @@ function buildProgram(program) {
   let button2 = document.createElement("button");
   button2.innerText = "Mer om landet";
   programContainer.append(button2);
+  //TO DO, se över funktionen
+  button2.addEventListener("click", function(){
+    localStorage.setItem("country", JSON.stringify(foundCountry[0]));
+    window.location.href = "./destinationer.html";
+    console.log(foundCountry[0]);
+  })
 
   programResult.append(programContainer);
   

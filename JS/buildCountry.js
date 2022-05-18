@@ -33,7 +33,7 @@ function buildCountry(country) {
                 <p>Språk: ${foundLanguages[0]} </P>
             </div>
             <div class="langVisastyle">
-                <p>${(country.visa === false) ?  "Visum: Nej":"Visum: Ja"}</p>
+                <p>${(country.visa === false) ? "Visum: Nej" : "Visum: Ja"}</p>
             </div>
         </div>
         <div id="optionsContainer">
@@ -72,12 +72,12 @@ function buildCountry(country) {
         let mooreComments = document.querySelector('.mooreComments')
 
         ////TO DO se över varför kommentarfunktionen endast fungerar en gång när man byter stad utan att ladda om sidan
-        mooreComments.addEventListener('click', function () { 
+        mooreComments.addEventListener('click', function () {
             getComments(2)
-           /* if (document.querySelector(".comment" === undefined)) { //TO DO, HIDE BUTTON OR SOMETHING
-                mooreComments.style.display = "none";
-            }
-            // om comment är undefined ta bort knappen*/
+            /* if (document.querySelector(".comment" === undefined)) { //TO DO, HIDE BUTTON OR SOMETHING
+                 mooreComments.style.display = "none";
+             }
+             // om comment är undefined ta bort knappen*/
         })
 
         init(city)
@@ -100,10 +100,18 @@ let countryResult = document.getElementById("countryWrapper");
 countryResult.innerHTML = "";
 
 // go through the country database and create each country
-for (let i = 0; i < COUNTRIES.length; i++) {
-    buildCountry(COUNTRIES[i]);
+//TO DO, fixa funktionen under
+if (localStorage.getItem("country") !== null) {
+    const country = JSON.parse(localStorage.getItem("country"));
+    localStorage.removeItem("country");
+    buildCountry(country);
+} else {
+    for (let i = 0; i < COUNTRIES.length; i++) {
+        buildCountry(COUNTRIES[i]);
 
+    }
 }
+
 
 // find the correct language based on the country id
 
