@@ -38,7 +38,6 @@ function buildCountry(country) {
         </div>
         <div id="optionsContainer">
             <div id="optionsDiv">
-                <button>Till utbildningar</button>
                 <select class="chooseCity" id="${country.name}">
                     <option selected disabled hidden>Välj stad</option>
                 </select>
@@ -47,10 +46,8 @@ function buildCountry(country) {
 
     `;
 
-    // to get the correct cities that belong to the choosen country
-    let foundCities = getCitiesById(country);
-    countryResult.append(countryContainer);
-    let selectCity = document.querySelector(`#${country.name}`);
+  let programmes = getProgramByCountryId(country.id);
+  // let optionsDiv = document.getElementbyId("optionsDiv");
 
     selectCity.addEventListener("change", function (event) {
         const city = CITIES.find(function (c) {
@@ -102,7 +99,8 @@ countryResult.innerHTML = "";
 // go through the country database and create each country
 for (let i = 0; i < COUNTRIES.length; i++) {
     buildCountry(COUNTRIES[i]);
-
+    
+  }
 }
 
 // find the correct language based on the country id
@@ -126,9 +124,26 @@ function getLanguageById(country) {
 function getCitiesById(country) {
     let foundCities = [];
 
-    for (let i = 0; i < CITIES.length; i++) {
-        if (country.id == CITIES[i].countryID) {
-            foundCities.push(CITIES[i].name);
+  for (let i = 0; i < CITIES.length; i++) {
+    if (country.id == CITIES[i].countryID) {
+      foundCities.push(CITIES[i].name);
+    }
+  }
+ 
+  return foundCities;
+}
+
+function getProgramByCountryId(id) {
+  let foundCountry = [];
+  for (let j = 0; j < CITIES.length; j++) {
+    if (id == CITIES[j].countryID) {
+      for (let f = 0; f < UNIVERSITIES.length; f++) {
+        if (UNIVERSITIES[f].cityID == CITIES[j].id) {
+          for (let r = 0; r < PROGRAMMES.length; r++) {
+            if (PROGRAMMES[r].universityID == UNIVERSITIES[f].id) {
+              foundCountry.push(PROGRAMMES[r]);
+            }
+          }
         }
     }
     return foundCities;
