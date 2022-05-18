@@ -58,25 +58,19 @@ function BurgerMenu() {
 		let overlay = document.createElement("div");
 		overlay.classList.add("meny");
 		burgerHTML.classList.add("menuactive");
-		let wrap = document.querySelector("#headerDiv"); //add wrapper on eachpage?
+		let wrap = document.querySelector("#headerDiv");
 		wrap.append(overlay);
 		for (let link of MENU_LINKS) {
 			const linkElem = document.createElement('a');
 			linkElem.href = link.url;
 			linkElem.innerHTML = link.name;
+			linkElem.addEventListener("click", function(){
+				burgerHTML.classList.remove("menuactive");
+				overlay.remove();
+			})
 			overlay.append(linkElem);
 		}
 	}
 }
-	//overlay
-	/*burgerHTML.innerHTML = `
-	<h1>MENY</h1>
-	`;
-	//append title
-	//append darkMode
-	//append close
-
-*/
-
 
 buildHeader();

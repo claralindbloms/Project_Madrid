@@ -80,16 +80,14 @@ function buildCountry(country) {
 
     let mooreComments = document.querySelector(".mooreComments");
 
-        ////TO DO se över varför kommentarfunktionen endast fungerar en gång när man byter stad utan att ladda om sidan
-        mooreComments.addEventListener('click', function () {
-            getComments(orderedComments.length) //TO DO keep order...lenght or place 2
-            /* if (document.querySelector(".comment" === undefined)) { //TO DO, HIDE BUTTON OR SOMETHING
-                 mooreComments.style.display = "none";
-             }
-             // om comment är undefined ta bort knappen*/
+    mooreComments.addEventListener('click', function () {
+      getComments(orderedComments.length)
+      if (showComments >= orderedComments.length) {
+        mooreComments.style.display = "none";
+      }
     });
 
-    init(city);
+    initComments(city);
     getComments(2);
   });
 
@@ -99,7 +97,7 @@ function buildCountry(country) {
 
     selectCity.append(option);
   }
-  
+
   return countryContainer;
 }
 

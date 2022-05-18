@@ -36,7 +36,7 @@ function buildCity(city) {
     </div>
     <button>Till utbildningar</button>
     `
- 
+
   countryResult.append(cityContainer)
 }
 
@@ -89,12 +89,20 @@ function averageCalc(array) {
 
 //start of comments function
 let orderedComments
-let showComments = 0
+let showComments
 
-function init(city) {
+function initComments(city) {
+  showComments = 0
   orderedComments = COMMENTS_CITY.filter(
     comment => comment.cityID === city.id
   ).sort((comment1, comment2) => compareByDate(comment2.date, comment1.date))
+  if (orderedComments.length === 0) {
+    document.querySelector(".mooreComments").style.display = "none";
+    document.querySelector("#comments").innerHTML = `
+    <h3>Kommentarer</h3>
+    <p>Det finns inga kommentarer att visa</p>
+    `;
+  }
 }
 
 function compareByDate(date1, date2) {
@@ -120,8 +128,10 @@ function compareByDate(date1, date2) {
 }
 
 function getComments(numberOfComments) {
+  console.log(showComments);
+  console.log(orderedComments);
   for (let i = showComments; i < showComments + numberOfComments; i++) {
-    if (i === orderedComments.length) {
+    if (i >= orderedComments.length) {
       break
     }
     let comment = orderedComments[i]
