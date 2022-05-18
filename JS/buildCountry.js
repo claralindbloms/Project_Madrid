@@ -3,24 +3,23 @@
 // function that creates each box with information of a country
 
 function buildCountry(country) {
+  let countryResult = document.getElementById("countryWrapper");
+  let countryContainer = document.createElement("div");
+  countryContainer.className = "countryContainer container";
+  countryContainer.id = country.id;
 
-    let countryResult = document.getElementById("countryWrapper");
-    let countryContainer = document.createElement("div");
-    countryContainer.className = "countryContainer container";
-    countryContainer.id = country.id
+  let foundLanguages = getLanguageById(country);
 
-    let foundLanguages = getLanguageById(country);
+  // to get the correct visa-status
+  let visaCountry = document.createElement("p");
+  if (country.visa === false) {
+    visaCountry.innerText = "Visum: Nej";
+  } else {
+    visaCountry.innerText = "Visum: Ja";
+  }
 
-    // to get the correct visa-status
-    let visaCountry = document.createElement("p");
-    if (country.visa === false) {
-        visaCountry.innerText = "Visum: Nej";
-    } else {
-        visaCountry.innerText = "Visum: Ja";
-    }
-
-    // the information of the countries
-    countryContainer.innerHTML = `
+  // the information of the countries
+  countryContainer.innerHTML = `
         <div class="flagCountryDiv">
             <img class="countryFlag" src="./images/${country.flag}">
             <h2>${country.name}</h2>
@@ -33,12 +32,12 @@ function buildCountry(country) {
                 <p>Språk: ${foundLanguages[0]} </P>
             </div>
             <div class="langVisastyle">
-                <p>${(country.visa === false) ? "Visum: Nej" : "Visum: Ja"}</p>
+                <p>${country.visa === false ? "Visum: Nej" : "Visum: Ja"}</p>
             </div>
         </div>
         <div id="optionsContainer">
             <div id="optionsDiv">
-                <button>Till utbildningar</button>
+                
                 <select class="chooseCity" id="${country.name}">
                     <option selected disabled hidden>Välj stad</option>
                 </select>
@@ -47,52 +46,71 @@ function buildCountry(country) {
 
     `;
 
-    // to get the correct cities that belong to the choosen country
-    let foundCities = getCitiesById(country);
-    countryResult.append(countryContainer);
-    let selectCity = document.querySelector(`#${country.name}`);
+  let programmes = getProgramByCountryId(country.id);
 
-    selectCity.addEventListener("change", function (event) {
-        const city = CITIES.find(function (c) {
+  let button = document.createElement("button");
+  button.innerText = "Till utbildningar";
+  countryContainer.append(button);
 
-            if (c.name === event.target.value) {
-                return true
-            } else {
-                return false
-            }
-        })
+  button.addEventListener("click", function () {
+    localStorage.setItem("programmes", JSON.stringify(programmes));
+    window.location.href = "./utbildningar.html";
+  });
 
-        document.querySelectorAll(".container").forEach(element => {
-            if (city.countryID !== parseInt(element.id)) {
-                element.remove()
-            }
-        })
-        buildCity(city)
+  // to get the correct cities that belong to the choosen country
+  let foundCities = getCitiesById(country);
+  countryResult.append(countryContainer);
+  let selectCity = document.querySelector(`#${country.name}`);
 
-        let mooreComments = document.querySelector('.mooreComments')
+  selectCity.addEventListener("change", function (event) {
+    const city = CITIES.find(function (c) {
+      if (c.name === event.target.value) {
+        return true;
+      } else {
+        return false;
+      }
+    });
 
-        ////TO DO se över varför kommentarfunktionen endast fungerar en gång när man byter stad utan att ladda om sidan
-        mooreComments.addEventListener('click', function () {
-            getComments(2)
-            /* if (document.querySelector(".comment" === undefined)) { //TO DO, HIDE BUTTON OR SOMETHING
+    document.querySelectorAll(".container").forEach((element) => {
+      if (city.countryID !== parseInt(element.id)) {
+        element.remove();
+      }
+    });
+    buildCity(city);
+
+    let mooreComments = document.querySelector(".mooreComments");
+
+    ////TO DO se över varför kommentarfunktionen endast fungerar en gång när man byter stad utan att ladda om sidan
+    mooreComments.addEventListener("click", function () {
+      getComments(2);
+      /* if (document.querySelector(".comment" === undefined)) { //TO DO, HIDE BUTTON OR SOMETHING
                  mooreComments.style.display = "none";
              }
              // om comment är undefined ta bort knappen*/
-        })
+    });
 
-        init(city)
-        getComments(2)
-    }
-    )
+    init(city);
+    getComments(2);
+  });
 
-    for (let i = 0; i < foundCities.length; i++) {
-        let option = document.createElement("option");
-        option.text = foundCities[i];
+  for (let i = 0; i < foundCities.length; i++) {
+    let option = document.createElement("option");
+    option.text = foundCities[i];
 
-        selectCity.append(option);
-    }
+    selectCity.append(option);
+  }
 
-    return countryContainer;
+  // button.addEventListener("click", function() {
+  //     localStorage.setItem("programmes", JSON.stringify(country));
+  //     window.location.href("./utbildningar.html");
+  // })
+
+  // button2.addEventListener("click", function(){
+  //     localStorage.setItem("country", JSON.stringify(foundCountry[0]));
+  //     window.location.href = "./destinationer.html";
+  //   })
+
+  return countryContainer;
 }
 
 // code that makes the select-bars empty when refreashing the page
@@ -101,43 +119,61 @@ countryResult.innerHTML = "";
 
 // go through the country database and create each country
 //TO DO, fixa funktionen under
+
 if (localStorage.getItem("country") !== null) {
-    const country = JSON.parse(localStorage.getItem("country"));
-    localStorage.removeItem("country");
-    buildCountry(country);
+  const country = JSON.parse(localStorage.getItem("country"));
+  buildCountry(country);
+  localStorage.removeItem("country");
 } else {
-    for (let i = 0; i < COUNTRIES.length; i++) {
-        buildCountry(COUNTRIES[i]);
-
-    }
+  for (let i = 0; i < COUNTRIES.length; i++) {
+    buildCountry(COUNTRIES[i]);
+  }
 }
-
 
 // find the correct language based on the country id
 
 function getLanguageById(country) {
-    let foundLanguages = []
+  let foundLanguages = [];
 
-    for (let i = 0; i < COUNTRIES.length; i++) {
-        for (let i = 0; i < LANGUAGES.length; i++) {
-            if (country.languageID == LANGUAGES[i].id) {
-                foundLanguages.push(LANGUAGES[i].name);
-            }
-        }
+  for (let i = 0; i < COUNTRIES.length; i++) {
+    for (let i = 0; i < LANGUAGES.length; i++) {
+      if (country.languageID == LANGUAGES[i].id) {
+        foundLanguages.push(LANGUAGES[i].name);
+      }
     }
+  }
 
-    return foundLanguages;
+  return foundLanguages;
 }
 
 // find the correct cities based on country id
 
 function getCitiesById(country) {
-    let foundCities = [];
+  let foundCities = [];
 
-    for (let i = 0; i < CITIES.length; i++) {
-        if (country.id == CITIES[i].countryID) {
-            foundCities.push(CITIES[i].name);
-        }
+  for (let i = 0; i < CITIES.length; i++) {
+    if (country.id == CITIES[i].countryID) {
+      foundCities.push(CITIES[i].name);
     }
-    return foundCities;
+  }
+  return foundCities;
+}
+
+function getProgramByCountryId(id) {
+  let foundCountry = [];
+  for (let j = 0; j < CITIES.length; j++) {
+    if (id == CITIES[j].countryID) {
+      for (let f = 0; f < UNIVERSITIES.length; f++) {
+        if (UNIVERSITIES[f].cityID == CITIES[j].id) {
+          for (let r = 0; r < PROGRAMMES.length; r++) {
+            if (PROGRAMMES[r].universityID == UNIVERSITIES[f].id) {
+              foundCountry.push(PROGRAMMES[r]);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return foundCountry;
 }
