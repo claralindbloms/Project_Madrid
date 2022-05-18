@@ -33,6 +33,12 @@ body {
     grid-template-rows: 1fr;
 }
 
+.adImage {
+    width: 100vw;
+    height: 33vw;
+}
+
+
 .grade {
     display: flex;
     flex-direction: column;
