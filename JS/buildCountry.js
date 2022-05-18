@@ -27,14 +27,24 @@ function buildCountry(country) {
         </div>
         <img class="countryImage" src="./images/${country.imagesNormal[0]}">
         <p>${country.text}</p>
-        <p>Språk: ${foundLanguages[0]} <br/>
-        ${(country.visa === false) ? "Visum: Nej" : "Visum: Ja"}
-        </p>
-    
-        <button>Till utbildningar</button>
-        <select class="chooseCity" id="${country.name}">
-            <option selected disabled hidden>Välj stad</option>
-        </select>
+
+        <div id="languageVisaDiv">
+            <div class="langVisastyle">
+                <p>Språk: ${foundLanguages[0]} </P>
+            </div>
+            <div class="langVisastyle">
+                <p>${(country.visa === false) ?  "Visum: Nej":"Visum: Ja"}</p>
+            </div>
+        </div>
+        <div id="optionsContainer">
+            <div id="optionsDiv">
+                <button>Till utbildningar</button>
+                <select class="chooseCity" id="${country.name}">
+                    <option selected disabled hidden>Välj stad</option>
+                </select>
+            </div>
+        </div>
+
     `;
 
     // to get the correct cities that belong to the choosen country

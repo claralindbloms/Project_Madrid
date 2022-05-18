@@ -22,13 +22,18 @@
 
     <h1>Destinationer</h1>
 
-    <select id="chooseCountry" required>
-        <option value="" selected disabled hidden>Välj land</option>
-    </select> 
-   
+    <div id="selectDivContainer">
+      <div id="selectDiv">
+        <select id="chooseCountry" required>
+            <option value="" selected disabled hidden>Välj land</option>
+        </select> 
+      </div>
+    </div>
+
     <div id="bigContainer">
       <div id="countryWrapper"></div> 
     </div>
+
     <footer id="footerDiv"></footer>
 
     <script src="Databases/database.js"></script>
@@ -39,7 +44,6 @@
     <script src="JS/buildCity.js"></script>
     <script src="JS/footer.js"></script>
     <script src="JS/chooseCountry.js"></script>
-    <script src="JS/chooseCity.js"></script>
 
   </body>
 </html>
