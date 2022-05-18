@@ -4,7 +4,7 @@ body {
     background-color: bisque;
 }
 
-#wrapper > h4 {
+#wrapper>h4 {
     text-align: center;
     font-size: 20px;
     margin-top: 110px;
@@ -27,28 +27,29 @@ body {
 
 #around {
     background-color: rgb(0, 174, 255);
-     display: flex;
+    display: flex;
     flex-direction: row;
 }
 
-#textdiv > h1 {
+#textdiv>h1 {
     font-size: 20px;
     margin-top: 20px;
 }
 
-#textdiv > p {
+#textdiv>p {
     font-size: 14px;
     margin-top: -8px;
 }
 
 #bookicon {
     background: url(../images/book_vwhite.png);
-	background-repeat: no-repeat;
-	background-size: contain;
+    background-repeat: no-repeat;
+    background-size: contain;
     height: 56px;
     width: 70px;
     margin: 25px;
 }
+
 
 .adImage {
     width: 100vw;
@@ -60,14 +61,60 @@ body {
     margin: 30px;
 }
 
-#aboutus > h4, #contact > h4 {
+#aboutus>h4,
+#contact>h4 {
     text-align: center;
     margin-top: 50px;
 }
 
 #contact {
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+#columns {
+    display: grid;
+    grid-template-rows: 60px 60px 60px;
+    grid-template-columns: 60px 150px;
+    grid-gap: 20px;
+
+}
+
+#columns>p {
+    display: flex;
+    align-items: center;
+}
+
+
+#lettericon,
+#phoneicon,
+#adressicon {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+#lettericon {
+    background: url(../images/lettericon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#phoneicon {
+    background: url(../images/phoneicon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#adressicon {
+    background: url(../images/pinicon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 .meny a {
     background-color: white;
@@ -91,7 +138,7 @@ body {
 
 }
 
-.overlay > a {
+.overlay>a {
     padding-left: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -101,14 +148,13 @@ body {
     border-bottom: 4px solid black;
 }
 
-.country_images{
+.country_images {
     height: 130px;
     width: 130px;
     border-radius: 100%;
     padding: 20px;
 }
 
-h2{
+h2 {
     padding-left: 30px;
 }
-
