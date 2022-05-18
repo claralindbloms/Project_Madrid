@@ -9,9 +9,6 @@ function buildCity(city) {
   let accomodationGrade = averageGradeCity(city, 'accomodation')
   let outGrade = averageGradeCity(city, 'out')
 
-
-
-  // let comments = getComments(city);
   cityContainer.innerHTML = `
     <h2 class="cityName">${city.name}</h2>
     <img class="cityImage" src="./images/${city.imagesNormal[0]}">
@@ -39,16 +36,8 @@ function buildCity(city) {
     </div>
     <button>Till utbildningar</button>
     `
-  // <div>${comments}</div> 
-
-  // let betyg = document.getElementsByClassName(".betyg");
-
-  // if (betyg === NaN){
-  //     return "saknas";
-  // }
-
+ 
   countryResult.append(cityContainer)
-  console.log(city)
 }
 
 function getCitiesByCountryId(city) {
@@ -71,9 +60,6 @@ function averageGradeCity(city, type) {
     if (comment.cityID == city.id) {
       grade.push(comment.stars[type])
     }
-    // else if (comment.cityID == NaN){
-    //     grade.push("saknas")
-    // }
   })
 
   return averageCalc(grade)
@@ -89,6 +75,14 @@ function averageCalc(array) {
   let average = sum / array.length
 
   let averageGrade = Math.round(average * 10) / 10
+
+  if (isNaN(averageGrade) == false) {
+    return averageGrade;
+  }
+
+  if (isNaN(averageGrade) == true) {
+    return "-"
+  }
 
   return averageGrade
 }

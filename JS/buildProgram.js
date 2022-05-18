@@ -148,14 +148,14 @@ function getCountryById(program) {
 }
 
 function getProgramByCountryId(id) {
-  let foundCountry = [];
+  let foundProgram = [];
   for (let j = 0; j < CITIES.length; j++) {
     if (id == CITIES[j].countryID) {
       for (let f = 0; f < UNIVERSITIES.length; f++) {
         if (UNIVERSITIES[f].cityID == CITIES[j].id) {
           for (let r = 0; r < PROGRAMMES.length; r++) {
             if (PROGRAMMES[r].universityID == UNIVERSITIES[f].id) {
-              foundCountry.push(PROGRAMMES[r]);
+              foundProgram.push(PROGRAMMES[r]);
             }
           }
         }
@@ -163,7 +163,7 @@ function getProgramByCountryId(id) {
     }
   }
 
-  return foundCountry;
+  return foundProgram;
 }
 
 function getProgramBySubjectId(id) {
@@ -235,6 +235,10 @@ function averageCalc(array) {
 
 let chooseCountry = document.getElementById("chooseCountry");
 
+window.onload = function () {
+  chooseCountry.value = ''
+}
+
 COUNTRIES.forEach((country) => {
   let option = document.createElement("option");
   option.text = country.name;
@@ -253,6 +257,9 @@ chooseCountry.addEventListener("change", function (event) {
 });
 
 let chooseSubject = document.getElementById("chooseSubject");
+window.onload = function () {
+  chooseSubject.value = ''
+}
 
 FIELDS.forEach((subject) => {
   let option = document.createElement("option");
