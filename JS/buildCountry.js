@@ -73,7 +73,7 @@ function buildCountry(country) {
 
         ////TO DO se över varför kommentarfunktionen endast fungerar en gång när man byter stad utan att ladda om sidan
         mooreComments.addEventListener('click', function () {
-            getComments(2)
+            getComments(orderedComments.length) //TO DO keep order...lenght or place 2
             /* if (document.querySelector(".comment" === undefined)) { //TO DO, HIDE BUTTON OR SOMETHING
                  mooreComments.style.display = "none";
              }
