@@ -50,8 +50,14 @@ body {
     margin: 25px;
 }
 
-#aboutus>p,
-#contact {
+
+.adImage {
+    width: 100vw;
+    height: 33vw;
+    margin: 0;
+}
+
+#aboutus > p, #contact {
     margin: 30px;
 }
 
