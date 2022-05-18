@@ -1,7 +1,6 @@
 "use strict";
 
 function buildProgram(program) {
-  
   let programResult = document.getElementById("programWrapper");
   let programContainer = document.createElement("div");
   programContainer.classList.add("programContainer");
@@ -69,25 +68,32 @@ function buildProgram(program) {
   let button2 = document.createElement("button");
   button2.innerText = "Mer om landet";
   programContainer.append(button2);
+
   //TO DO, se över funktionen
-  button2.addEventListener("click", function(){
+  button2.addEventListener("click", function () {
     localStorage.setItem("country", JSON.stringify(foundCountry[0]));
     window.location.href = "./destinationer.html";
-    console.log(foundCountry[0]);
-  })
+  });
 
   programResult.append(programContainer);
-  
 }
 
 let programResult = document.getElementById("programWrapper");
 programResult.innerHTML = "";
 
 // Kör denna loopen för att få alla och skriv i istället för 0
-//  for (let i = 0; i < PROGRAMMES.length; i++) {
+//  for (let i = 0; i < PROGRAMMES.length; i++)
 
-for (let i = 0; i < 20; i++) {
-  buildProgram(PROGRAMMES[i]);
+if (localStorage.getItem("programmes") !== null) {
+  const programmes = JSON.parse(localStorage.getItem("programmes"))
+  for (let i = 0; i < programmes.length; i++) {
+    buildProgram(programmes[i]);
+    localStorage.removeItem("programmes");
+  }
+} else {
+  for (let i = 0; i < 20; i++) {
+    buildProgram(PROGRAMMES[i]);
+  }
 }
 
 // Hitta rätt universitet baserat på dess id
@@ -271,4 +277,3 @@ chooseSubject.addEventListener("change", function (event) {
     buildProgram(program);
   });
 });
-
