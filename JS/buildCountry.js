@@ -36,7 +36,9 @@ function buildCountry(country) {
             </div>
         </div>
         <div id="optionsContainer">
+
             <div class="optionsDiv">
+
                 <select class="chooseCity" id="${country.name}">
                     <option selected disabled hidden>Välj stad</option>
                 </select>
@@ -47,10 +49,13 @@ function buildCountry(country) {
 
   
 
+
   let optionsDiv = document.querySelectorAll(".optionsDiv")
   console.log(optionsDiv) 
+
   let button = document.createElement("button");
   button.innerText = "Till utbildningar";
+
 
   for(let i = 0; i < optionsDiv.length; i++){
     
@@ -62,6 +67,7 @@ function buildCountry(country) {
       localStorage.setItem("programmes", JSON.stringify(programmes));
       window.location.href = "./utbildningar.html";
     });
+
 
   }
   
@@ -108,6 +114,7 @@ function buildCountry(country) {
   }
 
   return countryContainer;
+
 }
 
 // code that makes the select-bars empty when refreashing the page
@@ -117,13 +124,14 @@ countryResult.innerHTML = "";
 // go through the country database and create each country
 //TO DO, fixa funktionen under
 
-if (localStorage.getItem("country") !== null) {
-  const country = JSON.parse(localStorage.getItem("country"));
+if (sessionStorage.getItem("country") !== null) {
+  const country = JSON.parse(sessionStorage.getItem("country"));
   buildCountry(country);
-  localStorage.removeItem("country");
+  sessionStorage.removeItem("country");
 } else {
   for (let i = 0; i < COUNTRIES.length; i++) {
     buildCountry(COUNTRIES[i]);
+
   }
 }
 
@@ -155,6 +163,7 @@ function getCitiesById(country) {
   }
   return foundCities;
 }
+
 
 function getProgramByCountryId(id) {
   let foundCountry = [];

@@ -152,9 +152,22 @@ body {
     height: 130px;
     width: 130px;
     border-radius: 100%;
-    padding: 20px;
+    
 }
 
+/* Specificera mer! */
+/* 
 h2 {
     padding-left: 30px;
+} */
+
+.country {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.country img {
+    padding: 0px;
 }
