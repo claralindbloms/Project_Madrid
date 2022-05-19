@@ -135,7 +135,7 @@ body {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+    grid-template-rows: 260px 260px;
 }
 
 .overlay>a {
@@ -165,7 +165,7 @@ h2 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
 }
 
 .country img {
