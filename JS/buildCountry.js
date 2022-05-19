@@ -45,8 +45,6 @@ function buildCountry(country) {
 
     `;
 
-  let programmes = getProgramByCountryId(country.id);
-
   let optionsDiv = countryContainer.querySelector(".optionsDiv")
 
   let button = document.createElement("button");
