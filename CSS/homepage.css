@@ -1,7 +1,7 @@
 body {
     margin: 0;
     width: 100vw;
-    background-color: bisque;
+    background-color: whitesmoke;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -27,9 +27,10 @@ body {
 }
 
 #around {
-    background-color: rgb(0, 174, 255);
+    background-color: #f98058;
     display: flex;
     flex-direction: row;
+    margin: 20px 0px 20px 0px;
 }
 
 #textdiv>h1 {
@@ -88,6 +89,9 @@ body {
     align-items: center;
 }
 
+#contact h4 {
+    margin: 20px 0px 20px 0px;
+}
 
 #lettericon,
 #phoneicon,
