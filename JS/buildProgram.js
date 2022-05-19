@@ -273,6 +273,7 @@ COUNTRIES.forEach((country) => {
 });
 
 chooseCountry.addEventListener("change", function (event) {
+  chooseSubject.value = ''
   let programResult = document.getElementById("programWrapper");
   programResult.innerHTML = "";
 
@@ -295,6 +296,7 @@ FIELDS.forEach((subject) => {
 });
 
 chooseSubject.addEventListener("change", function (event) {
+  chooseCountry.value = ''
   let programResult = document.getElementById("programWrapper");
   programResult.innerHTML = "";
 
