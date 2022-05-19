@@ -105,6 +105,8 @@ if (sessionStorage.getItem("programmes") !== null) {
   }
 }
 
+
+
 // Hitta rätt universitet baserat på dess id
 function getUniversityById(program) {
   let foundUniversity = [];
@@ -256,12 +258,16 @@ COUNTRIES.forEach((country) => {
 });
 
 chooseCountry.addEventListener("change", function (event) {
+
   let programResult = document.getElementById("programWrapper");
   programResult.innerHTML = "";
 
   let foundPrograms = getProgramByCountryId(chooseCountry.value);
+  chooseSubject.value = ''
   foundPrograms.forEach((program) => {
     buildProgram(program);
+
+    
   });
 });
 
@@ -275,6 +281,7 @@ FIELDS.forEach((subject) => {
   option.text = subject.name;
   option.value = subject.id;
   chooseSubject.append(option);
+  console.log(option.value)
 });
 
 chooseSubject.addEventListener("change", function (event) {
@@ -282,6 +289,7 @@ chooseSubject.addEventListener("change", function (event) {
   programResult.innerHTML = "";
 
   let foundSubject = getProgramBySubjectId(chooseSubject.value);
+  chooseCountry.value = ''
   foundSubject.forEach((program) => {
     buildProgram(program);
   });

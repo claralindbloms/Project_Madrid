@@ -171,3 +171,11 @@ h2 {
 .country img {
     padding: 0px;
 }
+
+.cross{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    left: 80vw;
+    bottom: 5.5vh;
+}

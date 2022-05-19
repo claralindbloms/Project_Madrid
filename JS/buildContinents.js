@@ -9,7 +9,13 @@ function buildContinents() {
         `;
     if (CONTINENTS[i].countries == 0) {
       continent.style.opacity = "0.4";
+
+    
+      
     }
+
+
+
 
     let globesContainer = document.getElementById("globes");
     globesContainer.append(continent);
@@ -22,19 +28,28 @@ function buildContinents() {
         popupHTML.classList.remove("menuactive");
         overlay.remove();
       } else {
+        let burgerHTML = document.querySelector(".hamburger");
+        burgerHTML.style.display = "none";
         let overlay = document.createElement("div");
         overlay.classList.add("overlay");
         popupHTML.classList.add("menuactive");
         let wrap = document.querySelector("#wrapper");
+
         wrap.append(overlay);
+
+        
 
         foundC.forEach((country) => {
           popupCountries(country, overlay);
+
+ 
         });
       }
     });
   }
 }
+
+
 
 function getCountryByContinentId(id) {
   let foundCountry = [];
@@ -50,11 +65,11 @@ function getCountryByContinentId(id) {
 function popupCountries(country, overlay) {
   let countries = document.createElement("div");
   countries.classList.add("country");
-
   countries.innerHTML = `
             <img class="country_images" src="./images/${country.imagesNormal[0]}"</img>
             <h2>${country.name}</h2>
         `;
+  
 
   countries.addEventListener("click", function () {
     sessionStorage.setItem("country", JSON.stringify(country));
