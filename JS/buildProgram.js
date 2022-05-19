@@ -65,13 +65,22 @@ function buildProgram(program) {
   button.classList.add("showMoreLess");
   programContainer.append(button);
 
+  button.addEventListener("click", function () {
+    if (moreInformation.classList.contains("hidden")) {
+      moreInformation.classList.remove("hidden");
+      button.innerText="Visa mindre"; 
+    } else {
+      moreInformation.classList.add("hidden");
+    }
+  });
+
   let button2 = document.createElement("button");
   button2.innerText = "Mer om landet";
   programContainer.append(button2);
 
   //TO DO, se över funktionen
   button2.addEventListener("click", function () {
-    localStorage.setItem("country", JSON.stringify(foundCountry[0]));
+    sessionStorage.setItem("country", JSON.stringify(foundCountry[0]));
     window.location.href = "./destinationer.html";
   });
 
@@ -84,11 +93,11 @@ programResult.innerHTML = "";
 // Kör denna loopen för att få alla och skriv i istället för 0
 //  for (let i = 0; i < PROGRAMMES.length; i++)
 
-if (localStorage.getItem("programmes") !== null) {
-  const programmes = JSON.parse(localStorage.getItem("programmes"))
+if (sessionStorage.getItem("programmes") !== null) {
+  const programmes = JSON.parse(sessionStorage.getItem("programmes"))
   for (let i = 0; i < programmes.length; i++) {
     buildProgram(programmes[i]);
-    localStorage.removeItem("programmes");
+    sessionStorage.removeItem("programmes");
   }
 } else {
   for (let i = 0; i < 20; i++) {
