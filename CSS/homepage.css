@@ -2,6 +2,7 @@ body {
     margin: 0;
     width: 100vw;
     background-color: bisque;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #wrapper>h4 {
