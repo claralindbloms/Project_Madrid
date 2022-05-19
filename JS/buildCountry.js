@@ -36,8 +36,7 @@ function buildCountry(country) {
             </div>
         </div>
         <div id="optionsContainer">
-            <div id="optionsDiv">
-
+            <div class="optionsDiv">
                 <select class="chooseCity" id="${country.name}">
                     <option selected disabled hidden>Välj stad</option>
                 </select>
@@ -47,17 +46,20 @@ function buildCountry(country) {
     `;
 
   let programmes = getProgramByCountryId(country.id);
- 
+
+  let optionsDiv = countryContainer.querySelector(".optionsDiv")
 
   let button = document.createElement("button");
   button.innerText = "Till utbildningar";
-  countryContainer.append(button);
+
+  let programmes = getProgramByCountryId(country.id);
+  optionsDiv.append(button);
 
   button.addEventListener("click", function () {
     sessionStorage.setItem("programmes", JSON.stringify(programmes));
     window.location.href = "./utbildningar.html";
   });
-
+  
   // to get the correct cities that belong to the choosen country
   let foundCities = getCitiesById(country);
   countryResult.append(countryContainer);
@@ -70,8 +72,11 @@ function buildCountry(country) {
       } else {
         return false;
       }
+      
     });
 
+    selectCity.scrollIntoView();
+    
     document.querySelectorAll(".container").forEach((element) => {
       if (city.countryID !== parseInt(element.id)) {
         element.remove();
