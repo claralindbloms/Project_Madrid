@@ -9,6 +9,14 @@ body {
     margin-top: 93px;
 }
 
+#content-wrapper{
+    display: flex;
+    justify-content: center;
+}
+#selectItems {
+    display: flex;
+    justify-content: center;
+}
 .programContainer {
     background-color: beige;
     width: 80vw;
@@ -16,6 +24,15 @@ body {
     left: 10vw;
 
 }
+#chooseCountry, #chooseSubject{
+    border-radius: 30px;
+    border: black;
+    padding: 15px;
+    margin: 3vw;
+    width: -moz-available;
+}
+
+
 
 #picture{
     height: 260px;
@@ -67,7 +84,7 @@ body {
 }
 
 /* styling for programmes */
-#chooseCountry, #chooseSubject, button, .chooseCity{
+button, .chooseCity{
     border-radius: 30px;
     border: black;
     padding: 15px;
