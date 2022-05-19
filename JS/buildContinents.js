@@ -7,10 +7,7 @@ function buildContinents() {
         continent.innerHTML = `
             <img class="continent_images" src="./images/${CONTINENTS[i].image}"</img>
             <h2> ${CONTINENTS[i].name}</h2>
-            
-            
         `
-
         if (CONTINENTS[i].countries == 0) {
             continent.style.opacity = "0.4";
         }
@@ -38,11 +35,8 @@ function buildContinents() {
 
                 });
             }
-
         })
-
     }
-
 }
 
 function getCountryByContinentId(id) {
@@ -53,10 +47,6 @@ function getCountryByContinentId(id) {
             foundCountry.push(COUNTRIES[f]);
         }
     }
-
-
-
-
     return foundCountry;
 }
 
@@ -68,13 +58,9 @@ function popupCountries(country, overlay) {
             <h2>${country.name}</h2>
         `
     overlay.append(countries);
-
-
 }
 
 buildContinents();
-
-
 
 document.getElementById("bookicon").onclick = function () {
     location.href = "utbildningar.html";
