@@ -60,6 +60,7 @@ function popupCountries(country, overlay) {
     sessionStorage.setItem("country", JSON.stringify(country));
     window.location.href = "./destinationer.html";
   });
+  
 
   overlay.append(countries);
 }
