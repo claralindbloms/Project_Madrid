@@ -135,6 +135,7 @@ body {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 270px 270px;
 
 }
 
@@ -165,7 +166,8 @@ h2 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
+    
+    align-items: center;
 }
 
 .country img {
