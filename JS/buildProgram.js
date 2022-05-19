@@ -71,6 +71,7 @@ function buildProgram(program) {
       button.innerText="Visa mindre"; 
     } else {
       moreInformation.classList.add("hidden");
+      button.innerText="Visa mer";
     }
   });
 
