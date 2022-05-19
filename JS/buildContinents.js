@@ -49,6 +49,7 @@ function getCountryByContinentId(id) {
 
 function popupCountries(country, overlay) {
   let countries = document.createElement("div");
+  countries.classList.add("country");
 
   countries.innerHTML = `
             <img class="country_images" src="./images/${country.imagesNormal[0]}"</img>
