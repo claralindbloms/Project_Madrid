@@ -13,3 +13,8 @@
     border: beige;
 
   }
+
+.overlay div {
+  display: flex;
+  justify-content: center;
+}
