@@ -22,14 +22,28 @@ function buildContinents() {
         continent.addEventListener("click", function (event) {
             console.log (CONTINENTS[i].id)
             let foundC = getCountryByContinentId(CONTINENTS[i].id)
-            console.log (foundC)
-            foundC.forEach((country) => {
-                popupCountries(country);
-               
-            });
+            let popupHTML = document.querySelector(".continent_images");
+            if (document.querySelector(".menuactive")) {
+                let overlay = document.querySelector(".overlay");
+                popupHTML.classList.remove("menuactive");
+                overlay.remove();
+            } else {
+                let overlay = document.createElement("div");
+                overlay.classList.add("overlay");
+                popupHTML.classList.add("menuactive");
+                let wrap = document.querySelector("#wrapper"); //add wrapper on eachpage?
+                wrap.append(overlay);
+
+                foundC.forEach((country) => {
+                    popupCountries(country, overlay);
+                   
+                });
+            }
 
         })
+    
     }
+
 }
 
 function getCountryByContinentId(id) {
@@ -51,18 +65,19 @@ function getCountryByContinentId(id) {
 
 
 
-function popupCountries(country) {
-    let popupHTML = document.querySelector(".continent_images");
-    if (document.querySelector(".menuactive")) {
-        let overlay = document.querySelector(".overlay");
-        popupHTML.classList.remove("menuactive");
-        overlay.remove();
-    } else {
-        let overlay = document.createElement("div");
-        overlay.classList.add("overlay");
-        popupHTML.classList.add("menuactive");
-        let wrap = document.querySelector("#wrapper"); //add wrapper on eachpage?
-        wrap.append(overlay);
+function popupCountries(country, overlay) {
+    console.log (country)
+    // let popupHTML = document.querySelector(".continent_images");
+    // if (document.querySelector(".menuactive")) {
+    //     let overlay = document.querySelector(".overlay");
+    //     popupHTML.classList.remove("menuactive");
+    //     overlay.remove();
+    // } else {
+    //     let overlay = document.createElement("div");
+    //     overlay.classList.add("overlay");
+    //     popupHTML.classList.add("menuactive");
+    //     let wrap = document.querySelector("#wrapper"); //add wrapper on eachpage?
+    //     wrap.append(overlay);
     
             let countries = document.createElement("div");
             countries.innerHTML = `
@@ -71,7 +86,7 @@ function popupCountries(country) {
         `
             overlay.append(countries);
         
-    }
+    
 }
 
 buildContinents();
