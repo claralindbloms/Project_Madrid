@@ -101,41 +101,41 @@
 // Parameter 2: vilket id (program, land).
     // console.log(averageGrade(program, "courses"));
 
-function averageGradeProgramme(programme, type) {
-  let grade = [];
+// function averageGradeProgramme(programme, type) {
+//   let grade = [];
 
-  COMMENTS_PROGRAMME.filter((comment) => {
-    if (comment.programmeID == programme.id) {
-      grade.push(comment.stars[type]);
-    }
-  });
+//   COMMENTS_PROGRAMME.filter((comment) => {
+//     if (comment.programmeID == programme.id) {
+//       grade.push(comment.stars[type]);
+//     }
+//   });
 
-  return averageCalc(grade);
-}
+//   return averageCalc(grade);
+// }
 
-function averageGradeCity (city, type) {
-  let grade = [];
+// function averageGradeCity (city, type) {
+//   let grade = [];
 
-  COMMENTS_CITY.filter((comment) => {
-    if (comment.cityID == city.id) {
-      grade.push(comment.stars[type]);
-    }
-  });
+//   COMMENTS_CITY.filter((comment) => {
+//     if (comment.cityID == city.id) {
+//       grade.push(comment.stars[type]);
+//     }
+//   });
 
-  return averageCalc(grade);
-}
+//   return averageCalc(grade);
+// }
 
-function averageCalc(array) {
-  let sum = 0;
+// function averageCalc(array) {
+//   let sum = 0;
 
-  for (let i = 0; i < array.length; i++) {
-    sum += array[i];
-  }
+//   for (let i = 0; i < array.length; i++) {
+//     sum += array[i];
+//   }
 
-  let average = sum / array.length;
+//   let average = sum / array.length;
 
-  let averageGrade = Math.round(average * 10) / 10;
+//   let averageGrade = Math.round(average * 10) / 10;
 
-  return averageGrade;
-}
+//   return averageGrade;
+// }
 

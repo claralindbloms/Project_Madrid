@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/destinationer.css" />
+    <link rel="stylesheet" href="CSS/header.css" />
+    <link rel="stylesheet" href="CSS/footer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <title>Destinationer</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="CSS/destinationer.css">
-  <link rel="stylesheet" href="CSS/header.css">
-  <link rel="stylesheet" href="CSS/footer.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <title>Destinationer</title>
-</head>
+  <body>
+    <header id="headerDiv"></header>
 
-<body>
+    <div id="wrapper">
+      <img
+        src="../Project_Madrid/images/stockholm_big_2.jpg"
+        alt="picture"
+        id="picture"
+      />
 
-  <header id="headerDiv"></header>
-  <div id="wrapper">
-    <img src="../Project_Madrid/images/stockholm_big_2.jpg" alt="picture" id="picture"></img>
+      <h1>Destinationer</h1>
 
-    <h1>Destinationer</h1>
-
-    <div id="selectDivContainer">
-      <div id="selectDiv">
-        <select id="chooseCountry" required>
+      <div id="selectDivContainer">
+        <div id="selectDiv">
+          <select id="chooseCountry" required>
             <option value="" selected disabled hidden>Välj land</option>
-        </select> 
+          </select>
+        </div>
       </div>
+
+      <img id="one" class="adImage" src="" alt="ads" />
+
+      <div id="countryWrapper"></div>
+
+      <img id="two" class="adImage" src="" alt="ads" />
+
+      <footer id="footerDiv"></footer>
     </div>
-    <img id="one" class="adImage" src="" alt="ads">
-    <!-- <div id="bigContainer"> -->
-      <div id="countryWrapper">
-      </div> 
-    <!-- </div> -->
-    <img id="two" class="adImage" src="" alt="ads">
-    <footer id="footerDiv"></footer>
 
     <script src="Databases/database.js"></script>
     <script src="Databases/commentsProgramme.js"></script>
@@ -45,11 +53,6 @@
     <script src="JS/buildCity.js"></script>
     <script src="JS/footer.js"></script>
     <script src="JS/getAds.js"></script>
-
     <script src="JS/chooseCountry.js"></script>
-    
-
   </body>
 </html>
-
-
