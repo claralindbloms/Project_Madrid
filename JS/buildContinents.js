@@ -22,6 +22,8 @@ function buildContinents() {
         popupHTML.classList.remove("menuactive");
         overlay.remove();
       } else {
+        let burgerHTML = document.querySelector(".hamburger");
+        burgerHTML.style.display = "none";
         let overlay = document.createElement("div");
         overlay.classList.add("overlay");
         popupHTML.classList.add("menuactive");
