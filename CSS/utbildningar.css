@@ -101,7 +101,8 @@ button, .chooseCity{
 button {
     background-color: white;
     border: 1.5px solid black;
-    padding: 8px;
+    padding: 15px;
+    margin-right: 10px;
 }
 
 #showMoreProgrammes {
