@@ -83,7 +83,8 @@ function buildProgram(program) {
     sessionStorage.setItem("country", JSON.stringify(foundCountry[0]));
     window.location.href = "./destinationer.html";
   });
-
+  
+  
   programResult.append(programContainer);
 }
 
@@ -104,6 +105,16 @@ if (sessionStorage.getItem("programmes") !== null) {
     buildProgram(PROGRAMMES[i]);
   }
 }
+
+// försök till att visa fler program
+
+let showMoreProgrammes = document.getElementById("showMoreProgrammes");
+
+showMoreProgrammes.addEventListener("click", function(event){
+  for (let i = 20; i < PROGRAMMES.length; i++) {
+    buildProgram(PROGRAMMES[i]);
+  }
+})
 
 // Hitta rätt universitet baserat på dess id
 function getUniversityById(program) {
