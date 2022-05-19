@@ -70,8 +70,11 @@ function buildCountry(country) {
       } else {
         return false;
       }
+      
     });
 
+    selectCity.scrollIntoView();
+    
     document.querySelectorAll(".container").forEach((element) => {
       if (city.countryID !== parseInt(element.id)) {
         element.remove();
