@@ -36,8 +36,7 @@ function buildCountry(country) {
             </div>
         </div>
         <div id="optionsContainer">
-            <div id="optionsDiv">
-                
+            <div class="optionsDiv">
                 <select class="chooseCity" id="${country.name}">
                     <option selected disabled hidden>Välj stad</option>
                 </select>
@@ -46,17 +45,27 @@ function buildCountry(country) {
 
     `;
 
-  let programmes = getProgramByCountryId(country.id);
+  
 
+  let optionsDiv = document.querySelectorAll(".optionsDiv")
+  console.log(optionsDiv) 
   let button = document.createElement("button");
   button.innerText = "Till utbildningar";
-  countryContainer.append(button);
 
-  button.addEventListener("click", function () {
-    localStorage.setItem("programmes", JSON.stringify(programmes));
-    window.location.href = "./utbildningar.html";
-  });
+  for(let i = 0; i < optionsDiv.length; i++){
+    
+    optionsDiv[i].append(button);
+    
+    let programmes = getProgramByCountryId(country.id);
+    
+    button.addEventListener("click", function () {
+      localStorage.setItem("programmes", JSON.stringify(programmes));
+      window.location.href = "./utbildningar.html";
+    });
 
+  }
+  
+  
   // to get the correct cities that belong to the choosen country
   let foundCities = getCitiesById(country);
   countryResult.append(countryContainer);
