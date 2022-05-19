@@ -13,6 +13,7 @@ COUNTRIES.forEach(country => {
   option.text = country.name
 
   chooseCountry.append(option)
+
 })
 
 chooseCountry.addEventListener('change', function (event) {

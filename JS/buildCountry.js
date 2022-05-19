@@ -37,7 +37,7 @@ function buildCountry(country) {
         </div>
         <div id="optionsContainer">
             <div id="optionsDiv">
-                
+
                 <select class="chooseCity" id="${country.name}">
                     <option selected disabled hidden>Välj stad</option>
                 </select>
@@ -47,6 +47,7 @@ function buildCountry(country) {
     `;
 
   let programmes = getProgramByCountryId(country.id);
+
 
   let button = document.createElement("button");
   button.innerText = "Till utbildningar";
@@ -99,6 +100,7 @@ function buildCountry(country) {
   }
 
   return countryContainer;
+
 }
 
 // code that makes the select-bars empty when refreashing the page
@@ -115,6 +117,7 @@ if (localStorage.getItem("country") !== null) {
 } else {
   for (let i = 0; i < COUNTRIES.length; i++) {
     buildCountry(COUNTRIES[i]);
+
   }
 }
 
@@ -146,6 +149,7 @@ function getCitiesById(country) {
   }
   return foundCities;
 }
+
 
 function getProgramByCountryId(id) {
   let foundCountry = [];
