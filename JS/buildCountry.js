@@ -54,7 +54,7 @@ function buildCountry(country) {
   countryContainer.append(button);
 
   button.addEventListener("click", function () {
-    localStorage.setItem("programmes", JSON.stringify(programmes));
+    sessionStorage.setItem("programmes", JSON.stringify(programmes));
     window.location.href = "./utbildningar.html";
   });
 
@@ -110,10 +110,10 @@ countryResult.innerHTML = "";
 // go through the country database and create each country
 //TO DO, fixa funktionen under
 
-if (localStorage.getItem("country") !== null) {
-  const country = JSON.parse(localStorage.getItem("country"));
+if (sessionStorage.getItem("country") !== null) {
+  const country = JSON.parse(sessionStorage.getItem("country"));
   buildCountry(country);
-  localStorage.removeItem("country");
+  sessionStorage.removeItem("country");
 } else {
   for (let i = 0; i < COUNTRIES.length; i++) {
     buildCountry(COUNTRIES[i]);
