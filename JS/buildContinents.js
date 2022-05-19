@@ -11,7 +11,7 @@ function buildContinents() {
             
         `
 
-        if (CONTINENTS[i].id == 1 || 0) {
+        if (CONTINENTS[i].countries == 0) {
             continent.style.opacity = "0.4";
         }
 
