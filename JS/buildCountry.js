@@ -45,6 +45,8 @@ function buildCountry(country) {
 
     `;
 
+  let programmes = getProgramByCountryId(country.id);
+
   let optionsDiv = countryContainer.querySelector(".optionsDiv")
 
   let button = document.createElement("button");
@@ -80,6 +82,7 @@ function buildCountry(country) {
         element.remove();
       }
     });
+
     buildCity(city);
 
     let mooreComments = document.querySelector(".mooreComments");
@@ -120,7 +123,6 @@ if (sessionStorage.getItem("country") !== null) {
 } else {
   for (let i = 0; i < COUNTRIES.length; i++) {
     buildCountry(COUNTRIES[i]);
-
   }
 }
 

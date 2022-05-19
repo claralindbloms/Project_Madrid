@@ -99,6 +99,12 @@ if (sessionStorage.getItem("programmes") !== null) {
     buildProgram(programmes[i]);
     sessionStorage.removeItem("programmes");
   }
+} else if (sessionStorage.getItem("programmesCity") !== null) {
+  const programmesCity = JSON.parse(sessionStorage.getItem("programmesCity"));
+  for (let i = 0; i < programmesCity.length; i++) {
+    buildProgram(programmesCity[i]);
+    sessionStorage.removeItem("programmesCity");
+  }
 } else {
   for (let i = 0; i < 20; i++) {
     buildProgram(PROGRAMMES[i]);
