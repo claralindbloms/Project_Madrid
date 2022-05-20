@@ -1,19 +1,17 @@
-'use strict'
-
-function buildProgram (program) {
-  let programResult = document.getElementById('programWrapper')
-  let programContainer = document.createElement('div')
-  programContainer.classList.add('programContainer')
+"use strict";
+// a function that builds all programs
+function buildProgram(program) {
+  let programResult = document.getElementById("programWrapper")
+  let programContainer = document.createElement("div")
+  programContainer.classList.add("programContainer")
 
   let programName = document.createElement('h2')
 
   programName.innerText = program.name
   programContainer.append(programName)
 
-  // console.log(averageGrade(program, "courses"));
-
   let foundUniversity = getUniversityById(program)
-  let universityProgram = document.createElement('p')
+  let universityProgram = document.createElement("p")
   universityProgram.innerText = foundUniversity[0]
   programContainer.append(universityProgram)
 
@@ -65,10 +63,11 @@ function buildProgram (program) {
   button.classList.add('showMoreLess')
   programContainer.append(button)
 
-  button.addEventListener('click', function () {
-    if (moreInformation.classList.contains('hidden')) {
-      moreInformation.classList.remove('hidden')
-      button.innerText = 'Visa mindre'
+  //button to show more information about program
+  button.addEventListener("click", function () {
+    if (moreInformation.classList.contains("hidden")) {
+      moreInformation.classList.remove("hidden")
+      button.innerText = "Visa mindre"
     } else {
       moreInformation.classList.add('hidden')
       button.innerText = 'Visa mer'
@@ -91,20 +90,23 @@ function buildProgram (program) {
 let programResult = document.getElementById('programWrapper')
 programResult.innerHTML = ''
 
-// Kör denna loopen för att få alla och skriv i istället för 0
-//  for (let i = 0; i < PROGRAMMES.length; i++)
+
 
 if (sessionStorage.getItem('programmes') !== null) {
   const programmes = JSON.parse(sessionStorage.getItem('programmes'))
   for (let i = 0; i < programmes.length; i++) {
     buildProgram(programmes[i])
-    sessionStorage.removeItem('programmes')
+    sessionStorage.removeItem("programmes")
+    let showMoreProgrammes = document.getElementById("showMoreProgrammes")
+    showMoreProgrammes.style.display = "none"
   }
 } else if (sessionStorage.getItem('programmesCity') !== null) {
   const programmesCity = JSON.parse(sessionStorage.getItem('programmesCity'))
   for (let i = 0; i < programmesCity.length; i++) {
     buildProgram(programmesCity[i])
-    sessionStorage.removeItem('programmesCity')
+    sessionStorage.removeItem("programmesCity")
+    let showMoreProgrammes = document.getElementById("showMoreProgrammes")
+    showMoreProgrammes.style.display = "none"
   }
 } else {
   for (let i = 0; i < 20; i++) {
@@ -112,22 +114,27 @@ if (sessionStorage.getItem('programmes') !== null) {
   }
 }
 
-// försök till att visa fler program
 
-let showMoreProgrammes = document.getElementById('showMoreProgrammes')
+let showMoreProgrammes = document.getElementById("showMoreProgrammes")
 
 showMoreProgrammes.addEventListener('click', function (event) {
   for (let i = 20; i < PROGRAMMES.length; i++) {
     buildProgram(PROGRAMMES[i])
+
   }
+  showMoreProgrammes.style.display = "none";
+
 })
 
-// Hitta rätt universitet baserat på dess id
-function getUniversityById (program) {
-  let foundUniversity = []
-
+// Find right university based on ID
+function getUniversityById(program) {
+  let foundUniversity = [];
+  // go through all universities
   for (let j = 0; j < UNIVERSITIES.length; j++) {
+    // compare program universityId with university id
     if (program.universityID == UNIVERSITIES[j].id) {
+
+      // if its the same push the universities name to the empty array
       foundUniversity.push(UNIVERSITIES[j].name)
     }
   }
@@ -135,14 +142,20 @@ function getUniversityById (program) {
   return foundUniversity
 }
 
-// Hitta rätt stad baserat på dess id
-function getCityById (program) {
+// Find right university based on ID
+function getCityById(program) {
   let foundCity = []
+ // go through all universities
 
   for (let j = 0; j < UNIVERSITIES.length; j++) {
+        // compare program universityId with university id
     if (program.universityID == UNIVERSITIES[j].id) {
+       // go through all cities 
       for (let f = 0; f < CITIES.length; f++) {
+         // compare university cityId with city id
         if (UNIVERSITIES[j].cityID == CITIES[f].id) {
+
+          // if its the same push the city name to the empty array
           foundCity.push(CITIES[f].name)
         }
       }
@@ -152,16 +165,26 @@ function getCityById (program) {
   return foundCity
 }
 
-// Hitta rätt land baserat på dess id
-function getCountryById (program) {
+
+// Finde right country based on ID
+function getCountryById(program) {
   let foundCountry = []
+  
+// go through all universities
 
   for (let j = 0; j < UNIVERSITIES.length; j++) {
+     // compare program universityId with university id
     if (program.universityID == UNIVERSITIES[j].id) {
+       // go through all cities 
       for (let f = 0; f < CITIES.length; f++) {
+          // compare university cityId with city id
         if (UNIVERSITIES[j].cityID == CITIES[f].id) {
+          // go through all countries
           for (let r = 0; r < COUNTRIES.length; r++) {
+            // compare city countryId with coutry id
             if (CITIES[f].countryID == COUNTRIES[r].id) {
+
+              // if its the same push the country name to the empty array
               foundCountry.push(COUNTRIES[r])
             }
           }
@@ -173,14 +196,24 @@ function getCountryById (program) {
   return foundCountry
 }
 
-function getProgramByCountryId (id) {
+// Finde right program based on CountryID
+function getProgramByCountryId(id) {
   let foundProgram = []
+      // go through all cities 
+
   for (let j = 0; j < CITIES.length; j++) {
+     // compare city countryId with id (value/id of chosen option in country selector)
     if (id == CITIES[j].countryID) {
+      // go through all universities
       for (let f = 0; f < UNIVERSITIES.length; f++) {
+             // compare university cityId with city id
         if (UNIVERSITIES[f].cityID == CITIES[j].id) {
+               // go through all programmes
           for (let r = 0; r < PROGRAMMES.length; r++) {
+                 // compare programe universityId with university id
             if (PROGRAMMES[r].universityID == UNIVERSITIES[f].id) {
+
+              // if its the same push the program to the empty array
               foundProgram.push(PROGRAMMES[r])
             }
           }
@@ -192,10 +225,15 @@ function getProgramByCountryId (id) {
   return foundProgram
 }
 
-function getProgramBySubjectId (id) {
+
+// Finde right program based on SubjectID
+function getProgramBySubjectId(id) {
   let foundSubject = []
+  // go through all programmes
   for (let j = 0; j < PROGRAMMES.length; j++) {
+     // compare programe subjectId with id (value/id of chosen option in subject selector)
     if (id == PROGRAMMES[j].subjectID) {
+      // if its the same push the program to the empty array
       foundSubject.push(PROGRAMMES[j])
     }
   }
@@ -259,49 +297,69 @@ function averageCalc (array) {
   return averageGrade
 }
 
-let chooseCountry = document.getElementById('chooseCountry')
+// get selector from html
+let chooseCountry = document.getElementById("chooseCountry")
 
+// on every reload empty selector country value
 window.onload = function () {
-  chooseCountry.value = ''
+  chooseCountry.value = ""
 }
 
-COUNTRIES.forEach(country => {
-  let option = document.createElement('option')
+// go through all countries an for all country create option with name 
+// and option and append to selector
+COUNTRIES.forEach((country) => {
+  let option = document.createElement("option")
   option.text = country.name
   option.value = country.id
   chooseCountry.append(option)
-})
+});
 
-chooseCountry.addEventListener('change', function (event) {
-  chooseSubject.value = ''
-  let programResult = document.getElementById('programWrapper')
-  programResult.innerHTML = ''
+// eventlistener on selecter
+chooseCountry.addEventListener("change", function (event) {
+  // empty subject selector if you choose a country
+  chooseSubject.value = ""
+  // empty the programwrapper if you choose a country
+  let programResult = document.getElementById("programWrapper")
+  programResult.innerHTML = ""
 
+  // get the value/id from the country you choose in selector
   let foundPrograms = getProgramByCountryId(chooseCountry.value)
-  foundPrograms.forEach(program => {
+  // for each country you choose it call "builprogram" contected to right country
+  foundPrograms.forEach((program) => {
     buildProgram(program)
   })
 })
 
-let chooseSubject = document.getElementById('chooseSubject')
+// get selector from html
+let chooseSubject = document.getElementById("chooseSubject")
+
+// on every reload empty selector subject value
 window.onload = function () {
-  chooseSubject.value = ''
+  chooseSubject.value = ""
 }
 
-FIELDS.forEach(subject => {
-  let option = document.createElement('option')
+// go through all subjects an for all subject create option with name 
+// and option and append to selector
+FIELDS.forEach((subject) => {
+  let option = document.createElement("option")
   option.text = subject.name
   option.value = subject.id
   chooseSubject.append(option)
 })
 
-chooseSubject.addEventListener('change', function (event) {
-  chooseCountry.value = ''
-  let programResult = document.getElementById('programWrapper')
-  programResult.innerHTML = ''
+// eventlistener on selecter
+chooseSubject.addEventListener("change", function (event) {
+    // empty country selector if you choose a country
+  chooseCountry.value = ""
 
+  // empty the programwrapper if you choose a subject
+  let programResult = document.getElementById("programWrapper")
+  programResult.innerHTML = ""
+
+    // get the value/id from the subject you choose in selector
   let foundSubject = getProgramBySubjectId(chooseSubject.value)
-  foundSubject.forEach(program => {
+    // for each subject you choose it call "builprogram" contected to right subject
+  foundSubject.forEach((program) => {
     buildProgram(program)
   })
 })

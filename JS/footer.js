@@ -1,9 +1,11 @@
 'use strict'
 
-function buildFooter () {
-  let footer = document.getElementById('footerDiv')
-  let footerDiv = document.createElement('div')
-  footerDiv.classList.add('footer')
+// Function to build footer.
+
+function buildFooter() {
+  let footer = document.getElementById("footerDiv")
+  let footerDiv = document.createElement("div")
+  footerDiv.classList.add("footer")
 
   let instagramLogga = document.createElement('img')
   instagramLogga.src = './images/instagram_logo.png'
@@ -22,8 +24,10 @@ function buildFooter () {
 
   footer.append(footerDiv)
 
-  document.querySelector('.instagramLogga').onclick = function () {
-    location.href = 'https://www.instagram.com/'
+  // Redirecting on click.
+
+  document.querySelector(".instagramLogga").onclick = function () {
+    location.href = "https://www.instagram.com/"
   }
 
   document.querySelector('.twitterLogga').onclick = function () {
@@ -37,4 +41,5 @@ function buildFooter () {
   return footerDiv
 }
 
+// Run the buildFooter function
 buildFooter()

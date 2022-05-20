@@ -16,6 +16,7 @@ function buildContinents () {
 
     continent.addEventListener('click', function (event) {
       let foundC = getCountryByContinentId(CONTINENTS[i].id)
+
       let popupHTML = document.querySelector('.continent_images')
       if (document.querySelector('.menuactive')) {
         let overlay = document.querySelector('.overlay')
@@ -27,10 +28,26 @@ function buildContinents () {
         let overlay = document.createElement('div')
         overlay.classList.add('overlay')
         popupHTML.classList.add('menuactive')
+
+        // creates and appends a close-icon on the country pop-up
+
         let close = document.createElement('a')
         close.classList.add('close')
         close.href = '#'
         overlay.append(close)
+
+        // if-statement to deliver message about no current educations in choosen continent
+
+        if (foundC.length === 0) {
+          let sorry = document.createElement('p')
+          sorry.classList.add('sorry')
+          sorry.innerText =
+            'Tyvärr finns inga utbildningar tillgängliga i' +
+            ` ${CONTINENTS[i].name}`
+          overlay.append(sorry)
+        }
+
+        // event-listener that redirects the user to the index.html page
 
         close.addEventListener('click', function (event) {
           window.location.href = './index.html'
@@ -63,9 +80,10 @@ function popupCountries (country, overlay) {
   countries.classList.add('country')
 
   countries.innerHTML = `
-            <img class="country_images" src="./images/${country.imagesNormal[0]}"</img>
-            <h2>${country.name}</h2>
-        `
+
+  <img class="country_images" src="./images/${country.imagesNormal[0]}"</img>
+  <h2>${country.name}</h2>
+  `
 
   countries.addEventListener('click', function () {
     sessionStorage.setItem('country', JSON.stringify(country))

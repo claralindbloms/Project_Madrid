@@ -53,9 +53,10 @@ function buildCountry (country) {
   let programmes = getProgramByCountryId(country.id)
   optionsDiv.append(button)
 
-  button.addEventListener('click', function () {
-    sessionStorage.setItem('programmes', JSON.stringify(programmes))
-    window.location.href = './utbildningar.html'
+  // event-listener to send the user to the right programme via the city
+  button.addEventListener("click", function () {
+    sessionStorage.setItem("programmes", JSON.stringify(programmes))
+    window.location.href = "./utbildningar.html"
   })
 
   // to get the correct cities that belong to the choosen country
@@ -63,7 +64,9 @@ function buildCountry (country) {
   countryResult.append(countryContainer)
   let selectCity = document.querySelector(`#${country.name}`)
 
-  selectCity.addEventListener('change', function (event) {
+
+  // event-listener for the city-selector and what happens when choosing a city
+  selectCity.addEventListener("change", function (event) {
     const city = CITIES.find(function (c) {
       if (c.name === event.target.value) {
         return true
@@ -74,7 +77,8 @@ function buildCountry (country) {
 
     selectCity.scrollIntoView()
 
-    document.querySelectorAll('.container').forEach(element => {
+    // removing the countries that are not relevant to the choosen city
+    document.querySelectorAll(".container").forEach((element) => {
       if (city.countryID !== parseInt(element.id)) {
         element.remove()
       }
@@ -82,8 +86,10 @@ function buildCountry (country) {
 
     buildCity(city)
 
-    let mooreComments = document.querySelector('.mooreComments')
+    // code to show comments and event-listener to show more comments
 
+    let mooreComments = document.querySelector(".mooreComments")
+    
     mooreComments.addEventListener('click', function () {
       getComments(orderedComments.length)
       if (showComments >= orderedComments.length) {
@@ -95,6 +101,7 @@ function buildCountry (country) {
     getComments(2)
   })
 
+  // connects the correct city to the options in the city selector
   for (let i = 0; i < foundCities.length; i++) {
     let option = document.createElement('option')
     option.text = foundCities[i]
@@ -110,7 +117,6 @@ let countryResult = document.getElementById('countryWrapper')
 countryResult.innerHTML = ''
 
 // go through the country database and create each country
-//TO DO, fixa funktionen under
 
 if (sessionStorage.getItem('country') !== null) {
   const country = JSON.parse(sessionStorage.getItem('country'))
@@ -151,8 +157,11 @@ function getCitiesById (country) {
   return foundCities
 }
 
-function getProgramByCountryId (id) {
+// find the correct program based on country id
+
+function getProgramByCountryId(id) {
   let foundCountry = []
+
   for (let j = 0; j < CITIES.length; j++) {
     if (id == CITIES[j].countryID) {
       for (let f = 0; f < UNIVERSITIES.length; f++) {

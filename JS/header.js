@@ -1,9 +1,11 @@
 'use strict'
 
-function buildHeader () {
-  let header = document.getElementById('headerDiv')
-  let headerDiv = document.createElement('div')
-  headerDiv.classList.add('header')
+// Function to build the header.
+
+function buildHeader() {
+  let header = document.getElementById("headerDiv")
+  let headerDiv = document.createElement("div")
+  headerDiv.classList.add("header")
 
   header.append(headerDiv)
 
@@ -30,6 +32,8 @@ function buildHeader () {
   return headerDiv
 }
 
+// Array of menu-links.
+
 const MENU_LINKS = [
   {
     name: 'Hitta din utbildning',
@@ -45,11 +49,13 @@ const MENU_LINKS = [
   }
 ]
 
-function BurgerMenu () {
-  let burgerHTML = document.querySelector('.hamburger')
-  if (document.querySelector('.menuactive')) {
-    let overlay = document.querySelector('.meny')
-    burgerHTML.classList.remove('menuactive')
+// Function to build the burger-menu.
+
+function BurgerMenu() {
+  let burgerHTML = document.querySelector(".hamburger")
+  if (document.querySelector(".menuactive")) {
+    let overlay = document.querySelector(".meny")
+    burgerHTML.classList.remove("menuactive")
     overlay.remove()
   } else {
     let overlay = document.createElement('div')

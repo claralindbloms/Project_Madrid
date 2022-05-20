@@ -1,5 +1,7 @@
 'use strict'
 
+// Array of different ad-images.
+
 var adArray = new Array(
   './ads/1.jpeg',
   './ads/2.jpeg',
@@ -13,7 +15,8 @@ var adArray = new Array(
   './ads/10.png'
 )
 
-function randomNumber (adArray) {
+// Functions to generate random ads on the page.
+function randomNumber(adArray) {
   return Math.floor(Math.random() * adArray.length)
 }
 
@@ -27,5 +30,7 @@ function choosePic () {
     two.src = adArray[randomNumber(adArray)]
   }
 }
+
+// When page is loaded, run the function to generate ads. 
 
 window.onload = choosePic(randomNumber(adArray))
