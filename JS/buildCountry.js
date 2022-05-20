@@ -45,7 +45,7 @@ function buildCountry(country) {
 
     `;
 
-  let optionsDiv = countryContainer.querySelector(".optionsDiv")
+  let optionsDiv = countryContainer.querySelector(".optionsDiv");
 
   let button = document.createElement("button");
   button.innerText = "Till utbildningar";
@@ -57,7 +57,7 @@ function buildCountry(country) {
     sessionStorage.setItem("programmes", JSON.stringify(programmes));
     window.location.href = "./utbildningar.html";
   });
-  
+
   // to get the correct cities that belong to the choosen country
   let foundCities = getCitiesById(country);
   countryResult.append(countryContainer);
@@ -70,11 +70,10 @@ function buildCountry(country) {
       } else {
         return false;
       }
-      
     });
 
     selectCity.scrollIntoView();
-    
+
     document.querySelectorAll(".container").forEach((element) => {
       if (city.countryID !== parseInt(element.id)) {
         element.remove();
@@ -85,8 +84,8 @@ function buildCountry(country) {
 
     let mooreComments = document.querySelector(".mooreComments");
 
-    mooreComments.addEventListener('click', function () {
-      getComments(orderedComments.length)
+    mooreComments.addEventListener("click", function () {
+      getComments(orderedComments.length);
       if (showComments >= orderedComments.length) {
         mooreComments.style.display = "none";
       }
@@ -104,7 +103,6 @@ function buildCountry(country) {
   }
 
   return countryContainer;
-
 }
 
 // code that makes the select-bars empty when refreashing the page
@@ -152,7 +150,6 @@ function getCitiesById(country) {
   }
   return foundCities;
 }
-
 
 function getProgramByCountryId(id) {
   let foundCountry = [];

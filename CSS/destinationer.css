@@ -1,221 +1,221 @@
 body {
-    margin: 0;
-    width: 100vw;
-    background-color: whitesmoke;
+  margin: 0;
+  width: 100vw;
+  background-color: whitesmoke;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 #picture {
-    height: 260px;
-    width: 100vw;
+  height: 260px;
+  width: 100vw;
 }
 
 #wrapper {
-    margin-top: 93px;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
+  margin-top: 93px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .adImage {
-    width: 100vw;
-    height: 33vw;
+  width: 100vw;
+  height: 33vw;
 }
 
 #one {
-    margin-bottom: 3vh;
-
+  margin-bottom: 3vh;
 }
 
-#selectDivContainer{
-    height: 10vh;
-    position: relative;
+#selectDivContainer {
+  height: 10vh;
+  position: relative;
 }
 
-#selectDiv{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#selectDiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #chooseCountry {
-    margin-bottom: 20px;
-    border: solid 2px rgb(240, 113, 70);
-    background-color: rgb(243, 245, 235);
+  margin-bottom: 20px;
+  border: solid 2px rgb(240, 113, 70);
+  background-color: rgb(243, 245, 235);
 }
 
-p{
-    padding: 5%;
+p {
+  padding: 5%;
 }
 
-#optionsContainer{
-    height: 10vh;
-    position: relative;
+#optionsContainer {
+  height: 10vh;
+  position: relative;
 }
 
-.optionsDiv{
-    display: flex;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.optionsDiv {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .flagCountryDiv {
-    display: flex;
-    align-items: center;
-    padding-left: 15px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
 }
 
 h2 {
-    padding: 10px;
+  padding: 10px;
 }
 
-h3{
-    padding-left: 30px;
+h3 {
+  padding-left: 30px;
 }
 
 .countryContainer {
-    background-color: white;
-    width: 100vw;
-    margin-bottom: 6vh;
-    padding-bottom: 5%;
-    border-radius: 20px;
-
+  background-color: white;
+  width: 100vw;
+  margin-bottom: 6vh;
+  padding-bottom: 5%;
+  border-radius: 20px;
 }
 
 .cityContainer {
-    background-color: white;
-    width: 100vw;
-    margin-bottom: 8vh;
-    padding-bottom: 5%;
-    border-radius: 20px;
+  background-color: white;
+  width: 100vw;
+  margin-bottom: 8vh;
+  padding-bottom: 5%;
+  border-radius: 20px;
 }
 
 .cityName {
-    padding-top: 30px;
-    padding-left: 30px;
+  padding-top: 30px;
+  padding-left: 30px;
 }
 
-#languageVisaDiv{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+#languageVisaDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .countryFlag {
-    height: 6vh;
+  height: 6vh;
 }
 
 .countryImage {
-    width: 90%;
-    height: 90%;
+  width: 90%;
+  height: 90%;
 
-    padding-left: 5%;
+  padding-left: 5%;
 }
 
-.cityImage{
-    width: 90%;
-    height: 90%;
+.cityImage {
+  width: 90%;
+  height: 90%;
 
-    padding-left: 5%;
+  padding-left: 5%;
 }
 
 #grades {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .grade {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(243, 245, 235);
-    border: solid 4px rgb(240, 113, 70);
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(243, 245, 235);
+  border: solid 4px rgb(240, 113, 70);
 
-    border-radius: 20px;
-    margin: 10%; 
+  border-radius: 20px;
+  margin: 10%;
 }
 
 .langVisastyle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgb(243, 245, 235);
-    border: solid 4px rgb(240, 113, 70);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(243, 245, 235);
+  border: solid 4px rgb(240, 113, 70);
 
-    border-radius: 20px;
-    margin: 5%; 
+  border-radius: 20px;
+  margin: 5%;
 }
 
 .grade p {
-    margin: 0;
-    text-align: center;
+  margin: 0;
+  text-align: center;
 }
 
 .grade > h3 {
-    margin: 0;
+  margin: 0;
 }
 
 #disclaimer {
-    color: gray;
-    text-align: center;
-    margin-top: 1px;
-    font-size: 12px;
+  color: gray;
+  text-align: center;
+  margin-top: 1px;
+  font-size: 12px;
 }
 
 .cityContainer {
-    background-color: white;
+  background-color: white;
 }
 
 /* style for comments under */
 
 #box {
-    margin: 20px;
+  margin: 20px;
 }
 
 .comment {
-    background-color: bisque;
-    border: 2px solid red;
-    border-radius: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    color: black;
+  background-color: bisque;
+  border: 2px solid red;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: black;
 }
 
 .comment > p:nth-child(2) {
-    font-style: italic;
+  font-style: italic;
 }
 
 .comment > p {
-    margin: 0px;
+  margin: 0px;
 }
-
 
 /* styling for buttons */
-#chooseCountry, button, .chooseCity{
-    border-radius: 30px;
-    border: solid 2px rgb(240, 113, 70);
-    background-color: rgb(243, 245, 235);
-    padding: 15px;
+#chooseCountry,
+button,
+.chooseCity {
+  border-radius: 30px;
+  border: solid 2px rgb(240, 113, 70);
+  background-color: rgb(243, 245, 235);
+  padding: 15px;
 }
 
-button, .chooseCity {
-    background-color: rgb(243, 245, 235);;
-    width: max-content;
-    margin: 5vw;
+button,
+.chooseCity {
+  background-color: rgb(243, 245, 235);
+  width: max-content;
+  margin: 5vw;
 }
