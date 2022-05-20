@@ -327,6 +327,8 @@ chooseCountry.addEventListener("change", function (event) {
   // for each country you choose it call "builprogram" contected to right country
   foundPrograms.forEach((program) => {
     buildProgram(program)
+    let showMoreProgrammes = document.getElementById("showMoreProgrammes")
+    showMoreProgrammes.style.display = "none"
   })
 })
 
@@ -361,5 +363,7 @@ chooseSubject.addEventListener("change", function (event) {
     // for each subject you choose it call "builprogram" contected to right subject
   foundSubject.forEach((program) => {
     buildProgram(program)
+    let showMoreProgrammes = document.getElementById("showMoreProgrammes")
+    showMoreProgrammes.style.display = "none"
   })
 })
