@@ -1,5 +1,7 @@
 "use strict";
 
+// this function creates the "information"-box for each city
+
 function buildCity(city) {
   let countryResult = document.getElementById("countryWrapper");
   let cityContainer = document.createElement("div");
@@ -8,6 +10,8 @@ function buildCity(city) {
   let foodGrade = averageGradeCity(city, "food");
   let accomodationGrade = averageGradeCity(city, "accomodation");
   let outGrade = averageGradeCity(city, "out");
+
+  // building the innerHTML using the functions further down in the file
 
   cityContainer.innerHTML = `
     <h2 class="cityName">${city.name}</h2>
@@ -42,6 +46,8 @@ function buildCity(city) {
   button.innerText = "Till utbildningar";
   cityContainer.append(button);
 
+  // event-listener to redirect the user to the programmes linked to the choosen city
+
   button.addEventListener("click", function () {
     sessionStorage.setItem("programmesCity", JSON.stringify(programmes));
     window.location.href = "./utbildningar.html";
@@ -49,6 +55,8 @@ function buildCity(city) {
 
   countryResult.append(cityContainer);
 }
+
+// function to get and link the correct program to the right city
 
 function getProgrammesByCity(city) {
   let foundProgrammes = [];
@@ -64,6 +72,8 @@ function getProgrammesByCity(city) {
   }
   return foundProgrammes;
 }
+
+// renders the cities based on the country id
 
 function getCitiesByCountryId(city) {
   let foundCities = [];
