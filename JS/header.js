@@ -1,5 +1,7 @@
 "use strict";
 
+// Function to build the header.
+
 function buildHeader() {
   let header = document.getElementById("headerDiv");
   let headerDiv = document.createElement("div");
@@ -30,6 +32,8 @@ function buildHeader() {
   return headerDiv;
 }
 
+// Array of menu-links.
+
 const MENU_LINKS = [
   {
     name: "Hitta din utbildning",
@@ -44,6 +48,8 @@ const MENU_LINKS = [
     url: "./index.html#around",
   },
 ];
+
+// Function to build the burger-menu.
 
 function BurgerMenu() {
   let burgerHTML = document.querySelector(".hamburger");

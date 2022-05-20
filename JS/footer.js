@@ -1,5 +1,7 @@
 "use strict";
 
+// Function to build footer.
+
 function buildFooter() {
   let footer = document.getElementById("footerDiv");
   let footerDiv = document.createElement("div");
@@ -22,6 +24,8 @@ function buildFooter() {
 
   footer.append(footerDiv);
 
+  // Redirecting on click.
+
   document.querySelector(".instagramLogga").onclick = function () {
     location.href = "https://www.instagram.com/";
   };
@@ -37,4 +41,5 @@ function buildFooter() {
   return footerDiv;
 }
 
+// Run the buildFooter function
 buildFooter();
