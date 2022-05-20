@@ -22,7 +22,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-      
 }
 
 h1 {
@@ -35,7 +34,7 @@ h1 {
 }
 
 #one {
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
 
 }
 

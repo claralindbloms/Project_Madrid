@@ -55,6 +55,7 @@ body {
 
 #grades {
     display: grid;
+    gap: 10px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
 }
@@ -68,8 +69,12 @@ body {
 .grade {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border: solid 10px beige;
+    background-color: rgb(243, 245, 235);
+    border: solid 2px rgb(240, 113, 70);
+
+    border-radius: 20px;
+    margin-bottom: 10%;
+    padding: 10px;
 }
 
 .grade p {
