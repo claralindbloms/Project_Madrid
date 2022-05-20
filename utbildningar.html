@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/header.css">
-    <link rel="stylesheet" href="CSS/footer.css">
-    <link rel="stylesheet" href="CSS/utbildningar.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/header.css" />
+    <link rel="stylesheet" href="CSS/footer.css" />
+    <link rel="stylesheet" href="CSS/utbildningar.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
     <title>Utbildningar</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header id="headerDiv"></header>
 
-
     <div id="wrapper">
-        <img src="../Project_Madrid/images/buffalo_normal_2.jpg" alt="picture" id="picture"></img>
-        <div id="image"></div>
-        <div id="content-wrapper">
-            <h1>Utbildningar</h1>
-        </div>
-        <div id="selectItems">
-            <select id="chooseCountry" required>
-                <option value="" selected disabled hidden>Välj Land</option>
-            </select>
-            <select id="chooseSubject" required>
-                <option value="" selected disabled hidden>Välj Ämne</option>
-            </select>
-        </div>
-        <img id="two" class="adImage" src="" alt="ads">
-        <div id="programWrapper"></div>
+      <img
+        src="../Project_Madrid/images/buffalo_normal_2.jpg"
+        alt="picture"
+        id="picture"
+      />
 
+      <div id="content-wrapper">
+        <h1>Utbildningar</h1>
+      </div>
+
+      <div id="selectItems">
+        <select id="chooseCountry" required>
+          <option value="" selected disabled hidden>Välj Land</option>
+        </select>
+        <select id="chooseSubject" required>
+          <option value="" selected disabled hidden>Välj Ämne</option>
+        </select>
+      </div>
+
+      <img id="two" class="adImage" src="" alt="ads" />
+
+      <div id="programWrapper"></div>
+
+      <div id="showMoreContainer">
         <button id="showMoreProgrammes">Visa alla program</button>
+      </div>
 
-        <img id="one" class="adImage" src="" alt="ads">
+      <img id="one" class="adImage" src="" alt="ads" />
+    </div>
 
-        <footer id="footerDiv"></footer>
+    <footer id="footerDiv"></footer>
 
-        <script src="Databases/commentsProgramme.js"></script>
-        <script src="Databases/database.js"></script>
-        <script src="JS/header.js"> </script>
-        <script src="JS/footer.js"></script>
-        <script src="JS/averageGrade.js"></script>
-        <script src="JS/buildProgram.js"></script>
-        <script src="JS/getAds.js"></script>
-
-
-
-</body>
-
+    <script src="Databases/commentsProgramme.js"></script>
+    <script src="Databases/database.js"></script>
+    <script src="JS/header.js"></script>
+    <script src="JS/footer.js"></script>
+    <script src="JS/averageGrade.js"></script>
+    <script src="JS/buildProgram.js"></script>
+    <script src="JS/getAds.js"></script>
+  </body>
 </html>

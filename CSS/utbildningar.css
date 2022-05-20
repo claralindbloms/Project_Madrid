@@ -46,7 +46,8 @@ body {
 }
 #chooseCountry, #chooseSubject{
     border-radius: 30px;
-    border: black;
+    border: solid 2px rgb(240, 113, 70);
+    background-color: rgb(243, 245, 235);
     padding: 15px;
     margin: 3vw;
     width: -moz-available;
@@ -94,17 +95,27 @@ body {
 /* styling for programmes */
 button, .chooseCity{
     border-radius: 30px;
-    border: black;
+    border: solid 2px rgb(240, 113, 70);
+    background-color: rgb(243, 245, 235);
     padding: 15px;
 }
 
 button {
     background-color: white;
-    border: 1.5px solid black;
+    border: solid 2px rgb(240, 113, 70);
+    background-color: rgb(243, 245, 235);
     padding: 15px;
     margin-right: 10px;
 }
 
+#showMoreContainer {
+    display: flex;
+    justify-content: center;
+}
+
+
 #showMoreProgrammes {
     margin: 20px;
+    border: solid 2px rgb(240, 113, 70);
+    background-color: rgb(243, 245, 235);
 }

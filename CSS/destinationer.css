@@ -53,6 +53,8 @@ h1 {
 
 #chooseCountry {
     margin-bottom: 20px;
+    border: solid 2px rgb(240, 113, 70);
+    background-color: rgb(243, 245, 235);
 }
 
 p{
@@ -176,7 +178,7 @@ h3{
 }
 
 .cityContainer {
-    background-color: aliceblue;
+    background-color: white;
 }
 
 /* style for comments under */
@@ -208,12 +210,13 @@ h3{
 /* styling for buttons */
 #chooseCountry, button, .chooseCity{
     border-radius: 30px;
-    border: black;
+    border: solid 2px rgb(240, 113, 70);
+    background-color: rgb(243, 245, 235);
     padding: 15px;
 }
 
 button, .chooseCity {
-    background-color: lightgray;
+    background-color: rgb(243, 245, 235);;
     width: max-content;
     margin: 5vw;
 }
