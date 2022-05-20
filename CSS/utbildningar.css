@@ -1,121 +1,125 @@
 /* Education/utbildningar CSS-file */
 
 body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-color: whitesmoke;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: whitesmoke;
 }
 
-#picture{
-    height: 260px;
-    width: 100vw;
+#picture {
+  height: 260px;
+  width: 100vw;
 
-   
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#wrapper{
-    margin-top: 93px;
+#wrapper {
+  margin-top: 93px;
 }
 
-#content-wrapper{
-    display: flex;
-    justify-content: center;
+#content-wrapper {
+  display: flex;
+  justify-content: center;
 }
 #selectItems {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #programWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .programContainer {
-    background-color: white;
-    padding: 10px;
-    width: 80vw;
-    border-radius: 20px;
-    position: relative;
-    margin: 10px 0px 10px 0px;
-
+  background-color: white;
+  padding: 10px;
+  width: 80vw;
+  border-radius: 20px;
+  position: relative;
+  margin: 10px 0px 10px 0px;
 }
-#chooseCountry, #chooseSubject{
-    border-radius: 30px;
-    border: solid 2px rgb(240, 113, 70);
-    background-color: rgb(243, 245, 235);
-    padding: 15px;
-    margin: 3vw;
-    width: -moz-available;
+
+#chooseCountry,
+#chooseSubject {
+  border-radius: 30px;
+  border: solid 2px rgb(240, 113, 70);
+  background-color: rgb(243, 245, 235);
+  padding: 15px;
+  margin: 3vw;
+  width: -moz-available;
 }
 
 #grades {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .adImage {
-    width: 100vw;
-    height: 33vw;
+  width: 100vw;
+  height: 33vw;
 }
 
-
 .grade {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border: solid 10px beige;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(243, 245, 235);
+  border: solid 2px rgb(240, 113, 70);
+
+  border-radius: 20px;
+  margin-bottom: 10%;
+  padding: 10px;
 }
 
 .grade p {
-    margin: 0;
-    text-align: center;
+  margin: 0;
+  text-align: center;
 }
 
 .grade > h3 {
-    margin: 0;
+  margin: 0;
 }
 
 #disclaimer {
-    color: gray;
-    text-align: center;
-    margin-top: 1px;
-    font-size: 12px;
+  color: gray;
+  text-align: center;
+  margin-top: 1px;
+  font-size: 12px;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 /* styling for programmes */
-button, .chooseCity{
-    border-radius: 30px;
-    border: solid 2px rgb(240, 113, 70);
-    background-color: rgb(243, 245, 235);
-    padding: 15px;
+button,
+.chooseCity {
+  border-radius: 30px;
+  border: solid 2px rgb(240, 113, 70);
+  background-color: rgb(243, 245, 235);
+  padding: 15px;
 }
 
 button {
-    background-color: white;
-    border: solid 2px rgb(240, 113, 70);
-    background-color: rgb(243, 245, 235);
-    padding: 15px;
-    margin-right: 10px;
+  background-color: white;
+  border: solid 2px rgb(240, 113, 70);
+  background-color: rgb(243, 245, 235);
+  padding: 15px;
+  margin-right: 10px;
 }
 
 #showMoreContainer {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-
 #showMoreProgrammes {
-    margin: 20px;
-    border: solid 2px rgb(240, 113, 70);
-    background-color: rgb(243, 245, 235);
+  margin: 20px;
+  border: solid 2px rgb(240, 113, 70);
+  background-color: rgb(243, 245, 235);
 }

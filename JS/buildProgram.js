@@ -68,10 +68,10 @@ function buildProgram(program) {
   button.addEventListener("click", function () {
     if (moreInformation.classList.contains("hidden")) {
       moreInformation.classList.remove("hidden");
-      button.innerText="Visa mindre"; 
+      button.innerText = "Visa mindre";
     } else {
       moreInformation.classList.add("hidden");
-      button.innerText="Visa mer";
+      button.innerText = "Visa mer";
     }
   });
 
@@ -84,8 +84,7 @@ function buildProgram(program) {
     sessionStorage.setItem("country", JSON.stringify(foundCountry[0]));
     window.location.href = "./destinationer.html";
   });
-  
-  
+
   programResult.append(programContainer);
 }
 
@@ -96,7 +95,7 @@ programResult.innerHTML = "";
 //  for (let i = 0; i < PROGRAMMES.length; i++)
 
 if (sessionStorage.getItem("programmes") !== null) {
-  const programmes = JSON.parse(sessionStorage.getItem("programmes"))
+  const programmes = JSON.parse(sessionStorage.getItem("programmes"));
   for (let i = 0; i < programmes.length; i++) {
     buildProgram(programmes[i]);
     sessionStorage.removeItem("programmes");
@@ -117,11 +116,11 @@ if (sessionStorage.getItem("programmes") !== null) {
 
 let showMoreProgrammes = document.getElementById("showMoreProgrammes");
 
-showMoreProgrammes.addEventListener("click", function(event){
+showMoreProgrammes.addEventListener("click", function (event) {
   for (let i = 20; i < PROGRAMMES.length; i++) {
     buildProgram(PROGRAMMES[i]);
   }
-})
+});
 
 // Hitta rätt universitet baserat på dess id
 function getUniversityById(program) {
@@ -263,8 +262,8 @@ function averageCalc(array) {
 let chooseCountry = document.getElementById("chooseCountry");
 
 window.onload = function () {
-  chooseCountry.value = ''
-}
+  chooseCountry.value = "";
+};
 
 COUNTRIES.forEach((country) => {
   let option = document.createElement("option");
@@ -274,7 +273,7 @@ COUNTRIES.forEach((country) => {
 });
 
 chooseCountry.addEventListener("change", function (event) {
-  chooseSubject.value = ''
+  chooseSubject.value = "";
   let programResult = document.getElementById("programWrapper");
   programResult.innerHTML = "";
 
@@ -286,8 +285,8 @@ chooseCountry.addEventListener("change", function (event) {
 
 let chooseSubject = document.getElementById("chooseSubject");
 window.onload = function () {
-  chooseSubject.value = ''
-}
+  chooseSubject.value = "";
+};
 
 FIELDS.forEach((subject) => {
   let option = document.createElement("option");
@@ -297,7 +296,7 @@ FIELDS.forEach((subject) => {
 });
 
 chooseSubject.addEventListener("change", function (event) {
-  chooseCountry.value = ''
+  chooseCountry.value = "";
   let programResult = document.getElementById("programWrapper");
   programResult.innerHTML = "";
 
