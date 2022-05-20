@@ -16,7 +16,7 @@ const CONTINENTS = [
 
   {
     "name": "Nordamerika",
-    "countries": [6],
+    "countries": [6,5],
     "id": 3,
     "image": "northamerica2.png"
   },
@@ -37,7 +37,7 @@ const CONTINENTS = [
 
   {
     "name": "Sydamerika",
-    "countries": [8,5,7],
+    "countries": [8,7],
     "id": 5,
     "image": "southamerica2.png"
   },
