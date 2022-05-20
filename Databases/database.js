@@ -208,7 +208,7 @@ const COUNTRIES = [
     {
         "id": 5,
         "name": "Mexico",
-        "contitentId": 5,
+        "contitentId": 3,
         "visa": true,
         "languageID": 0,
         "flag": "mexico.png",
