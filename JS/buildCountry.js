@@ -53,6 +53,7 @@ function buildCountry(country) {
   let programmes = getProgramByCountryId(country.id);
   optionsDiv.append(button);
 
+  // event-listener to send the user to the right programme via the city
   button.addEventListener("click", function () {
     sessionStorage.setItem("programmes", JSON.stringify(programmes));
     window.location.href = "./utbildningar.html";
@@ -63,6 +64,7 @@ function buildCountry(country) {
   countryResult.append(countryContainer);
   let selectCity = document.querySelector(`#${country.name}`);
 
+  // event-listener for the city-selector and what happens when choosing a city
   selectCity.addEventListener("change", function (event) {
     const city = CITIES.find(function (c) {
       if (c.name === event.target.value) {
@@ -74,6 +76,7 @@ function buildCountry(country) {
 
     selectCity.scrollIntoView();
 
+    // removing the countries that are not relevant to the choosen city
     document.querySelectorAll(".container").forEach((element) => {
       if (city.countryID !== parseInt(element.id)) {
         element.remove();
@@ -81,6 +84,8 @@ function buildCountry(country) {
     });
 
     buildCity(city);
+
+    // code to show comments and event-listener to show more comments
 
     let mooreComments = document.querySelector(".mooreComments");
 
@@ -95,6 +100,7 @@ function buildCountry(country) {
     getComments(2);
   });
 
+  // connects the correct city to the options in the city selector
   for (let i = 0; i < foundCities.length; i++) {
     let option = document.createElement("option");
     option.text = foundCities[i];
@@ -110,7 +116,6 @@ let countryResult = document.getElementById("countryWrapper");
 countryResult.innerHTML = "";
 
 // go through the country database and create each country
-//TO DO, fixa funktionen under
 
 if (sessionStorage.getItem("country") !== null) {
   const country = JSON.parse(sessionStorage.getItem("country"));
@@ -150,6 +155,8 @@ function getCitiesById(country) {
   }
   return foundCities;
 }
+
+// find the correct program based on country id
 
 function getProgramByCountryId(id) {
   let foundCountry = [];
