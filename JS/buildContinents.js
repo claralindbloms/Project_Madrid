@@ -16,7 +16,7 @@ function buildContinents () {
 
     continent.addEventListener('click', function (event) {
       let foundC = getCountryByContinentId(CONTINENTS[i].id)
-      console.log(foundC)
+
       let popupHTML = document.querySelector('.continent_images')
       if (document.querySelector('.menuactive')) {
         let overlay = document.querySelector('.overlay')
@@ -30,6 +30,7 @@ function buildContinents () {
         popupHTML.classList.add('menuactive')
 
         // creates and appends a close-icon on the country pop-up
+
         let close = document.createElement('a')
         close.classList.add('close')
         close.href = '#'
@@ -47,6 +48,7 @@ function buildContinents () {
         }
 
         // event-listener that redirects the user to the index.html page
+
         close.addEventListener('click', function (event) {
           window.location.href = './index.html'
         })
@@ -78,6 +80,7 @@ function popupCountries (country, overlay) {
   countries.classList.add('country')
 
   countries.innerHTML = `
+
   <img class="country_images" src="./images/${country.imagesNormal[0]}"</img>
   <h2>${country.name}</h2>
   `
