@@ -127,6 +127,8 @@ function initComments(city) {
     <h3>Kommentarer</h3>
     <p>Det finns inga kommentarer att visa</p>
     `;
+  } else if (orderedComments.length === 1 || orderedComments.length === 2 ){
+    document.querySelector(".mooreComments").style.display = "none";
   }
 }
 
