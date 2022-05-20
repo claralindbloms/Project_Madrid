@@ -98,13 +98,17 @@ if (sessionStorage.getItem("programmes") !== null) {
   const programmes = JSON.parse(sessionStorage.getItem("programmes"));
   for (let i = 0; i < programmes.length; i++) {
     buildProgram(programmes[i]);
-    sessionStorage.removeItem("programmes");
+    sessionStorage.removeItem("programmes");    
+    let showMoreProgrammes = document.getElementById("showMoreProgrammes");
+    showMoreProgrammes.style.display = "none"
   }
 } else if (sessionStorage.getItem("programmesCity") !== null) {
   const programmesCity = JSON.parse(sessionStorage.getItem("programmesCity"));
   for (let i = 0; i < programmesCity.length; i++) {
     buildProgram(programmesCity[i]);
-    sessionStorage.removeItem("programmesCity");
+    sessionStorage.removeItem("programmesCity")
+    let showMoreProgrammes = document.getElementById("showMoreProgrammes");
+    showMoreProgrammes.style.display = "none"
   }
 } else {
   for (let i = 0; i < 20; i++) {
@@ -116,10 +120,14 @@ if (sessionStorage.getItem("programmes") !== null) {
 
 let showMoreProgrammes = document.getElementById("showMoreProgrammes");
 
+
 showMoreProgrammes.addEventListener("click", function (event) {
   for (let i = 20; i < PROGRAMMES.length; i++) {
     buildProgram(PROGRAMMES[i]);
+
   }
+  showMoreProgrammes.style.display = "none";
+
 });
 
 // Hitta rätt universitet baserat på dess id
