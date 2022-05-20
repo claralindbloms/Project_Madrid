@@ -1,20 +1,45 @@
 #overlay {
-    position: fixed;
-    display: none;
-    width: 100vw;
-    height: 78vh;
-    top: 10;
-    left: 0;
-    right: 0;
-    bottom: 10;
-    background-color:white;
-    z-index: 2;
-    cursor: pointer;
-    border: beige;
-
-  }
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 78vh;
+  top: 10;
+  left: 0;
+  right: 0;
+  bottom: 10;
+  background-color: white;
+  z-index: 2;
+  cursor: pointer;
+  border: beige;
+}
 
 .overlay div {
   display: flex;
   justify-content: center;
+}
+
+.close {
+  position: fixed;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
 }
