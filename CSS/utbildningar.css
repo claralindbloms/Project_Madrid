@@ -1,5 +1,3 @@
-/* Education/utbildningar CSS-file */
-
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -96,7 +94,6 @@ body {
   display: none;
 }
 
-/* styling for programmes */
 button,
 .chooseCity {
   border-radius: 30px;
