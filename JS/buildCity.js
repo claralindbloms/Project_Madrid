@@ -126,6 +126,9 @@ function averageCalc (array) {
 let orderedComments
 let showComments
 
+//Filters out right comment to right city
+//Sorts out in right order 
+// & change information depending on comments lenght
 function initComments (city) {
   showComments = 0
   orderedComments = COMMENTS_CITY.filter(
@@ -142,6 +145,7 @@ function initComments (city) {
   }
 }
 
+//Compares the date to eachother to get newest comments at top
 function compareByDate (date1, date2) {
   if (date1.year > date2.year) {
     return 1
@@ -164,6 +168,8 @@ function compareByDate (date1, date2) {
   }
 }
 
+//Creates the commentbox 
+//stops the loop from running the comments over and over again
 function getComments (numberOfComments) {
   for (let i = showComments; i < showComments + numberOfComments; i++) {
     if (i >= orderedComments.length) {

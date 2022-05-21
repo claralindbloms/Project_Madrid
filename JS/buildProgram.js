@@ -78,7 +78,7 @@ function buildProgram(program) {
   button2.innerText = 'Mer om landet'
   programContainer.append(button2)
 
-  //TO DO, se över funktionen
+
   button2.addEventListener('click', function () {
     sessionStorage.setItem('country', JSON.stringify(foundCountry[0]))
     window.location.href = './destinationer.html'
