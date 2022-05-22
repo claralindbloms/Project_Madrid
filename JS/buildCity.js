@@ -47,6 +47,7 @@ function buildCity (city) {
   cityContainer.append(button)
 
   // event-listener to redirect the user to the programmes linked to the choosen city
+  // Sends information about the chosen city to utbildningar.html using session storage.
 
   button.addEventListener('click', function () {
     sessionStorage.setItem('programmesCity', JSON.stringify(programmes))
@@ -88,6 +89,8 @@ function getCitiesByCountryId (city) {
   return foundCities
 }
 
+// Function to find the grades for a city.
+
 function averageGradeCity (city, type) {
   let grade = []
 
@@ -99,6 +102,8 @@ function averageGradeCity (city, type) {
 
   return averageCalc(grade)
 }
+
+// Function to calculate the average grade based on the found grades.
 
 function averageCalc (array) {
   let sum = 0
