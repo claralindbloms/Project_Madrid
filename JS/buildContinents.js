@@ -97,7 +97,7 @@ function popupCountries(country, overlay) {
 
   countries.addEventListener("click", function () {
     sessionStorage.setItem("country", JSON.stringify(country));
-    window.location.href = "./destinationer.html";
+    window.location.href = "./destinationer.html#one";
   });
 
   overlay.append(countries);
