@@ -17,8 +17,8 @@
 .hamburger {
   width: 60px;
   height: 60px;
-  position: relative;
-  left: 55vw;
+  position: absolute;
+  left: 80vw;
   bottom: 1vh;
 }
 
