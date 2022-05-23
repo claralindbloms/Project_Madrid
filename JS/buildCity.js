@@ -51,7 +51,7 @@ function buildCity (city) {
 
   button.addEventListener('click', function () {
     sessionStorage.setItem('programmesCity', JSON.stringify(programmes))
-    window.location.href = './utbildningar.html'
+    window.location.href = './utbildningar.html#two'
   })
 
   countryResult.append(cityContainer)

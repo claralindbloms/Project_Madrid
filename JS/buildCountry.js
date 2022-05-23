@@ -56,7 +56,7 @@ function buildCountry(country) {
   // event-listener to send the user to the right programme via the city
   button.addEventListener("click", function () {
     sessionStorage.setItem("programmes", JSON.stringify(programmes));
-    window.location.href = "./utbildningar.html";
+    window.location.href = "./utbildningar.html#two";
   });
 
   // to get the correct cities that belong to the choosen country

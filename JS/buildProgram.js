@@ -86,7 +86,7 @@ function buildProgram(program) {
 
   button2.addEventListener("click", function () {
     sessionStorage.setItem("country", JSON.stringify(foundCountry[0]));
-    window.location.href = "./destinationer.html";
+    window.location.href = "./destinationer.html#one";
   });
 
   programResult.append(programContainer);
