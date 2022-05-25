@@ -22,16 +22,16 @@ function buildContinents() {
       let foundC = getCountryByContinentId(CONTINENTS[i].id);
 
       let popupHTML = document.querySelector(".continent_images");
-      if (document.querySelector(".menuactive")) {
+      if (document.querySelector(".active")) {
         let overlay = document.querySelector(".overlay");
-        popupHTML.classList.remove("menuactive");
+        popupHTML.classList.remove("active");
         overlay.remove();
       } else {
-        let burgerHTML = document.querySelector(".hamburger");
-        burgerHTML.style.display = "none";
+        let popHTML = document.querySelector(".hamburger");
+        popHTML.style.display = "none";
         let overlay = document.createElement("div");
         overlay.classList.add("overlay");
-        popupHTML.classList.add("menuactive");
+        popupHTML.classList.add("active");
 
         // creates and appends a close-icon on the country pop-up
 

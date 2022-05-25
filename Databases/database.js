@@ -19671,4 +19671,3 @@ const DB = {
     COMMENTS_CITY
 };
 
-console.log( DB );
