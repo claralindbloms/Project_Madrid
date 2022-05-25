@@ -2,7 +2,7 @@
 
 // this function creates the "information"-box for each city
 
-function buildCity (city) {
+function buildCity(city) {
   let countryResult = document.getElementById('countryWrapper')
   let cityContainer = document.createElement('div')
   cityContainer.className = 'cityContainer container'
@@ -59,7 +59,7 @@ function buildCity (city) {
 
 // function to get and link the correct program to the right city
 
-function getProgrammesByCity (city) {
+function getProgrammesByCity(city) {
   let foundProgrammes = []
 
   for (let j = 0; j < UNIVERSITIES.length; j++) {
@@ -76,14 +76,12 @@ function getProgrammesByCity (city) {
 
 // renders the cities based on the country id
 
-function getCitiesByCountryId (city) {
+function getCitiesByCountryId(city) {
   let foundCities = []
 
-  for (let i = 0; i < COUNTRIES.length; i++) {
-    for (let i = 0; i < CITIES.length; i++) {
-      if (city.id == CITIES[i].countryID) {
-        foundCities.push(CITIES[i].name)
-      }
+  for (let j = 0; j < CITIES.length; j++) {
+    if (city.id == CITIES[j].countryID) {
+      foundCities.push(CITIES[j].name)
     }
   }
   return foundCities
@@ -91,7 +89,7 @@ function getCitiesByCountryId (city) {
 
 // Function to find the grades for a city.
 
-function averageGradeCity (city, type) {
+function averageGradeCity(city, type) {
   let grade = []
 
   COMMENTS_CITY.filter(comment => {
@@ -105,7 +103,7 @@ function averageGradeCity (city, type) {
 
 // Function to calculate the average grade based on the found grades.
 
-function averageCalc (array) {
+function averageCalc(array) {
   let sum = 0
 
   for (let i = 0; i < array.length; i++) {
@@ -134,7 +132,7 @@ let showComments
 //Filters out right comment to right city
 //Sorts out in right order 
 // & change information depending on comments lenght
-function initComments (city) {
+function initComments(city) {
   showComments = 0
   orderedComments = COMMENTS_CITY.filter(
     comment => comment.cityID === city.id
@@ -151,7 +149,7 @@ function initComments (city) {
 }
 
 //Compares the date to eachother to get newest comments at top
-function compareByDate (date1, date2) {
+function compareByDate(date1, date2) {
   if (date1.year > date2.year) {
     return 1
   } else if (date1.year < date2.year) {
@@ -175,7 +173,7 @@ function compareByDate (date1, date2) {
 
 //Creates the commentbox 
 //stops the loop from running the comments over and over again
-function getComments (numberOfComments) {
+function getComments(numberOfComments) {
   for (let i = showComments; i < showComments + numberOfComments; i++) {
     if (i >= orderedComments.length) {
       break

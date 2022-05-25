@@ -8,7 +8,6 @@ function buildProgram(program) {
   programContainer.classList.add("programContainer");
 
   let programName = document.createElement("h2");
-
   programName.innerText = program.name;
   programContainer.append(programName);
 
